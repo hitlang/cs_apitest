@@ -14,8 +14,8 @@ class TestUsers(unittest.TestCase):
         冒烟用例
         :return:
         '''
-        # url = "http://10.255.0.187:9000/users"
-        url = "http://localhost:9000/users"
+        url = "http://10.255.0.187:9000/users"
+        # url = "http://localhost:9000/users"
         res = requests.get(url).json()
         self.assertIn("吴云露" , res)
 
