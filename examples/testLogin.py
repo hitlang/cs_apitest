@@ -18,7 +18,7 @@ class TestLogin(unittest.TestCase):
 
         self.apikey = "ded63ea2d7bfc17264b83931b9045014"
 
-    @unittest.skip("")
+
     def testLogin_1(self):
         '''
         冒烟用例
@@ -37,7 +37,7 @@ class TestLogin(unittest.TestCase):
 
         self.assertEqual("success", res['status'], "登录测试没有通过")
 
-    @unittest.skip("")
+
     def testLogin_2(self):
         '''
         用户名错
@@ -56,7 +56,7 @@ class TestLogin(unittest.TestCase):
 
         self.assertEqual("error", res['status'], "登录测试没有通过")
 
-    @unittest.skip("")
+
     def testLogin_3(self):
         '''
         密码错误
