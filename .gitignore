@@ -1,2 +1,3 @@
 /.idea/
-__pycache__
+/.apitest/__pycache__
+/.apitest/common/__pycache__
