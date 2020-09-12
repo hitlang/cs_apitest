@@ -2,8 +2,8 @@ import os
 import unittest
 
 # 用例套件 方式 1
-from cs_apitest.apitest.common import HTMLTestRunner
-from cs_apitest.examples.testLogin import TestLogin
+from apitest.common import HTMLTestRunner
+from examples.testLogin import TestLogin
 
 
 def smokeSuit():
