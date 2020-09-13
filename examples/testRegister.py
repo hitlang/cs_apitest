@@ -6,6 +6,7 @@ import requests
 
 
 class TestRegister(unittest.TestCase):
+
     url = "http://116.85.42.10:9000/register"
 
     def test_register_1(self):
