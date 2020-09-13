@@ -18,7 +18,7 @@ class TestLogin(unittest.TestCase):
 
         self.apikey = "ded63ea2d7bfc17264b83931b9045014"
 
-
+    @unittest.skip("")
     def testLogin_1(self):
         '''
         冒烟用例
