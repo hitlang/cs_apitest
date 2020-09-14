@@ -10,6 +10,10 @@ class TestRegister(unittest.TestCase):
     url = "http://116.85.42.10:9000/register"
 
     def test_register_1(self):
+        '''
+        冒烟用例
+        :return:
+        '''
         payload = {
             "registerName": "kevin",
             "password": "123",
