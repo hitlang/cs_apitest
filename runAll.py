@@ -7,13 +7,21 @@ from examples.testLogin import TestLogin
 from examples.testRegister import TestRegister
 
 
+#缺点： 过于繁琐
+# def smokeSuite():
+#     suit = unittest.TestSuite()
+#     suit.addTest(TestLogin("testLogin_1"))
+#     suit.addTest(TestRegister("test_register_1"))
+#     return suit
+#多个套件，组成一个测试套件
+def suite():
+    suite1 =  unittest.makeSuite(TestLogin, "test")
+    suite2 =  unittest.makeSuite(TestRegister)
 
-def smokeSuit():
-    suit = unittest.TestSuite()
-    suit.addTest(TestLogin("testLogin_1"))  # 加入了正向用例
-    suit.addTest(TestRegister("test_register_1"))
+    tests = (suite1, suite2)
 
-    return suit
+    return unittest.TestSuite(tests=tests) # 这里注意讲解
+
 
 
 if __name__ == '__main__':
@@ -24,6 +32,8 @@ if __name__ == '__main__':
     #
     runner = HTMLTestRunner.HTMLTestRunner(stream=fp, verbosity=1, title="测试报告", description="描述")
     #
-    runner.run(smokeSuit())
+    # runner.run(smokeSuite()) # 1
 
-    print(report_path)
+    runner.run(suite()) # 2
+
+
