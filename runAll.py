@@ -26,7 +26,7 @@ def suite():
 
 if __name__ == '__main__':
     report_path = os.path.abspath(os.path.join(os.path.dirname(__file__),"report","report.html"))
-    runner = unittest.TextTestRunner(verbosity=2)
+    # runner = unittest.TextTestRunner(verbosity=2) 不使用这种方式
     #
     fp = open(report_path, "wb")
     #
