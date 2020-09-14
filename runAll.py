@@ -5,13 +5,12 @@ import unittest
 from apitest.common import HTMLTestRunner
 from examples.testLogin import TestLogin
 from examples.testRegister import TestRegister
-from examples.testabc import TestUsers
+
 
 
 def smokeSuit():
     suit = unittest.TestSuite()
     suit.addTest(TestLogin("testLogin_1"))  # 加入了正向用例
-    suit.addTest(TestUsers("test_users"))
     suit.addTest(TestRegister("test_register_1"))
 
     return suit
