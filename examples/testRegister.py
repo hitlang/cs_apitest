@@ -3,9 +3,10 @@
 import unittest
 import requests
 
+from apitest.common.log import Log
+
 
 class TestRegister(unittest.TestCase):
-
     url = "http://116.85.42.10:9000/register"
 
     def test_register_1(self):
@@ -24,6 +25,9 @@ class TestRegister(unittest.TestCase):
         self.assertEqual(res['msg'], '注册成功', "注册冒烟用例没有通过")
 
     def test_register_2(self):
+        logger = Log()
+
+        logger.getLogger().info("---注册用例2  开始 ----")
         '''
         回归
         :return:
@@ -37,3 +41,5 @@ class TestRegister(unittest.TestCase):
         res = requests.post(url=self.url, data=payload).json()
 
         self.assertEqual(res['性别'], '男', "注册冒烟用例没有通过")
+
+        logger.getLogger().info("---注册用例2  结束 ----")
