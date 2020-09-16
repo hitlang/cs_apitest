@@ -3,22 +3,23 @@ import unittest
 
 # 用例套件 方式 1
 from apitest.common import HTMLTestRunner
-from examples.testLogin import TestLogin
+# from examples.testLogin import TestLogin
+from apitest.tests.testLogin import TestLogin
 from examples.testRegister import TestRegister
 
 
 #缺点： 过于繁琐
-# def smokeSuite():
-#     suit = unittest.TestSuite()
-#     suit.addTest(TestLogin("testLogin_1"))
-#     suit.addTest(TestRegister("test_register_1"))
-#     return suit
+def smokeSuite():
+    suit = unittest.TestSuite()
+    suit.addTest(TestLogin("testLogin_1"))
+    # suit.addTest(TestRegister("test_register_1"))
+    return suit
 #多个套件，组成一个测试套件
 def suite():
     suite1 =  unittest.makeSuite(TestLogin, "test")
-    suite2 =  unittest.makeSuite(TestRegister)
+    # suite2 =  unittest.makeSuite(TestRegister)
 
-    tests = (suite1, suite2)
+    tests = (suite1,)
 
     return unittest.TestSuite(tests=tests) # 这里注意讲解
 
@@ -30,7 +31,7 @@ if __name__ == '__main__':
     #
     fp = open(report_path, "wb")
     #
-    runner = HTMLTestRunner.HTMLTestRunner(stream=fp, verbosity=1, title="测试报告", description="描述")
+    runner = HTMLTestRunner.HTMLTestRunner(stream=fp, verbosity=2, title="测试报告", description="描述")
     #
     # runner.run(smokeSuite()) # 1
 
