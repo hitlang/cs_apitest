@@ -5,13 +5,25 @@
 import unittest
 import requests
 
+from apitest.config.config import Config
+
+cf  = Config()
+
 class TestShopInfo(unittest.TestCase):
 
+    url = "shopinfo"
 
     def setUp(self) -> None:
-        self.url = "http://localhost/dbshop/Jsonapi/shopinfo"
+        global  cf
+        scheme = cf.getHttpConf("scheme")
+        baseurl = cf.getHttpConf("baseurl")
+        self.apikey = cf.getApikey()
+        self.url  = scheme + "://" + baseurl +  "/" + TestShopInfo.url
 
-        self.apikey = "ded63ea2d7bfc17264b83931b9045014"
+
+        # self.url = "http://localhost/dbshop/Jsonapi/shopinfo"
+        #
+        # self.apikey = "ded63ea2d7bfc17264b83931b9045014"
 
 
 
