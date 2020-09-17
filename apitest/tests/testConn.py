@@ -3,13 +3,21 @@
 # @Author:liulang
 import unittest
 import requests
+from apitest.config.config import Config
+# 声明全局变量
+localconfig = Config()
 
 class TestConn(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.url = "http://localhost/dbshop/Jsonapi"
+        global  localconfig
+        scheme = localconfig.getHttpConf("scheme")
+        baseurl = localconfig.getHttpConf("baseurl")
+        self.url = scheme + '://' + baseurl
 
-        self.apikey = "ded63ea2d7bfc17264b83931b9045014"
+        # self.url = "http://localhost/dbshop/Jsonapi"
+        #
+        # self.apikey = "ded63ea2d7bfc17264b83931b9045014"
 
     # 测试用例1
     def test_1(self):
