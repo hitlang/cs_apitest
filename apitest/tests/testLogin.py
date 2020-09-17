@@ -4,12 +4,14 @@ import unittest
 import requests
 
 from apitest.config.config import Config
+# 声明全局变量
+localconfig = Config()
+
 class TestLogin(unittest.TestCase):
     url = "login"
 
     def setUp(self) -> None:
-        global localconfig  # 声明全局变量
-        localconfig = Config()
+        global localconfig
         scheme = localconfig.getHttpConf("scheme")
         baseurl = localconfig.getHttpConf("baseurl")
         self.url = scheme + '://' + baseurl + '/' + TestLogin.url
