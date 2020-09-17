@@ -15,6 +15,8 @@ class TestConn(unittest.TestCase):
         baseurl = localconfig.getHttpConf("baseurl")
         self.url = scheme + '://' + baseurl
 
+        self.apikey = localconfig.getApikey()
+
         # self.url = "http://localhost/dbshop/Jsonapi"
         #
         # self.apikey = "ded63ea2d7bfc17264b83931b9045014"
