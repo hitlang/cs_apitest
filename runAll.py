@@ -4,22 +4,28 @@ import unittest
 # 用例套件 方式 1
 from apitest.common import HTMLTestRunner
 # from examples.testLogin import TestLogin
+from apitest.tests.testConn import TestConn
 from apitest.tests.testLogin import TestLogin
-from examples.testRegister import TestRegister
+from apitest.tests.testShopinfo import TestShopInfo
+# from examples.testRegister import TestRegister
 
 
-#缺点： 过于繁琐
-def smokeSuite():
-    suit = unittest.TestSuite()
-    suit.addTest(TestLogin("testLogin_1"))
-    # suit.addTest(TestRegister("test_register_1"))
-    return suit
+# #缺点： 过于繁琐
+# def smokeSuite():
+#     suit = unittest.TestSuite()
+#     suit.addTest(TestLogin("testLogin_1"))
+#     # suit.addTest(TestRegister("test_register_1"))
+#     return suit
 #多个套件，组成一个测试套件
+
+
+
 def suite():
     suite1 =  unittest.makeSuite(TestLogin, "test")
-    # suite2 =  unittest.makeSuite(TestRegister)
+    suite2 =  unittest.makeSuite(TestConn)
+    suite3 = unittest.makeSuite(TestShopInfo)
 
-    tests = (suite1,)
+    tests = (suite1,suite2, suite3)
 
     return unittest.TestSuite(tests=tests) # 这里注意讲解
 
