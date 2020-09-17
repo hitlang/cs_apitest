@@ -27,7 +27,6 @@ def foo1():
 def foo2():
     global stu
 
-
     print(stu.getName())
     pass
 
