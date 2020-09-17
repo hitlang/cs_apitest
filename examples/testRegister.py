@@ -43,3 +43,8 @@ class TestRegister(unittest.TestCase):
         self.assertEqual(res['性别'], '男', "注册冒烟用例没有通过")
 
         logger.getLogger().info("---end  ----")
+#test
+if __name__ == '__main__':
+    unittest.main()
+
+    pass
