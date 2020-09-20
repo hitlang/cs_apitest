@@ -8,7 +8,6 @@ from typing import Any
 
 
 class Log():
-
     __instance = None
 
     def __init__(self) -> None:
@@ -40,25 +39,34 @@ class Log():
         else:
             return cls.__instance
 
-    def getLogger(self):
+    # def getLogger(self):
+    #     return self.logger
+    # @staticmethod
+    # def getLogger():
+    #     if  Log.__instance is None:
+    #         Log.__instance = Log()
+    #
+    #     return Log.__instance
 
-        return self.logger
+    @classmethod
+    def getLogger(cls):
+        if cls.__instance is None:
+            cls.__instance = Log()
+            return cls.__instance.logger
 
-
+        return cls.__instance.logger
 
 
 if __name__ == '__main__':
-
-    myLogger =  Log()
-    # myLogger2 =  Log()
+    myLogger = Log.getLogger()
+    myLogger2 = Log.getLogger()
     #
-    # print( id(myLogger))
-    # print( id(myLogger2))
+    print(id(myLogger))
+    print(id(myLogger2))
 
-
-    logger = myLogger.getLogger()
-    # # 'application' code
-    logger.debug('debug message')
+    # logger = myLogger.getLogger()
+    # # # 'application' code
+    # logger.debug('debug message')
     # logger.info('info message')
     # logger.warning('warn message')
     # logger.error('error message')
