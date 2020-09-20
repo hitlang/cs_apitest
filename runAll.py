@@ -19,11 +19,22 @@ from apitest.tests.testShopinfo import TestShopInfo
 #多个套件，组成一个测试套件
 
 
+def suite2():
+    suite  = unittest.TestSuite()
+
+    cases = [TestLogin("testLogin_1"), TestLogin("testLogin_2")]
+    suite.addTests(cases)
+
+    return suite
+
+
 
 def suite():
     suite1 =  unittest.makeSuite(TestLogin, "test")
     suite2 =  unittest.makeSuite(TestConn)
     suite3 = unittest.makeSuite(TestShopInfo)
+
+
 
     tests = (suite1,suite2, suite3)
 
@@ -41,6 +52,6 @@ if __name__ == '__main__':
     #
     # runner.run(smokeSuite()) # 1
 
-    runner.run(suite()) # 2
+    runner.run(suite2()) # 2
 
 
