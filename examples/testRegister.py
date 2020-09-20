@@ -25,9 +25,7 @@ class TestRegister(unittest.TestCase):
         self.assertEqual(res['msg'], '注册成功', "注册冒烟用例没有通过")
 
     def test_register_2(self):
-        logger = Log()
-
-        logger.getLogger().info("--start ----")
+        Log.getLogger().info("----------------------start---------------------")
         '''
         回归
         :return:
@@ -42,7 +40,7 @@ class TestRegister(unittest.TestCase):
 
         self.assertEqual(res['性别'], '男', "注册冒烟用例没有通过")
 
-        logger.getLogger().info("---end  ----")
+        Log.getLogger().info("-----------------end---------------------")
 #test
 if __name__ == '__main__':
     unittest.main()
