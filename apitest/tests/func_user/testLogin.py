@@ -8,6 +8,7 @@ from apitest.config.config import Config
 # 声明全局变量
 localconfig = Config()
 
+@unittest.skip("")
 class TestLogin(unittest.TestCase):
     url = "login"
 

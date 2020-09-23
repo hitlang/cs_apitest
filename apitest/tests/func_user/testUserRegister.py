@@ -7,6 +7,7 @@ import unittest
 from apitest.common.log import Log
 
 
+@unittest.skip("")
 class TestUserRegister(unittest.TestCase):
 
     def setUp(self) -> None:
