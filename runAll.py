@@ -4,10 +4,7 @@ import unittest
 # 用例套件 方式 1
 from apitest.common import HTMLTestRunner
 # from examples.testLogin import TestLogin
-from apitest.tests.testConn import TestConn
-from apitest.tests.testLogin import TestLogin
-from apitest.tests.testShopinfo import TestShopInfo
-
+from apitest.ut.core import _TestCase
 
 # from examples.testRegister import TestRegister
 
@@ -26,24 +23,31 @@ from apitest.tests.testShopinfo import TestShopInfo
 #     cases = [TestLogin("testLogin_1"), TestLogin("testLogin_2")]
 #     suite.addTests(cases)
 #     return suite
-
-
-def suite():
-    suite1 = unittest.makeSuite(TestLogin, "test")
-    suite2 = unittest.makeSuite(TestConn)
-    suite3 = unittest.makeSuite(TestShopInfo)
-    tests = (suite1, suite2, suite3)
-    return unittest.TestSuite(tests=tests)  # 这里注意讲解
+#
+# def suite():
+#     suite1 = unittest.makeSuite(TestLogin, "test")
+#     suite2 = unittest.makeSuite(TestConn)
+#     suite3 = unittest.makeSuite(TestShopInfo)
+#     tests = (suite1, suite2, suite3)
+#     return unittest.TestSuite(tests=tests)  # 这里注意讲解
 
 
 if __name__ == '__main__':
+    # 增加
+    unittest.TestCase = _TestCase
+    # 测试报告
     report_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "report", "report.html"))
     # runner = unittest.TextTestRunner(verbosity=2) 不使用这种方式
     #
     fp = open(report_path, "wb")
+
+    testcase_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "apitest", "tests"))
     #
     runner = HTMLTestRunner.HTMLTestRunner(stream=fp, verbosity=2, title="测试报告", description="描述")
+
+    discover = unittest.defaultTestLoader.discover(start_dir=testcase_path, pattern='test*.py')
+
     #
     # runner.run(smokeSuite()) # 1
 
-    runner.run(suite())  # 2
+    runner.run(discover)  # 2
