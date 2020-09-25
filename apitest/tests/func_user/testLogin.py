@@ -19,10 +19,7 @@ class TestLogin(unittest.TestCase):
         scheme = localconfig.getHttpConf("scheme")
         baseurl = localconfig.getHttpConf("baseurl")
         self.url = scheme + '://' + baseurl + '/' + TestLogin.url
-        #
-        # self.url = "http://localhost/dbshop/Jsonapi"
-        #
-        # self.apikey = "ded63ea2d7bfc17264b83931b9045014"
+
 
     def testLogin_1(self):
         '''

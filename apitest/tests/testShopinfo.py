@@ -6,8 +6,8 @@ import requests
 
 from config import Config, global_config
 
-# localconfig = Config()
-localconfig = global_config # 注意讲解
+localconfig = Config()
+# localconfig = global_config # 注意讲解
 
 class TestShopInfo(unittest.TestCase):
     url = "shopinfo"

@@ -37,4 +37,4 @@ class TestAd(unittest.TestCase):
 
         res = requests.get(url=url, params=params).json()
         result = res.get('result')
-        self.assertIn("test1", result['dbapi_ad_body'])
+        self.assertIn("test", result['dbapi_ad_body'])

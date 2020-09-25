@@ -7,8 +7,8 @@ import requests
 # 声明全局变量
 from config import Config, global_config
 
-# localconfig = Config()
-localconfig = global_config # 注意讲解
+localconfig = Config()
+# localconfig = global_config # 注意讲解
 class TestConn(unittest.TestCase):
 
     def setUp(self) -> None:
