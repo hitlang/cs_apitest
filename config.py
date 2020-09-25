@@ -5,12 +5,17 @@
 import configparser
 import os
 
+from apitest.common.log import Log
+
 config_file = os.path.join( os.path.dirname(__file__),"config.ini")
 config_file = os.path.abspath(config_file)
 
 class Config:
 
     def __init__(self) -> None:
+        self.logger = Log.getLogger()
+
+        self.logger.info("------------------创建配置对象----------------------")
         self.cf = configparser.ConfigParser()
         self.cf.read(config_file)
 
@@ -26,7 +31,7 @@ class Config:
         value = self.cf.get("MYSQL", key)
         return value
 
-
+global_config = Config()
 # test
 if __name__ == '__main__':
     c = Config()
