@@ -5,10 +5,10 @@ import unittest
 import requests
 
 # 声明全局变量
-from config import Config
+from config import Config, global_config
 
-localconfig = Config()
-
+# localconfig = Config()
+localconfig = global_config # 注意讲解
 class TestConn(unittest.TestCase):
 
     def setUp(self) -> None:
@@ -18,7 +18,6 @@ class TestConn(unittest.TestCase):
         self.url = scheme + '://' + baseurl
         self.apikey = localconfig.getApikey()
 
-        # 测试用例2
 
     def test_connection_error_apikey(self):
         params = {
@@ -28,7 +27,7 @@ class TestConn(unittest.TestCase):
         self.assertEqual(res['status'], "error")
 
 
-    # 测试用例1
+
     def test_connection_smoke(self):
         params = {
             "apikey" : self.apikey
