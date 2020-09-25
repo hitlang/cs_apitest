@@ -1,11 +1,9 @@
 import os
 import unittest
-
 # 用例套件 方式 1
 from apitest.common import HTMLTestRunner
 # from examples.testLogin import TestLogin
 from apitest.ut.core import _TestCase
-
 # from examples.testRegister import TestRegister
 
 
