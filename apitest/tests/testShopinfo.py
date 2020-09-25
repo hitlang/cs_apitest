@@ -4,14 +4,18 @@
 import unittest
 import requests
 from apitest.config.config import Config
-cf = Config()
+
+localconfig = Config()
+
+
 class TestShopInfo(unittest.TestCase):
     url = "shopinfo"
+
     def setUp(self) -> None:
-        global cf
-        scheme = cf.getHttpConf("scheme")
-        baseurl = cf.getHttpConf("baseurl")
-        self.apikey = cf.getApikey()
+        global localconfig
+        scheme = localconfig.getHttpConf("scheme")
+        baseurl = localconfig.getHttpConf("baseurl")
+        self.apikey = localconfig.getApikey()
         self.url = scheme + "://" + baseurl + "/" + TestShopInfo.url
 
     def test_shopinfo_smoke(self):
