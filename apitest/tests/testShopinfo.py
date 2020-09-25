@@ -3,7 +3,8 @@
 # @Author:liulang
 import unittest
 import requests
-from apitest.config.config import Config
+
+from config import Config
 
 localconfig = Config()
 

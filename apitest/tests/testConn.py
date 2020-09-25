@@ -3,8 +3,10 @@
 # @Author:liulang
 import unittest
 import requests
-from apitest.config.config import Config
+
 # 声明全局变量
+from config import Config
+
 localconfig = Config()
 
 class TestConn(unittest.TestCase):
