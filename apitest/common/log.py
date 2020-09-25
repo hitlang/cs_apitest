@@ -19,7 +19,7 @@ class Log():
 
         # create console handler and set level to debug
         # ch = self.loggerlogging.StreamHandler()
-        ch = logging.FileHandler(filename=log_file, encoding="utf-8", mode="wt")
+        ch = logging.FileHandler(filename=log_file, encoding="utf-8", mode="at")
 
         ch.setLevel(logging.DEBUG)
 
