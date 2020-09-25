@@ -4,7 +4,7 @@
 import pymysql.cursors
 from time import time
 # ======== Reading db_config.ini setting ===========
-from apitest.config.config import Config
+from config import Config
 
 cf = Config()
 host = cf.getMysqlConf("host")
