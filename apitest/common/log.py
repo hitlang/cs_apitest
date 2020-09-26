@@ -13,15 +13,15 @@ class Log():
     def __init__(self) -> None:
         # create logger
         self.logger = logging.getLogger('simple_example')
-        self.logger.setLevel(logging.DEBUG)
+        self.logger.setLevel(logging.INFO)
         # 日志文件
         log_file = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, "log", "log.log"))
 
         # create console handler and set level to debug
         # ch = self.loggerlogging.StreamHandler()
-        ch = logging.FileHandler(filename=log_file, encoding="utf-8", mode="at")
+        ch = logging.FileHandler(filename=log_file, encoding="utf-8", mode="w")
 
-        ch.setLevel(logging.DEBUG)
+        ch.setLevel(logging.INFO)
 
         # create formatter
         formatter = logging.Formatter('%(asctime)s  - %(levelname)s - %(message)s')
