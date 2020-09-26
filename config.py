@@ -13,8 +13,6 @@ config_file = os.path.abspath( os.path.join( os.path.dirname(__file__),"config.i
 class Config:
 
     def __init__(self) -> None:
-        self.logger = Log.getLogger()
-        self.logger.info("------------------创建配置对象----------------------")
         self.cf = configparser.ConfigParser() # 第一步
         self.cf.read(config_file)
 
