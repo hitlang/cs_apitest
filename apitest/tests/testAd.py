@@ -19,7 +19,9 @@ class TestAd(unittest.TestCase):
         params = {
             "ad_code": test_data,
             "apikey": "ded63ea2d7bfc17264b83931b9045014"
+
         }
+
 
         res = requests.get(url=url, params=params).json()
         expected = "{\"status\": \"success\", \"msg\": \"信息调用成功！\",\"result\": null}"
