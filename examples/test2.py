@@ -22,7 +22,7 @@ import paramunittest
     {"user": "admin11", "psw": "1234", "result": "true"},
 )
 
-class TestDemo(unittest.TestCase):
+class TestDemo(paramunittest.ParametrizedTestCase):
     def setParameters(self, user, psw, result):
         '''这里注意了，user, psw, result三个参数和前面定义的字典一一对应'''
         self.user = user
