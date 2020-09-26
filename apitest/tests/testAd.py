@@ -4,19 +4,24 @@
 import unittest
 import json
 import requests
-
 from apitest.common.log import Log
 
 '''
 调用api内置广告接口测试
 '''
+from config import global_config
 
-@unittest.skip("")
 class TestAd(unittest.TestCase):
+
+    uri = "/specialAd"
 
     def setUp(self) -> None:
         Log.getLogger().info("广告调用标记接口测试用例 开始执行")
-        self.url = "http://localhost/dbshop/Jsonapi/specialAd"
+        scheme = global_config.getHttpConf("scheme")
+        baseurl = global_config.getHttpConf("baseurl")
+        self.url = scheme + '://' + baseurl + self.uri
+        self.apikey = global_config.getApikey()
+
 
     def testAd_1(self):
         Log.getLogger().info("测试用例1.开始执行")

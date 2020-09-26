@@ -5,8 +5,6 @@
 import configparser
 import os
 
-from apitest.common.log import Log
-
 config_file = os.path.abspath( os.path.join( os.path.dirname(__file__),"config.ini"))
 
 
