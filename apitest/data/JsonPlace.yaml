@@ -1,0 +1,20 @@
+---
+JsonPlace_info:
+  dec: "接口测试"
+  parameters:
+    # "测试获取所有用户信息接口 "
+    - url: /posts
+      data: {}
+      header: {"Content-Type": "application/x-www-form-urlencoded"}
+    # 测试获取指定用户信息接口
+    - url: /posts/1
+      data: {}
+      header: {"Content-Type": "application/x-www-form-urlencoded"}
+    # Create a resource
+    - url: /posts
+      data: {"title":"foo","body":"bar"}
+      header: {"Content-Type": "application/json"}
+    #"put"
+    - url: /posts/1
+      data: {"title":"foo","body":"bar","userId ":1}
+      header: {"Content-Type": "application/json"}

@@ -4,20 +4,20 @@
 import unittest
 import requests
 
-from config import Config, global_config
+from config import global_config
 
-localconfig = Config()
-# localconfig = global_config # 注意讲解
+
+
 
 class TestShopInfo(unittest.TestCase):
-    url = "shopinfo"
+
+    uri = "shopinfo"
 
     def setUp(self) -> None:
-        global localconfig
-        scheme = localconfig.getHttpConf("scheme")
-        baseurl = localconfig.getHttpConf("baseurl")
-        self.apikey = localconfig.getApikey()
-        self.url = scheme + "://" + baseurl + "/" + TestShopInfo.url
+        scheme = global_config.getHttpConf("scheme")
+        baseurl = global_config.getHttpConf("baseurl")
+        self.apikey = global_config.getApikey()
+        self.url = scheme + "://" + baseurl + "/" + self.uri
 
     def test_shopinfo_smoke(self):
         params = {

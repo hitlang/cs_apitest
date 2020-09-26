@@ -35,12 +35,33 @@ class Request():
         response = requests.get(url=self.url, params=self.params, headers=self.headers, timeout=float(timeout))
         return response
 
-    # def post(self):
-    #     '''
-    #     :return:
-    #     '''
-    #     response = requests.post(self.url, data=self.data, json=self.json)
-    #     return response
+    def post(self):
+        try:
+            response = requests.post(self.url, data=self.data, headers=self.headers, timeout=float(timeout))
+            return response
+        except TimeoutError:
+            self.logger.error("Time Out!")
+            return None
+
+    def postWithFile(self):
+        fp = open(self.file_path, 'rb')
+        self.files = {"filename": fp}
+        try:
+            response = requests.post(self.url, headers=self.headers, data=self.data, files=self.files,
+                                     timeout=float(timeout))
+            fp.close()
+            return response
+        except TimeoutError:
+            self.logger.error("Time out!")
+            return None
+
+    def postWithJson(self):
+        try:
+            response = requests.post(self.url, headers=self.headers, json=self.data, timeout=float(timeout))
+            return response
+        except TimeoutError:
+            self.logger.error("Time out!")
+            return None
 
 
 if __name__ == '__main__':

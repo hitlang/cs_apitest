@@ -1,7 +1,10 @@
 #-*-coding:utf-8 -*-
 #!/usr/bin/python3
 # @Author:liulang
+"""
+封装各种加密方法
 
+"""
 import hashlib
 #dbshop 数据库加密md5 盐值
 SALT = b'?3b)f*ixoY!WQ4t{jyk#<{/HZXIw$>7Kr?+VN`?tN8qRJZ?6GW|oJW|{z+KBe2@?'

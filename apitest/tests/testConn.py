@@ -5,18 +5,16 @@ import unittest
 import requests
 
 # 声明全局变量
-from config import Config, global_config
+from config import global_config
 
-localconfig = Config()
-# localconfig = global_config # 注意讲解
+
 class TestConn(unittest.TestCase):
 
     def setUp(self) -> None:
-        global  localconfig
-        scheme = localconfig.getHttpConf("scheme")
-        baseurl = localconfig.getHttpConf("baseurl")
+        scheme = global_config.getHttpConf("scheme")
+        baseurl = global_config.getHttpConf("baseurl")
         self.url = scheme + '://' + baseurl
-        self.apikey = localconfig.getApikey()
+        self.apikey = global_config.getApikey()
 
 
     def test_connection_error_apikey(self):

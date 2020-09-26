@@ -200,9 +200,9 @@
         
     <div class='page-header'>
         <h1>测试报告</h1>
-    <p class='attribute'><strong>开始时间:</strong> 2020-09-25 12:50:57</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:03.142179</p>
-<p class='attribute'><strong>状态:</strong> 通过 1 失败 4</p>
+    <p class='attribute'><strong>开始时间:</strong> 2020-09-26 14:25:45</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:01.100063</p>
+<p class='attribute'><strong>状态:</strong> 通过 3</p>
 
     </div>
     <div style="float: left;width:50%;"><p class='description'>描述</p></div>
@@ -233,126 +233,44 @@
             <td>查看</td>
         </tr>
         
-    <tr class='failClass'>
-        <td>testAd.TestAd</td>
+    <tr class='passClass'>
+        <td>testConn.TestConn</td>
+        <td>2</td>
         <td>2</td>
         <td>0</td>
-        <td>2</td>
         <td>0</td>
         <td><a href="javascript:showClassDetail('c1',2)">详情</a></td>
     </tr>
 
-<tr id='ft1.1' class='none'>
-    <td class='failCase'><div class='testcase'>testAd_1</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        失败</a>
-
-    <div id='div_ft1.1' class="popup_window">
-        <pre>ft1.1: Traceback (most recent call last):
-  File "E:\cs_apitest\cs_apitest\apitest\tests\testAd.py", line 27, in testAd_1
-    self.assertDictEqual(expected, res)
-AssertionError: {'sta[40 chars]lt': None} != {'sta[40 chars]lt': {'dbapi_ad_id': '2', 'dbapi_ad_code': 'ex[154 chars]pg'}}
-- {'msg': '信息调用成功！', 'result': None, 'status': 'success'}
-+ {'msg': '信息调用成功！',
-+  'result': {'dbapi_ad_body': 'http://localhost/dbshop/public/upload/ad/api/51b356f4ceb62f01af8f865ca6cfb096.jpg',
-+             'dbapi_ad_code': 'example0',
-+             'dbapi_ad_id': '2',
-+             'dbapi_ad_type': 'image',
-+             'dbapi_ad_url': None},
-+  'status': 'success'}
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='ft1.2' class='none'>
-    <td class='failCase'><div class='testcase'>testAd_2</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
-        失败</a>
-
-    <div id='div_ft1.2' class="popup_window">
-        <pre>ft1.2: Traceback (most recent call last):
-  File "E:\cs_apitest\cs_apitest\apitest\tests\testAd.py", line 40, in testAd_2
-    self.assertIn("test1", result['dbapi_ad_body'])
-AssertionError: 'test1' not found in '&lt;p&gt;test&lt;/p&gt;'
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-    <tr class='failClass'>
-        <td>testConn.TestConn</td>
-        <td>2</td>
-        <td>1</td>
-        <td>1</td>
-        <td>0</td>
-        <td><a href="javascript:showClassDetail('c2',2)">详情</a></td>
-    </tr>
-
-<tr id='pt2.1' class='hiddenRow'>
+<tr id='pt1.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_0001_connection_error_apikey</div></td>
     <td colspan='5' align='center'>通过</td>
 </tr>
 
-<tr id='ft2.2' class='none'>
-    <td class='failCase'><div class='testcase'>test_0002_connection_smoke</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.2')" >
-        失败</a>
-
-    <div id='div_ft2.2' class="popup_window">
-        <pre>ft2.2: Traceback (most recent call last):
-  File "E:\cs_apitest\cs_apitest\apitest\tests\testConn.py", line 37, in test_connection_smoke
-    self.assertEqual(res['status'] , "success", "接口连接失败")
-AssertionError: 'error' != 'success'
-- error
-+ success
- : 接口连接失败
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_0002_connection_smoke</div></td>
+    <td colspan='5' align='center'>通过</td>
 </tr>
 
-    <tr class='failClass'>
+    <tr class='passClass'>
         <td>testShopinfo.TestShopInfo</td>
         <td>1</td>
-        <td>0</td>
         <td>1</td>
         <td>0</td>
-        <td><a href="javascript:showClassDetail('c3',1)">详情</a></td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c2',1)">详情</a></td>
     </tr>
 
-<tr id='ft3.1' class='none'>
-    <td class='failCase'><div class='testcase'>test_0001_shopinfo_smoke</div></td>
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_0001_shopinfo_smoke</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
-        失败</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        通过</a>
 
-    <div id='div_ft3.1' class="popup_window">
-        <pre>ft3.1: test over
-Traceback (most recent call last):
-  File "E:\cs_apitest\cs_apitest\apitest\tests\testShopinfo.py", line 27, in test_shopinfo_smoke
-    self.assertEqual("success", res['status'])
-AssertionError: 'success' != 'error'
-- success
-+ error
-
+    <div id='div_pt2.1' class="popup_window">
+        <pre>pt2.1: test over
 </pre>
     </div>
     <!--css div popup end-->
@@ -362,9 +280,9 @@ AssertionError: 'success' != 'error'
 
         <tr id='total_row'>
             <td>总计</td>
-            <td>5</td>
-            <td>1</td>
-            <td>4</td>
+            <td>3</td>
+            <td>3</td>
+            <td>0</td>
             <td>0</td>
             <td>&nbsp;</td>
         </tr>
@@ -399,8 +317,8 @@ AssertionError: 'success' != 'error'
                     radius : '60%',
                     center: ['50%', '60%'],
                     data:[
-                        {value:1, name:'通过'},
-                        {value:4, name:'失败'},
+                        {value:3, name:'通过'},
+                        {value:0, name:'失败'},
                         {value:0, name:'错误'}
                     ],
                     itemStyle: {

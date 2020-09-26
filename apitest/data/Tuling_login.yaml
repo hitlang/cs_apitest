@@ -1,0 +1,49 @@
+---
+Login_info:
+  dec: "登录"
+  parameters:
+    # "正常参数入参"
+    - url: /sso-api/login/p/1
+      data: {"username":"18637692102","password":"max123456789"}
+      header: {"Content-Type": "application/x-www-form-urlencoded"}
+    # "用户名错误"
+    - url: /sso-api/login/p/1
+      data: {"username":"18637692101","password":"max123456789"}
+      header: {"Content-Type": "application/x-www-form-urlencoded"}
+    #“密码错误”
+    - url: /sso-api/login/p/1
+      data: {"username":"18637692102","password":"max1234567891"}
+      header: {"Content-Type": "application/x-www-form-urlencoded"}
+    #"用户名和密码错误"
+    - url: /sso-api/login/p/1
+      data: {"username":"18637692101","password":"max1234567891"}
+      header: {"Content-Type": "application/x-www-form-urlencoded"}
+    #“用户名为空”
+    - url: /sso-api/login/p/1
+      data: {"username":"","password":"max1234567891"}
+      header: {"Content-Type": "application/x-www-form-urlencoded"}
+    #“密码为空”
+    - url: /sso-api/login/p/1
+      data: {"username":"18637692102","password":""}
+      header: {"Content-Type": "application/x-www-form-urlencoded"}
+    #“用户名和密码都为空”
+    - url: /sso-api/login/p/1
+      data: {"username":"","password":""}
+      header: {"Content-Type": "application/x-www-form-urlencoded"}
+    #“用户名超长”
+    - url: /sso-api/login/p/1
+      data: {"username":"1863769210118637692101186376921011863769210118637692101186376921011863769210118637692101","password":"max123456789"}
+      header: {"Content-Type": "application/x-www-form-urlencoded"}
+    #“密码超长”
+    - url: /sso-api/login/p/1
+      data: {"username":"18637692102","password":"max1234567891max1234567891max1234567891max1234567891max1234567891max1234567891max1234567891"}
+      header: {"Content-Type": "application/x-www-form-urlencoded"}
+    #“用户名和密码超长”
+    - url: /sso-api/login/p/1
+      data: {"username":"1863769210118637692101186376921011863769210118637692101","password":"max1234567891max1234567891max1234567891max1234567891"}
+      header: {"Content-Type": "application/x-www-form-urlencoded"}
+    #“用户名格式错误”
+    - url: /sso-api/login/p/1
+      data: {"username":"1863769210","password":"max1234567891"}
+      header: {"Content-Type": "application/x-www-form-urlencoded"}
+

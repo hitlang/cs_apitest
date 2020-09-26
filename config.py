@@ -7,16 +7,15 @@ import os
 
 from apitest.common.log import Log
 
-config_file = os.path.join( os.path.dirname(__file__),"config.ini")
-config_file = os.path.abspath(config_file)
+config_file = os.path.abspath( os.path.join( os.path.dirname(__file__),"config.ini"))
+
 
 class Config:
 
     def __init__(self) -> None:
         self.logger = Log.getLogger()
-
         self.logger.info("------------------创建配置对象----------------------")
-        self.cf = configparser.ConfigParser()
+        self.cf = configparser.ConfigParser() # 第一步
         self.cf.read(config_file)
 
     def getHttpConf(self, key):
@@ -30,11 +29,11 @@ class Config:
     def getMysqlConf(self, key):
         value = self.cf.get("MYSQL", key)
         return value
-
+# 配置对象
 global_config = Config()
 # test
 if __name__ == '__main__':
-    c = Config()
-    print(c.getHttpConf("scheme"))
-    print(c.getApikey())
+    cf = Config()
+    port = cf.getMysqlConf("port")
+    print(port)
     pass

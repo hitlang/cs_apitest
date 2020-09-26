@@ -1,0 +1,10 @@
+---
+Basic:
+  dec: "在库收货效率"
+  parameters:
+    - url: /api/vlogistics/performance/workefficiency/data/receivewh
+      data: {"stateDateFrom":"2020-01-04","stateDateTo":"2020-01-04","areaCode":"1","epCodes":"DC45,DC10,DC12,DC09,DC15,DC23,DC36,DC49","whCodes":"EW45,EW10,EW12,EW09,EW15,EW23,EW36,EW49"}
+    - url: /api/vlogistics/business/warning/data/timeoutcontainer/product
+      data: {"areaCode":"1","stateDateFrom":"2020-02-05","stateDateTo":"2020-02-05","curPage":"1","pageSize":"20000"}
+    - url: /api/vlogistics/business/warning/data/timeoutcontainer/product
+      data: {"areaCode":"1","stateDateFrom":"2020-02-05","stateDateTo":"2020-02-05","whCode":"EW09","customerCode":"2017","curPage":"1","pageSize":"10000"}

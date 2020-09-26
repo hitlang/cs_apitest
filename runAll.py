@@ -31,6 +31,7 @@ from apitest.ut.core import _TestCase
 
 
 if __name__ == '__main__':
+    #test_data.init_data()  # 初始化接口测试数据
     # 增加
     unittest.TestCase = _TestCase
     # 测试报告

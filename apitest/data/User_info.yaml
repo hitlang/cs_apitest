@@ -1,0 +1,16 @@
+---
+User_info:
+  dec: "新增"
+  parameters:
+    - url: /user-info/add.do
+      data: {"userCode":"20200107","userName":"自动化新增","phone":""}
+      header: {"Content-Type": "application/json"}
+    - url: /user-info/add.do
+      data: {"userCode":"20200107","userName":"","phone":""}
+      header: {"Content-Type": "application/json"}
+    - url: /user-info/add.do
+      data: {"userCode":"","userName":"自动化新增","phone":""}
+      header: {"Content-Type": "application/json"}
+    - url: /user-info/add.do
+      data: {"userCode":"20200107","userName":"自动化新增","phone":"","email":""}
+      header: {"Content-Type": "application/json"}
