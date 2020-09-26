@@ -3,26 +3,23 @@
 # @Author:liulang
 import unittest
 import requests
-
 # 声明全局变量
+from apitest.common.request import Request
 from config import global_config
-
-
 class TestConn(unittest.TestCase):
 
-
     def setUp(self) -> None:
-        scheme = global_config.getHttpConf("scheme")
-        baseurl = global_config.getHttpConf("baseurl")
-        self.url = scheme + '://' + baseurl
-        self.apikey = global_config.getApikey()
+        pass
 
     def test_connection_smoke(self):
+        r = Request(uri="")
         params = {
-            "apikey": self.apikey
+            "apikey": r.apikey
         }
-        res = requests.get(url=self.url, params=params).json()
+        r.params = params
+        res = r.get().json()
         self.assertEqual(res['status'], "success", "接口连接失败")
+
 
     def test_connection_error_apikey(self):
         params = {
