@@ -4,7 +4,6 @@
 import unittest
 import json
 import requests
-import paramunittest
 
 from apitest.common.log import Log
 
@@ -14,14 +13,6 @@ from apitest.common.log import Log
 from config import global_config
 
 
-@paramunittest.parametrized(
-    {"pramsname": "ad_code", "testdata": ""},
-
-    {"pramsname": "ad_error", "testdata": ""},
-
-    {"pramsname": "", "testdata": ""},
-
-)
 class TestAd(unittest.TestCase):
     uri = "/specialAd"
 
@@ -32,28 +23,36 @@ class TestAd(unittest.TestCase):
         self.url = scheme + '://' + baseurl + self.uri
         self.apikey = global_config.getApikey()
 
-    def setParameters(self, pramsname, testdata):
-        '''
-        :param pramsname: 参数名
-        :param pramsvalue: 参数值
-        :return:
-        '''
-        self.pramsname = pramsname
-        self.testdata = testdata
-
-    def test_345(self):
-        '''
-        参数化
-        :return:
-        '''
+    def test_Ad_1(self):
+        Log.getLogger().info("测试用例1.开始执行")
+        # 测试数据
+        test_data = "efg"
         params = {
-             self.pramsname: self.testdata,
+            "ad_code": test_data,
+            "apikey": "ded63ea2d7bfc17264b83931b9045014"
+
+        }
+        Log.getLogger().debug("任何的调试信息")
+
+        res = requests.get(url=self.url, params=params).json()
+        expected = "{\"status\": \"success\", \"msg\": \"信息调用成功！\",\"result\": null}"
+        expected = json.loads(expected)
+        self.assertDictEqual(expected, res)
+        Log.getLogger().info("测试用例1.执行结束")
+
+    def test_Ad_2(self):
+        # 测试数据
+        test_data = "example1"
+        params = {
+            "ad_code": test_data,
             "apikey": "ded63ea2d7bfc17264b83931b9045014"
         }
-        print(params)
+
         res = requests.get(url=self.url, params=params).json()
-        self.assertFalse(res['result'])
-        pass
+        result = res.get('result')
+        self.assertIn("test", result['dbapi_ad_body'])
+
+
 
     def tearDown(self) -> None:
         Log.getLogger().info("广告调用标记接口测试用例 结束执行")
