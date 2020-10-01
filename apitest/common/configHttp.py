@@ -40,7 +40,7 @@ class ConfigHttp():
             response = requests.get(url=self.url, params=self.params, headers=self.headers, timeout=float(self.timeout))
             return response
         except TimeoutError:
-            Log.getLogger().error("timeout")
+            MyLog.get_log().error("timeout")
 
     def post(self):
         '''
@@ -51,7 +51,7 @@ class ConfigHttp():
             response = requests.post(self.url, data=self.data, headers=self.headers, timeout=float(self.timeout))
             return response
         except TimeoutError:
-            Log.getLogger().error("timeout")
+            MyLog.get_log().error("timeout")
 
     def postWithJson(self):
         '''
@@ -62,8 +62,8 @@ class ConfigHttp():
             response = requests.post(self.url, headers=self.headers, json=self.data, timeout=float(self.timeout))
             return response
         except TimeoutError:
-            self.logger.error("Time out!")
-            return None
+            MyLog.get_log().error("Time out!")
+
 
     # def postWithFile(self):
     #     fp = open(self.file_path, 'rb')
