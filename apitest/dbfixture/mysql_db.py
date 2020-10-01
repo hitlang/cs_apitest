@@ -4,9 +4,12 @@
 import pymysql.cursors
 from time import time
 # ======== Reading db_config.ini setting ===========
-from config import Config
+# from config import Config
+#
+# cf = Config()
+from config import global_config
 
-cf = Config()
+cf = global_config
 host = cf.getMysqlConf("host")
 port = cf.getMysqlConf("port")
 db = cf.getMysqlConf("db_name")
