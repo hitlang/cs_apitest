@@ -1,14 +1,21 @@
 # -*-coding:utf-8 -*-
 # !/usr/bin/python3
 # @Author:liulang
-
 import logging
 import os
+import threading
 from typing import Any
 
 
 class Log():
     __instance = None
+
+    def __new__(cls) -> Any:
+        if not cls.__instance:
+            cls.__instance = object.__new__(cls)
+            return cls.__instance
+        else:
+            return cls.__instance
 
     def __init__(self) -> None:
         # create logger
@@ -32,50 +39,27 @@ class Log():
         # add ch to logger
         self.logger.addHandler(ch)
 
-    def __new__(cls) -> Any:
-        if not cls.__instance:
-            cls.__instance = object.__new__(cls)
-            return cls.__instance
-        else:
-            return cls.__instance
+    def getLogger(self):
+        return self.logger
 
-    # def getLogger(self):
-    #     return self.logger
-    # @staticmethod
-    # def getLogger():
-    #     if  Log.__instance is None:
-    #         Log.__instance = Log()
-    #
-    #     return Log.__instance
 
-    @classmethod
-    def getLogger(cls):
-        if cls.__instance is None:
-            cls.__instance = Log()
-            return cls.__instance.logger
-
-        return cls.__instance.logger
-
+class MyLog:
+    log = None
+    mutex = threading.Lock()
+    @staticmethod
+    def get_log():
+        if MyLog.log is None:
+            MyLog.mutex.acquire()
+            MyLog.log = Log().getLogger()
+            MyLog.mutex.release()
+        return MyLog.log
 
 if __name__ == '__main__':
-    myLogger = Log.getLogger()
-    myLogger2 = Log.getLogger()
-    #
+    myLogger = Log().getLogger()
+    myLogger2 = Log().getLogger()
+
     print(id(myLogger))
     print(id(myLogger2))
 
-    # logger = myLogger.getLogger()
-    # # # 'application' code
-    # logger.debug('debug message')
-    # logger.info('info message')
-    # logger.warning('warn message')
-    # logger.error('error message')
-    # logger.critical('critical message')
-    #
-    # logger.debug("test abc")
-    # logger.debug("中文")
-
-    # os.path.join(os.path.dirname(__file__), os.path.pardir)
-    # print( os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, "log","log.log")))
 
     pass
