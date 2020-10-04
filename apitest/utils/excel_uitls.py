@@ -12,8 +12,7 @@ class ExcelUtil:
         :param start_col: 切片开始列 从1开始
         :param end_col: 切片结束列
         '''
-        wb = openpyxl.load_workbook(
-            os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "testfiles", "test_cases.xlsx")))
+        wb = openpyxl.load_workbook(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "testfiles", "test_cases.xlsx")))
         self.sheet = wb[sheetName]
         self.start_col_letter = get_column_letter(start_col)
         self.end_col_letter = get_column_letter(end_col)
