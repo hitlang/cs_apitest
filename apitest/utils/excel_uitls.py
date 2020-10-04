@@ -2,23 +2,25 @@
 # @Author  : lang
 import os
 import openpyxl
-
-class ExcelUtil():
-
-    def __init__(self, sheetName) -> None:
-        wb = openpyxl.load_workbook(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "test_data","test_data.xlsx")))
+from openpyxl.utils.cell import get_column_letter
+import pprint
+class ExcelUtil:
+    def __init__(self, sheetName, *, start_col=1, end_col=None) -> None:
+        wb = openpyxl.load_workbook(
+            os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "testfiles", "test_cases.xlsx")))
         self.sheet = wb[sheetName]
-
+        self.start_col_letter = get_column_letter(start_col)
+        self.end_col_letter = get_column_letter(end_col)
 
     def get_dict(self):
-        cells = self.sheet["A1":"C1"][0]
-        keys = [i.value for i in cells]
-        max_row = self.sheet.max_row
-        end = "C{}".format(max_row)
-        data_cells = self.sheet["A2":end]
+        start = "{}{}".format(self.start_col_letter, 1)
+        end = "{}{}".format(self.end_col_letter, self.sheet.max_row)
+        CELL_SLICE = slice(start, end)
+        cells = self.sheet[CELL_SLICE]
+        title_cells = [cellobj.value for cellobj in cells[0]]
         ret = []
-        for r in data_cells:
-            m = zip(keys, r)
+        for r in cells[1:]:
+            m = zip(title_cells, r)
             data_dict = {}
             for k, v in m:
                 data_dict[k] = v.value
@@ -28,7 +30,6 @@ class ExcelUtil():
 
 
 if __name__ == '__main__':
-    excel = ExcelUtil("正向用例")
+    excel = ExcelUtil("login", start_col=1, end_col=8)
     r = excel.get_dict()
-    print(r)
-
+    pprint.pprint(r)
