@@ -8,10 +8,6 @@ import unittest
 import paramunittest
 from apitest.common.configHttp import ConfigHttp
 from apitest.common.log import MyLog
-
-
-
-
 @paramunittest.parametrized(
     {"pramsname": "ad_code", "testdata": ""},
     {"pramsname": "ad_error", "testdata": ""},

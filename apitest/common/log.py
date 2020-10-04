@@ -5,8 +5,6 @@ import logging
 import os
 import threading
 from typing import Any
-
-
 class Log():
     __instance = None
 
@@ -57,7 +55,6 @@ class MyLog:
 if __name__ == '__main__':
     myLogger = Log().getLogger()
     myLogger2 = Log().getLogger()
-
     print(id(myLogger))
     print(id(myLogger2))
 

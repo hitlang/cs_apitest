@@ -6,8 +6,7 @@ import openpyxl
 class ExcelUtil():
 
     def __init__(self, sheetName) -> None:
-        wb = openpyxl.load_workbook(
-            os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "test_data/test_data.xlsx")))
+        wb = openpyxl.load_workbook(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "test_data","test_data.xlsx")))
         self.sheet = wb[sheetName]
 
 
@@ -15,9 +14,7 @@ class ExcelUtil():
         cells = self.sheet["A1":"C1"][0]
         keys = [i.value for i in cells]
         max_row = self.sheet.max_row
-
         end = "C{}".format(max_row)
-
         data_cells = self.sheet["A2":end]
         ret = []
         for r in data_cells:

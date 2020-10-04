@@ -4,12 +4,9 @@
 from config import global_config
 import requests
 from apitest.common.log import MyLog
-
 config = global_config
 class ConfigHttp():
     def __init__(self, *, uri, params={}, data={}, headers={}) -> None:
-
-
         '''
         :param uri:  接口 uri
         :param params: 接口查询串
@@ -21,12 +18,9 @@ class ConfigHttp():
         self.timeout = config.getHttpConf("timeout")
         apikey = config.getApikey()
         self.url = "{scheme}://{baseurl}{uri}{apikey}" \
-            .format(scheme=scheme, baseurl=baseurl, uri=uri, apikey= "?apikey=" + apikey if apikey else "")
-
+            .format(scheme=scheme, baseurl=baseurl, uri=uri, apikey="?apikey=" + apikey if apikey else "")
         # Log().getLogger().debug(self.url)
-
-        MyLog.get_log().debug("aaaaaaaaaaaaaa")
-
+        MyLog.get_log().debug(self.url)
         self.params = params
         self.headers = headers
         self.data = data
@@ -63,7 +57,6 @@ class ConfigHttp():
             return response
         except TimeoutError:
             MyLog.get_log().error("Time out!")
-
 
     # def postWithFile(self):
     #     fp = open(self.file_path, 'rb')
