@@ -4,26 +4,46 @@
 from config import global_config
 import requests
 from apitest.common.log import MyLog
+
 config = global_config
+
+
 class ConfigHttp():
-    def __init__(self, *, uri, params={}, data={}, headers={}) -> None:
-        '''
-        :param uri:  接口 uri
-        :param params: 接口查询串
-        :param data:   数据
-        :param headers: 头部数据
-        '''
+    def __init__(self, *, uri) -> None:
+        MyLog.get_log().debug("---------创建ConfigHttp对象---------")
         scheme = config.getHttpConf("scheme")
         baseurl = config.getHttpConf("baseurl")
         self.timeout = config.getHttpConf("timeout")
         apikey = config.getApikey()
         self.url = "{scheme}://{baseurl}{uri}{apikey}" \
             .format(scheme=scheme, baseurl=baseurl, uri=uri, apikey="?apikey=" + apikey if apikey else "")
-        # Log().getLogger().debug(self.url)
-        MyLog.get_log().debug(self.url)
-        self.params = params
-        self.headers = headers
-        self.data = data
+        self._params = {}
+        self._headers = {}
+        self._data = {}
+
+    @property
+    def params(self):
+        return self._params
+
+    @params.setter
+    def params(self, value):
+        self._params = value
+
+    @property
+    def headers(self):
+        return self._headers
+
+    @headers.setter
+    def headers(self, value):
+        self._headers = value
+
+    @property
+    def data(self):
+        return self._data
+
+    @data.setter
+    def data(self, value):
+        self._data = value
 
     def get(self):
         '''
