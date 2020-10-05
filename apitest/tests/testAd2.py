@@ -10,7 +10,7 @@ from apitest.common.configHttp import ConfigHttp
 from apitest.common.log import MyLog
 
 
-class TestAd(unittest.TestCase):
+class TestAd2(unittest.TestCase):
 
 
     def setUp(self) -> None:

@@ -18,7 +18,7 @@ class TestAd(unittest.TestCase):
 
     def setUp(self) -> None:
         MyLog.get_log().info("广告调用标记接口测试用例 开始执行")
-        self.configHttp = ConfigHttp(uri="/sepcialAd")
+        self.configHttp = ConfigHttp(uri="/specialAd")
 
     def setParameters(self, pramsname, testdata):
         '''
@@ -40,7 +40,9 @@ class TestAd(unittest.TestCase):
 
         self.configHttp.params = params
 
-        res = self.configHttp.get()
+        res = self.configHttp.get().json()
+
+        MyLog.get_log().debug("-----res---" + str(res))
 
         self.assertFalse(res['result'])
         pass
