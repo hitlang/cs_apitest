@@ -14,7 +14,11 @@ from apitest.common.log import MyLog
     {"pramsname": "", "testdata": ""},
 )
 class TestAd(unittest.TestCase):
-    uri = "/specialAd"
+
+
+    def setUp(self) -> None:
+        MyLog.get_log().info("广告调用标记接口测试用例 开始执行")
+        self.configHttp = ConfigHttp(uri="/sepcialAd")
 
     def setParameters(self, pramsname, testdata):
         '''
@@ -26,8 +30,6 @@ class TestAd(unittest.TestCase):
         self.testdata = testdata
 
     def test_345(self):
-
-
         '''
         参数化
         :return:
@@ -36,10 +38,10 @@ class TestAd(unittest.TestCase):
             self.pramsname: self.testdata
         }
 
-        res = ConfigHttp(uri=self.uri, params=params).get().json()
+        self.configHttp.params = params
 
-        # Log().getLogger().debug(res)
-        MyLog.get_log().debug(res) #修正
+        res = self.configHttp.get()
+
         self.assertFalse(res['result'])
         pass
 
