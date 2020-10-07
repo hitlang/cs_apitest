@@ -37,8 +37,7 @@ if __name__ == '__main__':
     unittest.TestCase = _TestCase
     # 测试报告
     report_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "report", "report.html"))
-    # runner = unittest.TextTestRunner(verbosity=2) 不使用这种方式
-    #
+
     fp = open(report_path, "wb")
 
     testcase_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "apitest", "tests"))
@@ -51,3 +50,5 @@ if __name__ == '__main__':
     # runner.run(smokeSuite()) # 1
 
     runner.run(discover)  # 2
+
+    fp.close()

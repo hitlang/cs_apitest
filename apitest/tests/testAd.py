@@ -3,6 +3,7 @@
 # @Author:liulang
 '''
 调用api内置广告接口测试
+paramunittest数据驱动
 '''
 import unittest
 import paramunittest
@@ -13,6 +14,7 @@ from apitest.common.log import MyLog
     {"pramsname": "ad_error", "testdata": ""},
     {"pramsname": "", "testdata": ""},
 )
+@unittest.skip("")
 class TestAd(unittest.TestCase):
 
 

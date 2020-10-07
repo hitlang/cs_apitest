@@ -5,7 +5,7 @@ import unittest
 from apitest.common.configHttp import ConfigHttp
 from apitest.common.log import MyLog
 
-
+# @unittest.skip("")
 class TestLogin(unittest.TestCase):
 
     def setUp(self) -> None:

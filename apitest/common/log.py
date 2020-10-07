@@ -5,12 +5,12 @@ import logging
 import os
 import threading
 from typing import Any
-class Log():
+class Log:
     __instance = None
 
     def __new__(cls) -> Any:
         if not cls.__instance:
-            cls.__instance = object.__new__(cls)
+            cls.__instance = super().__new__(cls)
             return cls.__instance
         else:
             return cls.__instance
@@ -24,7 +24,7 @@ class Log():
 
         # create console handler and set level to debug
         # ch = self.loggerlogging.StreamHandler()
-        ch = logging.FileHandler(filename=log_file, encoding="utf-8", mode="w")
+        ch = logging.FileHandler(filename=log_file, encoding="utf-8", mode="wt")
 
         ch.setLevel(logging.DEBUG)
 
@@ -38,6 +38,7 @@ class Log():
         self.logger.addHandler(ch)
 
     def getLogger(self):
+
         return self.logger
 
 
