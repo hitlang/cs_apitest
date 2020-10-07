@@ -8,11 +8,12 @@ import json
 import unittest
 from apitest.common.configHttp import ConfigHttp
 from apitest.common.log import MyLog
-@unittest.skip("")
+# @unittest.skip("")
 class TestAd2(unittest.TestCase):
     def setUp(self) -> None:
         MyLog.get_log().info("-----------广告接口测试开始-------------------")
-        self.configHttp = ConfigHttp(uri="/specialAd")
+        # self.configHttp = ConfigHttp(uri="/specialAd")
+        self.configHttp = ConfigHttp(uri="/specialAd", method="get")
         pass
 
     def test_Ad_1(self):
@@ -21,7 +22,7 @@ class TestAd2(unittest.TestCase):
         }
         self.configHttp.params = params
 
-        res = self.configHttp.get().json()
+        res = self.configHttp.request().json()
 
         expected = "{\"status\": \"success\", \"msg\": \"信息调用成功！\",\"result\": null}"
         expected = json.loads(expected)
@@ -34,7 +35,7 @@ class TestAd2(unittest.TestCase):
         }
         self.configHttp.params = params
 
-        res = self.configHttp.get().json()
+        res = self.configHttp.request().json()
 
         self.assertIn("test", res['result']['dbapi_ad_body'])
 

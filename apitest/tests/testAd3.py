@@ -17,7 +17,7 @@ from apitest.common.log import MyLog
 class TestAd3(unittest.TestCase):
     def setUp(self) -> None:
         MyLog.get_log().info("-----------广告接口测试开始-------------------")
-        self.configHttp = ConfigHttp(uri="/specialAd")
+        self.configHttp = ConfigHttp(uri="/specialAd", method="get")
         pass
 
     @data({"pramsname": "ad_code", "testdata": ""},
@@ -30,7 +30,7 @@ class TestAd3(unittest.TestCase):
         }
         self.configHttp.params = params
 
-        res = self.configHttp.get().json()
+        res = self.configHttp.request().json()
 
         self.assertFalse(res['result'])
 
