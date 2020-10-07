@@ -10,7 +10,7 @@ class TestLogin(unittest.TestCase):
 
     def setUp(self) -> None:
         MyLog.get_log().info("----------------登录测试开始-------------------------")
-        self.configHttp = ConfigHttp(uri="/login")
+        self.configHttp = ConfigHttp(uri="/login", method='post')
         pass
 
     def testLogin_1(self):
@@ -23,7 +23,7 @@ class TestLogin(unittest.TestCase):
             "user_password": "123456"
         }
         self.configHttp.data = payload
-        res = self.configHttp.post().json()
+        res = self.configHttp.request().json()
         self.assertEqual("success", res['status'], "登录测试没有通过")
 
 
@@ -37,7 +37,7 @@ class TestLogin(unittest.TestCase):
             "user_password": "123456"
         }
         self.configHttp.data = payload
-        res = self.configHttp.post().json()
+        res = self.configHttp.request().json()
         self.assertEqual("error", res['status'], "登录测试没有通过")
 
     def testLogin_3(self):
@@ -50,7 +50,7 @@ class TestLogin(unittest.TestCase):
             "user_password": "12345"
         }
         self.configHttp.data = payload
-        res = self.configHttp.post().json()
+        res = self.configHttp.request().json()
         self.assertEqual("error", res['status'], "登录测试没有通过")
 
 
