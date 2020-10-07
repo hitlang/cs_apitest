@@ -46,7 +46,6 @@ class AllTest:
             suit = self.set_case_suite()
             if suit is not None:
                 MyLog.get_log().info("-------------------------测试开始-----------------------")
-
                 # 测试报告
                 report_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "report", "report.html"))
                 fp = open(report_path, 'wb')
