@@ -1,41 +1,17 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/7/31 上午11:32
-# @Author  : maxiang
-# @File    : datas.py
-
+# -*-coding:utf-8 -*-
+# !/usr/bin/python3
+# @Author:liulang
 """
 定义所有测试数据
 """
 from examples import tools
 
 
+
 def get_parameter(name):
     data = tools.GetPages.get_page_list()
     param = data[name]
     return param
-
-
-class Basic:
-    params = get_parameter('User_info')
-    url = []
-    data = []
-    header = []
-    for i in range(0, len(params)):
-        url.append(params[i]['url'])
-        data.append(params[i]['data'])
-        header.append(params[i]['header'])
-
-
-class Tuling_Login:
-    params = get_parameter('Login_info')
-    url = []
-    data = []
-    header = []
-    for i in range(0, len(params)):
-        url.append(params[i]['url'])
-        data.append(params[i]['data'])
-        header.append(params[i]['header'])
-
 
 class Dbshop_Info:
     params = get_parameter('Dbshop_info')
@@ -47,18 +23,9 @@ class Dbshop_Info:
         data.append(params[i]['data'])
         header.append(params[i]['header'])
 
-
-class JsonPlace_Info:
-    params = get_parameter('JsonPlace_info')
-    url = []
-    data = []
-    header = []
-    for i in range(0, len(params)):
-        url.append(params[i]['url'])
-        data.append(params[i]['data'])
-        header.append(params[i]['header'])
-
+#test
 if __name__ == '__main__':
-    Dbshop_Info()
-    # Basic()
+    di = Dbshop_Info()
+    print(di.data)
+
     pass
