@@ -1,0 +1,14 @@
+{
+  "广告用例1": {
+    "pramsname": "ad_code",
+    "testdata": ""
+  },
+  "广告用例2": {
+    "pramsname": "ad_error",
+    "testdata": ""
+  },
+  "广告用例3": {
+    "pramsname": "",
+    "testdata": ""
+  }
+}
