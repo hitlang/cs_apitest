@@ -5,6 +5,7 @@ import os
 import unittest
 from apitest.common import HTMLTestRunner
 from apitest.common.log import MyLog
+from apitest.ut.core import _TestCase
 
 
 class AllTest:
@@ -47,6 +48,7 @@ class AllTest:
             if suit is not None:
                 MyLog.get_log().info("-------------------------测试开始-----------------------")
                 # 测试报告
+                unittest.TestCase = _TestCase
                 report_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "report", "report.html"))
                 fp = open(report_path, 'wb')
                 runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='Interface Test Report', description='饼图统计表：')
@@ -63,8 +65,6 @@ class AllTest:
 if __name__ == '__main__':
     at = AllTest()
 
-    # at.set_case_list()
-
-    at.set_case_suite()
+    at.run()
 
     pass

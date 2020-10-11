@@ -1,2 +1,3 @@
-#testAd2
 testLogin
+testGoodsInfo
+testLogout
