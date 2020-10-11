@@ -43,7 +43,7 @@ class AllTest:
         return test_suite
 
     def run(self):
-        unittest.TestCase = _TestCase
+
         try:
             suit = self.set_case_suite()
             if suit is not None:
@@ -63,8 +63,7 @@ class AllTest:
 
 
 if __name__ == '__main__':
+    unittest.TestCase = _TestCase
     at = AllTest()
-
     at.run()
-
     pass
