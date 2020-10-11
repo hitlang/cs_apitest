@@ -43,12 +43,12 @@ class AllTest:
         return test_suite
 
     def run(self):
+        unittest.TestCase = _TestCase
         try:
             suit = self.set_case_suite()
             if suit is not None:
                 MyLog.get_log().info("-------------------------测试开始-----------------------")
-                # 测试报告
-                unittest.TestCase = _TestCase
+
                 report_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "report", "report.html"))
                 fp = open(report_path, 'wb')
                 runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='Interface Test Report', description='饼图统计表：')
