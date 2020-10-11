@@ -19,7 +19,7 @@ class TestLogin(unittest.TestCase):
 
 
 
-    def testLogin_2(self):
+    def test_Login_2(self):
         '''
         用户名错
         :return:
@@ -32,7 +32,7 @@ class TestLogin(unittest.TestCase):
         res = self.configHttp.request().json()
         self.assertEqual("error", res['status'], "登录测试没有通过")
 
-    def testLogin_3(self):
+    def test_Login_3(self):
         '''
         密码错误
         :return:
@@ -45,7 +45,7 @@ class TestLogin(unittest.TestCase):
         res = self.configHttp.request().json()
         self.assertEqual("error", res['status'], "登录测试没有通过")
 
-    def testLogin_1(self):
+    def test_Login_1(self):
         '''
         冒烟用例
         :return:

@@ -13,7 +13,7 @@ class TestLogout(unittest.TestCase):
     def setUp(self) -> None:
         self.user_token = global_config.getToken()
 
-    def testLogout(self):
+    def test_Logout(self):
         '''
         退出
         :return:
