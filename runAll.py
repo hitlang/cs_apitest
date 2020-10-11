@@ -57,7 +57,7 @@ if __name__ == '__main__':
     #
     runner = HTMLTestRunner.HTMLTestRunner(stream=fp, verbosity=2, title="测试报告", description="描述")
 
-    discover = unittest.defaultTestLoader.discover(start_dir=testcase_path, pattern='testGoodsInfo.py')
+    discover = unittest.defaultTestLoader.discover(start_dir=testcase_path, pattern='testAd4.py')
     #
     # runner.run(smokeSuite()) # 1
     runner.run(discover)  # 2

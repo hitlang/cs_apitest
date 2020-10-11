@@ -200,9 +200,9 @@
         
     <div class='page-header'>
         <h1>测试报告</h1>
-    <p class='attribute'><strong>开始时间:</strong> 2020-10-11 10:59:04</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:00.297017</p>
-<p class='attribute'><strong>状态:</strong> 错误 1</p>
+    <p class='attribute'><strong>开始时间:</strong> 2020-10-11 15:18:08</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:00.036002</p>
+<p class='attribute'><strong>状态:</strong> 通过 3</p>
 
     </div>
     <div style="float: left;width:50%;"><p class='description'>描述</p></div>
@@ -233,49 +233,36 @@
             <td>查看</td>
         </tr>
         
-    <tr class='errorClass'>
-        <td>testGoodsInfo.TestGoodsInfo</td>
-        <td>1</td>
+    <tr class='passClass'>
+        <td>testAd4.TestAd4</td>
+        <td>3</td>
+        <td>3</td>
         <td>0</td>
         <td>0</td>
-        <td>1</td>
-        <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
+        <td><a href="javascript:showClassDetail('c1',3)">详情</a></td>
     </tr>
 
-<tr id='ft1.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_0001_2</div></td>
-    <td colspan='5' align='center'>
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_0001_Ads_00001_测试用例1: test_0001_Ads_00001_测试用例1</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
 
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        错误</a>
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_0001_Ads_00002_测试用例2: test_0001_Ads_00002_测试用例2</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
 
-    <div id='div_ft1.1' class="popup_window">
-        <pre>ft1.1: Traceback (most recent call last):
-  File "E:\cs_apitest\cs_apitest\apitest\tests\testGoodsInfo.py", line 29, in setUp
-    res = configHttp.request().json()
-  File "F:\virtualenv\apitest_venv\lib\site-packages\requests\models.py", line 898, in json
-    return complexjson.loads(self.text, **kwargs)
-  File "c:\python37\lib\json\__init__.py", line 348, in loads
-    return _default_decoder.decode(s)
-  File "c:\python37\lib\json\decoder.py", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File "c:\python37\lib\json\decoder.py", line 355, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_0001_Ads_00003_测试用例3: test_0001_Ads_00003_测试用例3</div></td>
+    <td colspan='5' align='center'>通过</td>
 </tr>
 
         <tr id='total_row'>
             <td>总计</td>
-            <td>1</td>
+            <td>3</td>
+            <td>3</td>
             <td>0</td>
             <td>0</td>
-            <td>1</td>
             <td>&nbsp;</td>
         </tr>
     </table>
@@ -309,9 +296,9 @@ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
                     radius : '60%',
                     center: ['50%', '60%'],
                     data:[
-                        {value:0, name:'通过'},
+                        {value:3, name:'通过'},
                         {value:0, name:'失败'},
-                        {value:1, name:'错误'}
+                        {value:0, name:'错误'}
                     ],
                     itemStyle: {
                         emphasis: {
