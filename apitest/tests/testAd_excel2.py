@@ -10,7 +10,7 @@ import unittest
 from ddt import ddt, file_data, data, unpack
 import json
 import os
-
+from pprint import pprint
 from apitest.common.configHttp import ConfigHttp
 from apitest.common.log import MyLog
 from apitest.utils.excel_uitls import ExcelUtil
@@ -19,14 +19,13 @@ file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pard
 excel_data = ExcelUtil(file_path, "ad2", start_col=1, end_col=7).get_dict()
 
 
-# print(excel_data)
+pprint(excel_data)
 
 @ddt
-# @unittest.skip("")
 class TestAd4(unittest.TestCase):
 
     @data(*excel_data)
-    # @unpack
+    #@unpack
     def test_Ads(self, test_case):
         '''
         given
