@@ -5,11 +5,8 @@
 import unittest
 import os
 from pprint import pprint
-
 from ddt import ddt, file_data, data, unpack
-
 from apitest.common.configHttp import ConfigHttp
-
 file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, "data", "test_data_shopInfo.json"))
 
 
