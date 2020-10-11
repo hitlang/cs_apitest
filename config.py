@@ -5,13 +5,13 @@
 import configparser
 import os
 
-config_file = os.path.abspath( os.path.join( os.path.dirname(__file__),"config.ini"))
+config_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "config.ini"))
 
 
 class Config:
 
     def __init__(self) -> None:
-        self.cf = configparser.ConfigParser() # 第一步
+        self.cf = configparser.ConfigParser()  # 第一步
         self.cf.read(config_file)
 
     def getHttpConf(self, key):
@@ -25,6 +25,17 @@ class Config:
     def getMysqlConf(self, key):
         value = self.cf.get("MYSQL", key)
         return value
+
+    def getToken(self):
+        return self.cf.get("TOKEN", "user_token")
+
+    def setToken(self, value):
+        self.cf.set("TOKEN", "user_token", value)
+        with open(config_file,"w") as fp:
+
+            self.cf.write(fp)
+
+
 # 配置对象
 global_config = Config()
 # test
