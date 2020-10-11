@@ -13,6 +13,7 @@ from apitest.common.log import MyLog
 
 
 @ddt
+@unittest.skip("")
 class TestAd3(unittest.TestCase):
     def setUp(self) -> None:
         MyLog.get_log().info("-----------广告接口测试开始-------------------")

@@ -14,7 +14,7 @@ from apitest.common.log import MyLog
     {"pramsname": "ad_error", "testdata": ""},
     {"pramsname": "", "testdata": ""},
 )
-# @unittest.skip("")
+@unittest.skip("")
 class TestAd(paramunittest.ParametrizedTestCase):
 
 
