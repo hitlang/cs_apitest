@@ -4,6 +4,8 @@ import unittest
 # 用例套件 方式 1
 from apitest.common import HTMLTestRunner
 # from examples.testLogin import TestLogin
+from apitest.tests.testGoodsInfo import TestGoodsInfo
+from apitest.tests.testLogin import TestLogin
 from apitest.ut.core import _TestCase
 # from examples.testRegister import TestRegister
 
@@ -15,6 +17,17 @@ from apitest.ut.core import _TestCase
 #     # suit.addTest(TestRegister("test_register_1"))
 #     return suit
 # 多个套件，组成一个测试套件
+
+
+
+def suite1():
+    suite = unittest.TestSuite()
+
+    cases = [TestLogin("testLogin_1"), TestGoodsInfo("test_2")]
+
+    suite.addTests(cases)
+    return suite
+
 
 #
 # def suite2():
@@ -44,11 +57,9 @@ if __name__ == '__main__':
     #
     runner = HTMLTestRunner.HTMLTestRunner(stream=fp, verbosity=2, title="测试报告", description="描述")
 
-    discover = unittest.defaultTestLoader.discover(start_dir=testcase_path, pattern='test*.py')
-
+    discover = unittest.defaultTestLoader.discover(start_dir=testcase_path, pattern='testGoodsInfo.py')
     #
     # runner.run(smokeSuite()) # 1
-
     runner.run(discover)  # 2
 
     fp.close()

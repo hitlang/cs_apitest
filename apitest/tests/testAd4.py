@@ -10,15 +10,28 @@ import unittest
 from ddt import ddt, file_data, data, unpack
 import json
 import os
+from apitest.common.configHttp import ConfigHttp
 from apitest.common.log import MyLog
-file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, "data", "test_data6.json"))
-with open(file_path) as fp:
-    test_data = json.load(fp)
-    pass
-# print(file_path)
+file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, "data", "test_data4.json"))
+# with open(file_path) as fp:
+#     test_data = json.load(fp)
 @ddt
-@unittest.skip("")
 class TestAd4(unittest.TestCase):
+    def setUp(self) -> None:
+        MyLog.get_log().info("广告调用标记接口测试用例 开始执行")
+        self.configHttp = ConfigHttp(uri="/specialAd", method="get")
+
+    @file_data(file_path)
+    def test_Ads(self, pramsname,testdata):
+        params = {
+            pramsname: testdata
+        }
+        self.configHttp.params = params
+        res = self.configHttp.request().json()
+        MyLog.get_log().debug("-----res---" + str(res))
+        self.assertFalse(res['result'])
+
+
 
     # @file_data(file_path)
     # def test_Ads_1(self, pramsname, testdata):
@@ -45,9 +58,3 @@ class TestAd4(unittest.TestCase):
     # def test_Ads(self, pramsname,testdata):
     #     # print(pramsname, testdata)
     #     pass
-
-    @data(*test_data)
-    @unpack
-    def test_Ads(self, pramsname,testdata):
-        # print(pramsname, testdata)
-        pass

@@ -14,6 +14,8 @@ class TestAd2(unittest.TestCase):
         MyLog.get_log().info("-----------广告接口测试开始-------------------")
         # self.configHttp = ConfigHttp(uri="/specialAd")
         self.configHttp = ConfigHttp(uri="/specialAd", method="get")
+        raise Exception
+
         pass
 
     def test_Ad_1(self):

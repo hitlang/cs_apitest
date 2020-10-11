@@ -5,13 +5,13 @@ test_data = [(1, 2), (4, 5)]
 @paramunittest.parametrized(
     *test_data
 )
-# @paramunittest.parametrized(
+@paramunittest.parametrized(
 #     # ('1', '2'),
 #     # #(4, 3),
 #     # ('2', '3'),
-#     # (('4', ), {'b': '5'}),
+ (('4', ), {'b': '5'}),
 #     # {'a': 5, 'b': 6},
-# )
+)
 class TestFoo(unittest.TestCase):
     def setParameters(self, a, b):
         self.a = a

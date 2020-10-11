@@ -5,68 +5,71 @@
 关联
 '''
 import unittest
-from ddt import ddt, data, unpack
 from apitest.common.configHttp import ConfigHttp
-from apitest.common.log import MyLog
 
-# @unittest.skip("")
-@ddt
+# @ddt
+from apitest.utils.getUserToken import GetUserToken
+
+
 class TestGoodsInfo(unittest.TestCase):
 
-    def setUp(self) -> None:
+    @classmethod
+    def setUpClass(cls) -> None:
+        print("-------------------执行了setupclass-------------------")
+        global goods_http
         payload = {
             "user_name": "test1",
             "user_password": "123456"
         }
-        # 登录
-        configHttp = ConfigHttp(uri="/login", method='post', data=payload)
-        res = configHttp.request().json()
-        self.assertEqual(res['status'], "success")
-        globals()['user_token'] = res['result']['user_token']  # 可以使用self, 测业务流程使用globals
+        login_http = ConfigHttp(uri="/login", method='post', data=payload)
 
-        self.configHttp = ConfigHttp(uri="/goodsInfo", method="post")
+        res = login_http.request().json()
+        user_token = res['result']['user_token']
 
+        setattr(GetUserToken , "user_token" , user_token)
+        goods_http = ConfigHttp(uri="/goodsInfo", method="post")
+
+    def setUp(self) -> None:
         pass
 
-    @data({
-        "class_id": 1,
-        "goods_id": 1,
+    def test_1(self):
+        global goods_http
 
-    })
-    @unpack
-    def test_2(self, class_id, goods_id):
-        '''
-        使用ddt把测试数据抽离
-        :param class_id:
-        :param goods_id:
-        :return:
-        '''
-        global user_token
-        MyLog.get_log().debug("获取用户登录token====" + user_token)
+        user_token = getattr(GetUserToken, "user_token")
+        print(user_token)
         payload = {
-            "class_id": class_id,
-            "goods_id": goods_id,
+            "class_id": 1,
+            "goods_id": 1,
             "user_token": user_token
 
         }
+        goods_http.data = payload
+        res = goods_http.request().json()
+        self.assertEqual(res['status'], "success")
+        pass
 
-        # MyLog.get_log().debug("请求数据====" + payload)
-        self.configHttp.data = payload
-        res = self.configHttp.request().json()
+    def test_2(self):
+        global goods_http
+
+        user_token = getattr(GetUserToken, "user_token")
+        payload = {
+            "class_id": 1,
+            "goods_id": 1,
+            "user_token": user_token
+
+        }
+        goods_http.data = payload
+        res = goods_http.request().json()
         self.assertEqual(res['status'], "success")
         pass
 
     def tearDown(self) -> None:
-        global user_token
+        user_token = getattr(GetUserToken, "user_token")
         payload = {
             "user_token": user_token
 
         }
-        # 推出登录
-        ch = ConfigHttp(uri="/loginOut", method="post", data=payload)
-
-        res = ch.request().json()
-        self.assertEqual(res['status'], "success")
-        # self.assertEqual(res['status'], "xxx") #注意讲解
+        # # 推出登录
+        ConfigHttp(uri="/loginOut", method="post", data=payload).request()
 
         pass
