@@ -48,7 +48,6 @@ class AllTest:
             suit = self.set_case_suite()
             if suit is not None:
                 MyLog.get_log().info("-------------------------测试开始-----------------------")
-
                 report_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "report", "report.html"))
                 fp = open(report_path, 'wb')
                 runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='Interface Test Report', description='饼图统计表：')
