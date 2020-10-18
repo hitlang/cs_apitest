@@ -19,11 +19,11 @@ class TestPayment(unittest.TestCase):
     def setUpClass(cls) -> None:
         # global  addCartHttp
         cls.addCartHttp = ConfigHttp(uri="/addCart", method="post")
-        cls.saveAddressHttp =  ConfigHttp(uri="/saveAddress" , method="post")
-        cls.addressListHttp =  ConfigHttp(uri="/addressList", method="post")
-        cls.stepHttp =  ConfigHttp(uri="/step",method="post")
-        cls.cartSubmitHttp =  ConfigHttp(uri="/cartSubmit", method="post")
-        cls.orderPayFinishHttp =  ConfigHttp(uri="/orderPayFinish", method="post")
+        cls.saveAddressHttp = ConfigHttp(uri="/saveAddress", method="post")
+        cls.addressListHttp = ConfigHttp(uri="/addressList", method="post")
+        cls.stepHttp = ConfigHttp(uri="/step", method="post")
+        cls.cartSubmitHttp = ConfigHttp(uri="/cartSubmit", method="post")
+        cls.orderPayFinishHttp = ConfigHttp(uri="/orderPayFinish", method="post")
 
     def test_add_product_cart(self):
         '''
@@ -47,7 +47,7 @@ class TestPayment(unittest.TestCase):
         # then
 
         self.assertEqual(res["status"], "success", "添加商品到购物车失败")
-        #out
+        # out
         pass
 
     def test_save_ship_address(self):
@@ -82,18 +82,16 @@ class TestPayment(unittest.TestCase):
         res = self.addressListHttp.request().json()
         # then
 
-
-
         self.assertEqual(res["status"], "success", "获取配送地址失败")
 
-        #out
+        # out
         global addr_id
         addr_id = res["result"][0]["address_id"]
         pass
 
     def test_order_confirm(self):
         # given
-        global  addr_id
+        global addr_id
         user_token = global_config.getToken()
         payload = {
             "user_token": user_token,
@@ -126,18 +124,16 @@ class TestPayment(unittest.TestCase):
         # then
         self.assertEqual(res["status"], "success", "提交订单失败")
 
-        #out
-        global  order_id
+        # out
+        global order_id
 
-        order_id =  res["result"]["order_id"]
+        order_id = res["result"]["order_id"]
 
         pass
 
-
-
     def test_order_payment(self):
         # given
-        global  order_id
+        global order_id
         user_token = global_config.getToken()
         payload = {
             "user_token": user_token,
@@ -146,13 +142,8 @@ class TestPayment(unittest.TestCase):
         # # when
         self.orderPayFinishHttp.data = payload
 
-        # res = self.orderPayFinishHttp.request().json()
-
-
-        pay_gateway.get_orderPayFinish = Mock(return_value={"status": "fdsafds","msg": "hahahah！"})
+        pay_gateway.get_orderPayFinish = Mock(return_value={"status": "fdsafds", "msg": "hahahah！"})
         res = pay_gateway.get_orderPayFinish(self.orderPayFinishHttp)
-        print(res)
-
         # then
         self.assertEqual(res["status"], "success", "支付凭据提交失败")
 
