@@ -5,8 +5,12 @@
 线下支付流程
 '''
 import unittest
+
+from apitest.api import pay_gateway
 from apitest.common.configHttp import ConfigHttp
 from config import global_config
+
+from unittest.mock import Mock
 
 
 class TestPayment(unittest.TestCase):
@@ -129,6 +133,8 @@ class TestPayment(unittest.TestCase):
 
         pass
 
+
+
     def test_order_payment(self):
         # given
         global  order_id
@@ -137,10 +143,16 @@ class TestPayment(unittest.TestCase):
             "user_token": user_token,
             "order_id": order_id
         }
-        # when
+        # # when
         self.orderPayFinishHttp.data = payload
 
-        res = self.orderPayFinishHttp.request().json()
+        # res = self.orderPayFinishHttp.request().json()
+
+
+        pay_gateway.get_orderPayFinish = Mock(return_value={"status": "fdsafds","msg": "hahahah！"})
+        res = pay_gateway.get_orderPayFinish(self.orderPayFinishHttp)
+        print(res)
+
         # then
         self.assertEqual(res["status"], "success", "支付凭据提交失败")
 
