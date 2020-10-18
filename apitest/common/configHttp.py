@@ -4,7 +4,6 @@
 from config import global_config
 import requests
 from apitest.common.log import MyLog
-
 config = global_config
 
 

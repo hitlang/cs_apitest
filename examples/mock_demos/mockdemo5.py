@@ -3,9 +3,9 @@
 # @Author:liulang
 
 from unittest.mock import  Mock
-
 class Student():
 
+    _gender = None
 
     def __init__(self, name) -> None:
         self.name = name
@@ -14,18 +14,14 @@ class Student():
     def info(self, x ):
         return self.name + x
 
+if __name__ == '__main__':
 
+    m = Mock(spec = Student)
 
-m = Mock(name="m1" , return_value = Student("kevin"))
+    s = Student("kevin")
 
-x = m()
+    print(m.info(1))
 
-print(x.info("y"))
+    m.info.assert_called_with(1)
 
-
-
-
-
-
-
-
+    pass
