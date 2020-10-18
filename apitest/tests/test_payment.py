@@ -7,10 +7,11 @@
 import unittest
 
 from apitest.api import pay_gateway
+from apitest.api.pay_gateway import get_orderPayFinish
 from apitest.common.configHttp import ConfigHttp
 from config import global_config
 
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
 
 class TestPayment(unittest.TestCase):
@@ -130,8 +131,8 @@ class TestPayment(unittest.TestCase):
         order_id = res["result"]["order_id"]
 
         pass
-
-    def test_order_payment(self):
+    @patch("apitest.api.pay_gateway.get_orderPayFinish")
+    def test_order_payment(self,mock):
         # given
         global order_id
         user_token = global_config.getToken()
@@ -142,8 +143,10 @@ class TestPayment(unittest.TestCase):
         # # when
         self.orderPayFinishHttp.data = payload
 
-        pay_gateway.get_orderPayFinish = Mock(return_value={"status": "fdsafds", "msg": "hahahah！"})
+        # pay_gateway.get_orderPayFinish = Mock(return_value={"status": "fdsafds", "msg": "hahahah！"})
+        mock.return_value = {"status": "success", "msg": "hahahah！"}
         res = pay_gateway.get_orderPayFinish(self.orderPayFinishHttp)
+        print(res)
         # then
         self.assertEqual(res["status"], "success", "支付凭据提交失败")
 
