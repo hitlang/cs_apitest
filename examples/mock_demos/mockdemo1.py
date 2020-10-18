@@ -2,6 +2,8 @@
 #!/usr/bin/python3
 # @Author:liulang
 
+
+
 from unittest.mock import  Mock
 
 class Student():
@@ -16,7 +18,7 @@ class Student():
 
 
 
-m = Mock(name="m1" , return_value = Student("kevin"))
+m = Mock(return_value = Student("kevin"))
 
 x = m()
 

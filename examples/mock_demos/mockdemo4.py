@@ -1,34 +1,30 @@
-#-*-coding:utf-8 -*-
-#!/usr/bin/python3
+# -*-coding:utf-8 -*-
+# !/usr/bin/python3
 # @Author:liulang
+import unittest
 
-from unittest.mock import  Mock
-class Student():
-
-    _gender = None
-
-    def __init__(self, name) -> None:
-        self.name = name
+from unittest.mock import Mock
 
 
-    def info(self, x ):
-        return self.name + x
+class Cal():
 
-#
-#
-# m = Mock(spec = ["name" , "age"]) #属性列表
-#
-#
-# print(m.name)
-# print(m.age)
+    def add(self, x, y):
+        # return x + y
 
+        pass
 
+    pass
 
-m2 = Mock(spec= Student)
+class TestAdd(unittest.TestCase):
+    def test_1(self):
+        c = Cal()
+        c.add = Mock(return_value=10)
+        self.assertEqual(c.add(1, 2), 10)
 
-print(m2.info)
-print(m2._gender)
+        print(c.add.called)
 
+        c.add.assert_called_with(1, 2) #检查是否被正确调用
 
+        pass
 
-
+    pass

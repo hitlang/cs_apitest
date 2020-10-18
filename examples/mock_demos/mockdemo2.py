@@ -3,16 +3,10 @@
 # @Author:liulang
 
 from unittest.mock import  Mock
+#调用抛出异常
+m = Mock(return_value = "1" ,side_effect = Exception("异常"))
+print(m())
 
-
-
-# m = Mock(return_value = "1" ,side_effect=Exception("abc"))
-m = Mock(return_value = "1" )
-
-x = m()
-
-# print(m.called) #是否被调用
-# print(m.call_count) # 调用次数
 
 
 

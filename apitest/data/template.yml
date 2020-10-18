@@ -1,0 +1,22 @@
+-   config:
+        name: testcase description
+        variables: {}
+-   test:
+        name: /dbshop/
+        request:
+            headers:
+                Sec-Fetch-Dest: document
+                Sec-Fetch-Mode: navigate
+                Sec-Fetch-Site: none
+                Sec-Fetch-User: ?1
+                User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
+                    (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36
+            method: GET
+            url: http://localhost/dbshop/
+        validate:
+        -   eq:
+            - status_code
+            - 200
+        -   eq:
+            - headers.Content-Type
+            - text/html; charset=utf-8

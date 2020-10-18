@@ -11,7 +11,7 @@ class PayApi(object):
         :param amount: 支付金额
         :return:
         """
-        pay_url = "http://www.zhifubao.com" # 第三方支付接口地址
+        pay_url = "22222" # 第三方支付接口地址
         data = {"card": card, "amount": amount}
         response = requests.post(pay_url, data=data) # 请求第三方支付接口
         return response # 返回状态码
