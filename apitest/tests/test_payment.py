@@ -7,7 +7,6 @@
 import unittest
 
 from apitest.api import pay_gateway
-from apitest.api.pay_gateway import get_orderPayFinish
 from apitest.common.configHttp import ConfigHttp
 from config import global_config
 
