@@ -12,12 +12,7 @@
           "user_password": "123456",
           "user_unionid": 1
         }
-      },
-      "extract": [
-        {
-          "user_token": "content.result.user_token"
-        }
-      ]
+      }
     }
   },
   {
@@ -69,12 +64,7 @@
         "data": {
           "user_token": "$user_token"
         }
-      },
-      "extract": [
-        {
-          "add_id": "content.result.0.address_id"
-        }
-      ]
+      }
     }
   },
   {
