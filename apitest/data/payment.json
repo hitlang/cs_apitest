@@ -3,7 +3,7 @@
     "test": {
       "name": "添加商品到购物车",
       "request": {
-        "url": "/addCart?apikey=$apikey",
+        "url": "/addCart",
         "method": "POST",
         "headers": {
         },
@@ -11,8 +11,7 @@
           "class_id": 1,
           "goods_id": 1,
           "buy_goods_num": 1,
-          "user_unionid": 1,
-          "user_token": "$user_token"
+          "user_unionid": 1
         }
       }
     }
@@ -21,18 +20,17 @@
     "test": {
       "name": "添加新的收货地址",
       "request": {
-        "url": "/saveAddress?apikey=$apikey",
+        "url": "/saveAddress",
         "method": "POST",
         "headers": {
         },
         "data": {
-          "user_token": "$user_token",
           "true_name": "刘浪",
           "region_id": 1,
           "region_value": "北京市",
           "address": "测试地址2",
           "zip_code": 1,
-          "mod_phone": "${creat_phone()}"
+          "mod_phone": "13349948790}"
         }
       }
     }
@@ -41,12 +39,12 @@
     "test": {
       "name": "获取配送地址",
       "request": {
-        "url": "/addressList?apikey=$apikey",
+        "url": "/addressList",
         "method": "POST",
         "headers": {
         },
         "data": {
-          "user_token": "$user_token"
+
         }
       }
     }
@@ -55,13 +53,11 @@
     "test": {
       "name": "订单确认",
       "request": {
-        "url": "/step?apikey=$apikey",
+        "url": "/step",
         "method": "POST",
         "headers": {
         },
         "data": {
-          "user_token": "$user_token",
-          "address_id": "$add_id",
           "user_unionid": 1
         }
       }
