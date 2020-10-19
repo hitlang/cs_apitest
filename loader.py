@@ -161,11 +161,13 @@ def locate_file(start_path: Text, file_name: Text) -> Text:
 
 
 if __name__ == '__main__':
-    # r = load_test_file("payment.json")
-    r = load_test_file("template.yml")
+    r = load_test_file("payment.json")
+    # r = load_test_file("template.yml")
+    #
 
-    print(r)
-
+    # r = load_testcase_file("payment.json")
+    import pprint
+    pprint.pprint(r)
     pass
 
 
