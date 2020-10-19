@@ -1,5 +1,4 @@
 [
-
   {
     "test": {
       "name": "登录",
@@ -13,13 +12,7 @@
           "user_password": "123456",
           "user_unionid": 1
         }
-      },
-      "extract": [
-        {
-          "user_token": "content.result.user_token"
-        }
-      ]
-
+      }
     }
   },
   {
@@ -37,19 +30,7 @@
           "user_unionid": 1,
           "user_token": "$user_token"
         }
-      },
-      "validate": [
-        {
-          "eq": [
-            "status_code",
-            200
-          ],
-          "eq": [
-            "content.status",
-            "success"
-          ]
-        }
-      ]
+      }
     }
   },
   {
@@ -69,19 +50,7 @@
           "zip_code": 1,
           "mod_phone": "${creat_phone()}"
         }
-      },
-      "validate": [
-        {
-          "eq": [
-            "status_code",
-            200
-          ],
-          "eq": [
-            "content.status",
-            "success"
-          ]
-        }
-      ]
+      }
     }
   },
   {
@@ -95,24 +64,7 @@
         "data": {
           "user_token": "$user_token"
         }
-      },
-      "extract": [
-        {
-          "add_id": "content.result.0.address_id"
-        }
-      ],
-      "validate": [
-        {
-          "eq": [
-            "status_code",
-            200
-          ],
-          "eq": [
-            "content.status",
-            "success"
-          ]
-        }
-      ]
+      }
     }
   },
   {
@@ -128,19 +80,7 @@
           "address_id": "$add_id",
           "user_unionid": 1
         }
-      },
-      "validate": [
-        {
-          "eq": [
-            "status_code",
-            200
-          ],
-          "eq": [
-            "content.status",
-            "success"
-          ]
-        }
-      ]
+      }
     }
   },
   {
@@ -158,19 +98,7 @@
           "payment_code": "xxzf",
           "express_id": 7
         }
-      },
-      "validate": [
-        {
-          "eq": [
-            "status_code",
-            200
-          ],
-          "eq": [
-            "content.status",
-            "success"
-          ]
-        }
-      ]
+      }
     }
   }
 ]
