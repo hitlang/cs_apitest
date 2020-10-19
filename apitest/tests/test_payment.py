@@ -17,7 +17,6 @@ class TestPayment(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        # global  addCartHttp
         cls.addCartHttp = ConfigHttp(uri="/addCart", method="post")
         cls.saveAddressHttp = ConfigHttp(uri="/saveAddress", method="post")
         cls.addressListHttp = ConfigHttp(uri="/addressList", method="post")
