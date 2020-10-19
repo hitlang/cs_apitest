@@ -1,3 +1,7 @@
+# -*-coding:utf-8 -*-
+# !/usr/bin/python3
+# @Author:liulang
+
 import json
 import os
 from typing import Dict, Text, List
