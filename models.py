@@ -6,14 +6,10 @@ from typing import Any
 from typing import Dict, Text, Union, Callable
 from typing import List
 from pydantic import BaseModel, Field
-
-
 Name = Text
 Url = Text
 Headers = Dict[Text, Text]
 Cookies = Dict[Text, Text]
-
-
 
 class MethodEnum(Text, Enum):
     GET = "GET"
@@ -23,9 +19,6 @@ class MethodEnum(Text, Enum):
     HEAD = "HEAD"
     OPTIONS = "OPTIONS"
     PATCH = "PATCH"
-
-
-
 
 class TRequest(BaseModel):
     """requests.Request model"""
