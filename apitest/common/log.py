@@ -53,11 +53,4 @@ class MyLog:
             MyLog.mutex.release()
         return MyLog.log
 
-if __name__ == '__main__':
-    myLogger = Log().getLogger()
-    myLogger2 = Log().getLogger()
-    print(id(myLogger))
-    print(id(myLogger2))
 
-
-    pass

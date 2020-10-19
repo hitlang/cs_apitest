@@ -13,7 +13,7 @@ import os
 from pprint import pprint
 from apitest.common.configHttp import ConfigHttp
 from apitest.common.log import MyLog
-from apitest.utils.excel_uitls import ExcelUtil
+from apitest.utils.excelUitls import ExcelUtil
 
 file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, "testfiles", "test_cases.xlsx"))
 excel_data = ExcelUtil(file_path, "ad2", start_col=1, end_col=7).get_dict()

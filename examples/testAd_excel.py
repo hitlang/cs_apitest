@@ -9,7 +9,7 @@ ddt数据驱动
 import os
 import unittest
 from ddt import ddt, data, unpack
-from apitest.utils.excel_uitls import ExcelUtil
+from apitest.utils.excelUitls import ExcelUtil
 
 file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, "testfiles", "test_cases.xlsx"))
 excel_data = ExcelUtil(file_path, "ad",start_col=1, end_col=2).get_dict()
