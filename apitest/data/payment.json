@@ -1,22 +1,6 @@
 [
   {
     "test": {
-      "name": "登录",
-      "request": {
-        "url": "/login?apikey=$apikey",
-        "method": "POST",
-        "headers": {
-        },
-        "data": {
-          "user_name": "test7",
-          "user_password": "123456",
-          "user_unionid": 1
-        }
-      }
-    }
-  },
-  {
-    "test": {
       "name": "添加商品到购物车",
       "request": {
         "url": "/addCart?apikey=$apikey",
