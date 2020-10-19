@@ -4,122 +4,88 @@
 '''
 线下支付流程
 '''
+import os
 import unittest
-
 from apitest.api import pay_gateway
 from apitest.common.configHttp import ConfigHttp
+from apitest.common.loader import load_test_file
 from config import global_config
 
-from unittest.mock import patch
-
+file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, "data", "payment.json"))
+r = load_test_file(file_path)
 
 class TestPayment(unittest.TestCase):
 
-    @classmethod
-    def setUpClass(cls) -> None:
-        cls.addCartHttp = ConfigHttp(uri="/addCart", method="post")
-        cls.saveAddressHttp = ConfigHttp(uri="/saveAddress", method="post")
-        cls.addressListHttp = ConfigHttp(uri="/addressList", method="post")
-        cls.stepHttp = ConfigHttp(uri="/step", method="post")
-        cls.cartSubmitHttp = ConfigHttp(uri="/cartSubmit", method="post")
-        cls.orderPayFinishHttp = ConfigHttp(uri="/orderPayFinish", method="post")
-
     def test_add_product_cart(self):
-        '''
-
-        :return:
-        '''
         # given
-        user_token = global_config.getToken()
-        payload = {
-            "class_id": 1,
-            "goods_id": 1,
-            "buy_goods_num": 1,
-            "user_unionid": 1,
-            "user_token": user_token
-        }
-        self.addCartHttp.data = payload
-        # when
+        test_data = r[0]["test"]["request"]
+        configHttp = ConfigHttp(**test_data)
 
-        res = self.addCartHttp.request().json()
+        # when
+        user_token = global_config.getToken()
+        configHttp.data.update({"user_token": user_token})
+        res = configHttp.request().json()
 
         # then
-
         self.assertEqual(res["status"], "success", "添加商品到购物车失败")
         # out
         pass
 
     def test_save_ship_address(self):
         # given
-        user_token = global_config.getToken()
-        payload = {
-            "user_token": user_token,
-            "true_name": "刘浪",
-            "region_id": "1",
-            "region_value": "北京市",
-            "address": "测试地址",
-            "zip_code": "1",
-            "mod_phone": "13349948796",
-
-        }
+        test_data = r[1]["test"]["request"]
+        configHttp = ConfigHttp(**test_data)
         # when
-        self.saveAddressHttp.data = payload
-        res = self.saveAddressHttp.request().json()
+        user_token = global_config.getToken()
+        configHttp.data.update({"user_token": user_token})
+        res = configHttp.request().json()
         # then
         self.assertEqual(res["status"], "success", "添加邮寄地址失败")
         pass
 
     def test_get_ship_address(self):
-        # # given
-        user_token = global_config.getToken()
-        payload = {
-            "user_token": user_token,
-
-        }
+        # given
+        test_data = r[2]["test"]["request"]
+        configHttp = ConfigHttp(**test_data)
         # when
-        self.addressListHttp.data = payload
-        res = self.addressListHttp.request().json()
+        user_token = global_config.getToken()
+        configHttp.data.update({ "user_token": user_token})
+        res = configHttp.request().json()
         # then
-
         self.assertEqual(res["status"], "success", "获取配送地址失败")
-
         # out
         global addr_id
         addr_id = res["result"][0]["address_id"]
-        pass
+
 
     def test_order_confirm(self):
         # given
+        test_data = r[3]["test"]["request"]
+        configHttp = ConfigHttp(**test_data)
+
+        # when
         global addr_id
         user_token = global_config.getToken()
-        payload = {
-            "user_token": user_token,
-            "address_id": addr_id,
-            "user_unionid": 1
-        }
-        # when
-        self.stepHttp.data = payload
-        res = self.stepHttp.request().json()
+        configHttp.data.update({ "user_token": user_token,"address_id": addr_id})
+        res = configHttp.request().json()
+
         # then
         self.assertEqual(res["status"], "success", "订单确认失败")
         pass
-
+    #
     def test_sumbmit_order(self):
         # given
-        global addr_id
-        user_token = global_config.getToken()
-        payload = {
-            "user_unionid": "1",
-            "address_id": addr_id,
-            "user_token": user_token,
-            "payment_code": "xxzf",
-            "express_id": "7"
-        }
-
+        test_data = r[4]["test"]["request"]
+        configHttp = ConfigHttp(**test_data)
         # when
-        self.cartSubmitHttp.data = payload
-
-        res = self.cartSubmitHttp.request().json()
+        user_token = global_config.getToken()
+        global addr_id
+        extract = {
+            "address_id": addr_id,
+            "user_token": user_token
+        }
+        configHttp.data.update(extract)
+        res = configHttp.request().json()
         # then
         self.assertEqual(res["status"], "success", "提交订单失败")
 
@@ -129,20 +95,27 @@ class TestPayment(unittest.TestCase):
         order_id = res["result"]["order_id"]
 
         pass
-    @patch("apitest.api.pay_gateway.get_orderPayFinish")
-    def test_order_payment(self,mock):
+
+    # @patch("apitest.api.pay_gateway.get_orderPayFinish")
+    def test_order_payment(self,mock = None):
         # given
+        test_data = r[5]["test"]["request"]
+        configHttp = ConfigHttp(**test_data)
+
         global order_id
         user_token = global_config.getToken()
-        payload = {
+        extract = {
             "user_token": user_token,
             "order_id": order_id
         }
         # # when
-        self.orderPayFinishHttp.data = payload
-        mock.return_value = {"status": "success", "msg": "hahahah！"}
-        res = pay_gateway.get_orderPayFinish(self.orderPayFinishHttp)
+        configHttp.data.update(extract)
+
+        # mock.return_value = {"status": "success", "msg": "hahahah！"}
+
+        res = pay_gateway.get_orderPayFinish(configHttp)
+
         #then
-        self.assertEqual(res["status"], "success", "支付凭据提交失败")
+        self.assertEqual(res["status"], "success", "订单完成付款失败")
 
         pass

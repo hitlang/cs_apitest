@@ -1,27 +1,25 @@
 # -*-coding:utf-8 -*-
 # !/usr/bin/python3
 # @Author:liulang
-from config import global_config
 import requests
 from apitest.common.log import MyLog
+from config import global_config
 config = global_config
-
-
 class ConfigHttp():
-    def __init__(self, *, method, uri, params=None, data=None, headers=None) -> None:
+    def __init__(self, *, method, url, params=None, data=None, headers=None) -> None:
         self.scheme = config.getHttpConf("scheme")
         self.baseurl = config.getHttpConf("baseurl")
         self.timeout = config.getHttpConf("timeout")
         self.apikey = config.getApikey()
-        self.url = "{scheme}://{baseurl}{uri}{apikey}" \
-            .format(scheme=self.scheme,
+        self.url = "{scheme}://{baseurl}{url}{apikey}".format(scheme=self.scheme,
                     baseurl=self.baseurl,
-                    uri=uri,
+                    url=url,
                     apikey="?apikey=" + self.apikey if self.apikey else "")
         self.params = params
         self.headers = headers
         self.data = data
         self.method = method
+
 
     def request(self):
 

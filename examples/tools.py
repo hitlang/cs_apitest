@@ -7,7 +7,6 @@ import  pprint
 
 import  yaml
 yaml_dir_path =   os.path.abspath( os.path.join(os.path.dirname(__file__), os.pardir , "apitest", "data"))
-# print(yaml_dir_path)
 def parse():
     pages = {}
     for   root, dirs , files in os.walk(top=yaml_dir_path):
@@ -19,25 +18,26 @@ def parse():
                 pass
         # pprint.pprint(pages)
         return pages
-
-class GetPages:
-    @staticmethod
-    def get_page_list():
-        _page_list = {}
-        pages = parse()
-        print(pages)
-        for page, value in pages.items():
-            parameters = value['parameters']
-            data_list = []
-            for parameter in parameters:
-                data_list.append(parameter)
-            _page_list[page] = data_list
-
-        return _page_list
-
-
-if __name__ == '__main__':
-    r = GetPages.get_page_list()
-    pprint.pprint(r)
-
-    pass
+#
+# class GetPages:
+#     @staticmethod
+#     def get_page_list():
+#         _page_list = {}
+#         pages = parse()
+#         print(pages)
+#         for page, value in pages.items():
+#             # parameters = value['parameters']
+#             parameters = value['data']
+#             data_list = []
+#             for parameter in parameters:
+#                 data_list.append(parameter)
+#             _page_list[page] = data_list
+#
+#         return _page_list
+#
+#
+# if __name__ == '__main__':
+#     r = GetPages.get_page_list()
+#     pprint.pprint(r)
+#
+#     pass

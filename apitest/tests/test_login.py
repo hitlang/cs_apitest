@@ -5,7 +5,6 @@ import unittest
 from apitest.common.configHttp import ConfigHttp
 from apitest.common.log import MyLog
 
-# @unittest.skip("")
 from config import global_config
 
 
@@ -13,21 +12,20 @@ class TestLogin(unittest.TestCase):
 
     def setUp(self) -> None:
         MyLog.get_log().info("----------------登录测试开始-------------------------")
-        self.configHttp = ConfigHttp(uri="/login", method='post')
         pass
 
     def test_Login_success(self):
-        '''
-        冒烟用例
-        :return:
-        '''
-        payload = {
-            "user_name": "test1",
-            "user_password": "123456"
-        }
-        self.configHttp.data = payload
-        res = self.configHttp.request().json()
+        # given
+        payload = {"user_name": "test1", "user_password": "123456"}
+
+        # when
+        configHttp = ConfigHttp(url="/login", method='post', data=payload)
+        res = configHttp.request().json()
+
+        # then
         self.assertEqual("success", res['status'], "登录测试没有通过")
+
+        # out
         user_token = res['result']['user_token']
         global_config.setToken(user_token)
 

@@ -67,16 +67,28 @@
     "test": {
       "name": "提交订单",
       "request": {
-        "url": "/cartSubmit?apikey=$apikey",
+        "url": "/cartSubmit",
         "method": "POST",
         "headers": {
         },
         "data": {
-          "user_token": "$user_token",
-          "address_id": "$add_id",
           "user_unionid": 1,
           "payment_code": "xxzf",
           "express_id": 7
+        }
+      }
+    }
+  },
+  {
+    "test": {
+      "name": "订单完成付款",
+      "request": {
+        "url": "/orderPayFinish",
+        "method": "POST",
+        "headers": {
+        },
+        "data": {
+
         }
       }
     }

@@ -8,7 +8,7 @@ from typing import Dict, Text, List
 import yaml
 from apitest.common.exceptions import *
 from apitest.common.log import MyLog
-from models import TestCase
+from apitest.common.models import TestCase
 
 try:
     # PyYAML version >= 5.1
@@ -165,11 +165,9 @@ def locate_file(start_path: Text, file_name: Text) -> Text:
 
 
 if __name__ == '__main__':
-    r = load_test_file("payment.json")
-    # r = load_test_file("template.yml")
-    #
-
-    # r = load_testcase_file("payment.json")
+    file_path = os.path.abspath(  os.path.join(os.path.dirname(__file__), os.path.pardir, "data","payment.json"))
+    print(file_path)
+    r = load_test_file(file_path)
     import pprint
     pprint.pprint(r)
     pass

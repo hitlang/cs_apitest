@@ -18,11 +18,12 @@ class TestLogout(unittest.TestCase):
         退出
         :return:
         '''
+        #given
         payload = {
             "user_token": self.user_token
-
         }
-        # # 推出登录
-        res = ConfigHttp(uri="/loginOut", method="post", data=payload).request().json()
+        # when
+        res = ConfigHttp(url="/loginOut", method="post", data=payload).request().json()
 
+        #then
         self.assertEqual(res['status'], "success")

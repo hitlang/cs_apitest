@@ -3,8 +3,15 @@
 # @Author:liulang
 import jpype
 
-jpype.startJVM()
+jpype.startJVM("-Djava.class.path=test.jar")
 
-jpype.java.lang.System.out.println("hello world!")
+javaclass = jpype.JClass('com.cs.Hello')
 
+# 实例化java对象
+# javaInstance = javaclass()
+
+#静态方法不实例化
+javaclass.getMsg()
+
+#关闭虚拟机
 jpype.shutdownJVM()
