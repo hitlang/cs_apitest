@@ -1,4 +1,6 @@
-import os
+# -*-coding:utf-8 -*-
+# !/usr/bin/python3
+# @Author:liulang
 from enum import Enum
 from typing import Any
 from typing import Dict, Text, Union, Callable
