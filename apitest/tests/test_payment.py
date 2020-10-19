@@ -10,7 +10,7 @@ from apitest.api import pay_gateway
 from apitest.common.configHttp import ConfigHttp
 from config import global_config
 
-from unittest.mock import Mock, patch
+from unittest.mock import patch
 
 
 class TestPayment(unittest.TestCase):
