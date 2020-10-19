@@ -3,22 +3,14 @@ from enum import Enum
 from typing import Any
 from typing import Dict, Text, Union, Callable
 from typing import List
-
 from pydantic import BaseModel, Field
-from pydantic import HttpUrl
+
 
 Name = Text
 Url = Text
-BaseUrl = Union[HttpUrl, Text]
-VariablesMapping = Dict[Text, Any]
-FunctionsMapping = Dict[Text, Callable]
 Headers = Dict[Text, Text]
 Cookies = Dict[Text, Text]
-Verify = bool
-Hooks = List[Union[Text, Dict[Text, Text]]]
-Export = List[Text]
-Validators = List[Dict]
-Env = Dict[Text, Any]
+
 
 
 class MethodEnum(Text, Enum):
