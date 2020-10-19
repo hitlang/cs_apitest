@@ -165,7 +165,7 @@ def locate_file(start_path: Text, file_name: Text) -> Text:
 
 
 if __name__ == '__main__':
-    file_path = os.path.abspath(  os.path.join(os.path.dirname(__file__), os.path.pardir, "data","payment.json"))
+    file_path = os.path.abspath(  os.path.join(os.path.dirname(__file__), os.path.pardir, "data","template.yml"))
     print(file_path)
     r = load_test_file(file_path)
     import pprint
