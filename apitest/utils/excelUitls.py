@@ -35,6 +35,6 @@ class ExcelUtil:
 
 #for test
 if __name__ == '__main__':
-    excel = ExcelUtil("login", start_col=1, end_col=8)
+    excel = ExcelUtil("test_cases.xlsx","login", start_col=1, end_col=9)
     r = excel.get_dict()
     pprint.pprint(r)
