@@ -141,12 +141,9 @@ class TestPayment(unittest.TestCase):
         }
         # # when
         self.orderPayFinishHttp.data = payload
-
-        # pay_gateway.get_orderPayFinish = Mock(return_value={"status": "fdsafds", "msg": "hahahah！"})
         mock.return_value = {"status": "success", "msg": "hahahah！"}
         res = pay_gateway.get_orderPayFinish(self.orderPayFinishHttp)
-        print(res)
-        # then
+        #then
         self.assertEqual(res["status"], "success", "支付凭据提交失败")
 
         pass
