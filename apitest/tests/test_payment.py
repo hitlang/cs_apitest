@@ -8,18 +8,17 @@ import os
 import unittest
 from apitest.api import pay_gateway
 from apitest.common.configHttp import ConfigHttp
-from apitest.common.loader import load_test_file
+from apitest.params.params import Payment
 from config import global_config
 
-file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, "data", "payment.json"))
-r = load_test_file(file_path)
 
 class TestPayment(unittest.TestCase):
 
     def test_add_product_cart(self):
         # given
-        test_data = r[0]["test"]["request"]
-        configHttp = ConfigHttp(**test_data)
+        parmas = Payment()
+
+        configHttp = ConfigHttp(url=parmas.url[0], method="post" , data=parmas.data[0])
 
         # when
         user_token = global_config.getToken()
@@ -33,8 +32,8 @@ class TestPayment(unittest.TestCase):
 
     def test_save_ship_address(self):
         # given
-        test_data = r[1]["test"]["request"]
-        configHttp = ConfigHttp(**test_data)
+        parmas = Payment()
+        configHttp = ConfigHttp(url=parmas.url[1], method="post",data=parmas.data[1])
         # when
         user_token = global_config.getToken()
         configHttp.data.update({"user_token": user_token})
@@ -42,11 +41,11 @@ class TestPayment(unittest.TestCase):
         # then
         self.assertEqual(res["status"], "success", "添加邮寄地址失败")
         pass
-
+    #
     def test_get_ship_address(self):
         # given
-        test_data = r[2]["test"]["request"]
-        configHttp = ConfigHttp(**test_data)
+        parmas = Payment()
+        configHttp = ConfigHttp(url=parmas.url[2], method="post",data=parmas.data[2])
         # when
         user_token = global_config.getToken()
         configHttp.data.update({ "user_token": user_token})
@@ -56,12 +55,12 @@ class TestPayment(unittest.TestCase):
         # out
         global addr_id
         addr_id = res["result"][0]["address_id"]
-
-
+    #
+    #
     def test_order_confirm(self):
         # given
-        test_data = r[3]["test"]["request"]
-        configHttp = ConfigHttp(**test_data)
+        parmas = Payment()
+        configHttp = ConfigHttp(url=parmas.url[3],method="post", data=parmas.data[3])
 
         # when
         global addr_id
@@ -75,8 +74,8 @@ class TestPayment(unittest.TestCase):
     #
     def test_sumbmit_order(self):
         # given
-        test_data = r[4]["test"]["request"]
-        configHttp = ConfigHttp(**test_data)
+        parmas = Payment()
+        configHttp = ConfigHttp(url=parmas.url[4], method="post", data=parmas.data[4])
         # when
         user_token = global_config.getToken()
         global addr_id
@@ -95,27 +94,27 @@ class TestPayment(unittest.TestCase):
         order_id = res["result"]["order_id"]
 
         pass
-
-    # @patch("apitest.api.pay_gateway.get_orderPayFinish")
-    def test_order_payment(self,mock = None):
-        # given
-        test_data = r[5]["test"]["request"]
-        configHttp = ConfigHttp(**test_data)
-
-        global order_id
-        user_token = global_config.getToken()
-        extract = {
-            "user_token": user_token,
-            "order_id": order_id
-        }
-        # # when
-        configHttp.data.update(extract)
-
-        # mock.return_value = {"status": "success", "msg": "hahahah！"}
-
-        res = pay_gateway.get_orderPayFinish(configHttp)
-
-        #then
-        self.assertEqual(res["status"], "success", "订单完成付款失败")
-
-        pass
+    #
+    # # @patch("apitest.api.pay_gateway.get_orderPayFinish")
+    # def test_order_payment(self,mock = None):
+    #     # given
+    #     test_data = r[5]["test"]["request"]
+    #     configHttp = ConfigHttp(**test_data)
+    #
+    #     global order_id
+    #     user_token = global_config.getToken()
+    #     extract = {
+    #         "user_token": user_token,
+    #         "order_id": order_id
+    #     }
+    #     # # when
+    #     configHttp.data.update(extract)
+    #
+    #     # mock.return_value = {"status": "success", "msg": "hahahah！"}
+    #
+    #     res = pay_gateway.get_orderPayFinish(configHttp)
+    #
+    #     #then
+    #     self.assertEqual(res["status"], "success", "订单完成付款失败")
+    #
+    #     pass

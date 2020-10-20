@@ -1,0 +1,73 @@
+payment:
+  dec: 线下支付测试
+  parameters:
+    -   test:
+            name: 添加商品到购物车
+            request:
+                headers:
+                    User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
+                        (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36
+                method: POST
+                data:
+                  class_id: 1
+                  goods_id: 1
+                  buy_goods_num: 1
+                  user_unionid: 1
+                url: /addCart
+    -   test:
+            name: 添加新的收货地址
+            request:
+                headers:
+                    Sec-Fetch-Dest: document
+                    Sec-Fetch-Mode: navigate
+                    Sec-Fetch-Site: none
+                    Sec-Fetch-User: ?1
+                    User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
+                        (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36
+                method: POST
+                data:
+                  true_name: 刘浪,
+                  region_id: 1,
+                  region_value: 北京市,
+                  address: 测试地址2,
+                  zip_code: 1,
+                  mod_phone: 13349948796
+                url: /saveAddress
+    -   test:
+            name: 获取收货地址
+            request:
+                headers:
+                    Sec-Fetch-Dest: document
+                    Sec-Fetch-Mode: navigate
+                    Sec-Fetch-Site: none
+                    Sec-Fetch-User: ?1
+                    User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
+                        (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36
+                method: POST
+                data: {}
+                url: /addressList
+    -   test:
+            name: 订单确认
+            request:
+                headers:
+                    Sec-Fetch-Dest: document
+                    Sec-Fetch-Mode: navigate
+                    Sec-Fetch-Site: none
+                    Sec-Fetch-User: ?1
+                    User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
+                        (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36
+                method: POST
+                data:
+                   user_unionid: 1
+                url: /step
+
+    -   test:
+            name: 提交订单
+            request:
+                headers: {}
+                method: POST
+                data:
+                  user_unionid: 1
+                  payment_code: xxzf
+                  express_id: 7
+                url: /cartSubmit

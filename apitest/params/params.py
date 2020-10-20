@@ -18,8 +18,8 @@ def _getParameter(name):
     param = data[name]
     return param
 
-class HomePage:
-    params = _getParameter('homepage')
+class Payment:
+    params = _getParameter('payment')
     url = []
     data = []
     headers = []
@@ -28,6 +28,3 @@ class HomePage:
         data.append(params[i]["test"]["request"].get("data"))
         headers.append(params[i]["test"]["request"].get("headers"))
 
-if __name__ == '__main__':
-    HomePage() #加载一次
-    pass
