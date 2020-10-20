@@ -4,15 +4,14 @@
 import os
 import unittest
 from apitest.common.configHttp import ConfigHttp
-from apitest.common.loader import load_test_file
-file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, "data", "test_home.json"))
-r = load_test_file(file_path)
+from apitest.params.params import HomePage
+
 
 class TestHome(unittest.TestCase):
 
     def test_home_page(self):
-        test_data = r[0]["test"]["request"]
-        configHttp = ConfigHttp(**test_data)
+        params = HomePage()
+        configHttp = ConfigHttp(url=params.url[0],method="get", headers=params.headers[0])
         res = configHttp.request()
         print(res.text)
         pass

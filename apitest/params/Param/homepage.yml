@@ -1,8 +1,8 @@
-payment:
-  dec: "接口测试"
+homepage:
+  dec: "首页测试"
   parameters:
     -   test:
-            name: "payment"
+            name: "用例1"
             request:
                 headers:
                     Sec-Fetch-Dest: document
@@ -14,7 +14,7 @@ payment:
                 method: GET
                 url: http://localhost/dbshop/
     -   test:
-            name: "payment"
+            name: "用例2"
             request:
                 headers:
                     Sec-Fetch-Dest: document
