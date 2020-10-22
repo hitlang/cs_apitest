@@ -13,13 +13,25 @@ path_dir = str(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir
 
 def _getParameter(name):
     data = tools.GetPages().get_page_list()
-
     pprint(data)
     param = data[name]
     return param
 
 class Payment:
     params = _getParameter('payment')
+    url = []
+    data = []
+    headers = []
+    for i in range(0, len(params)):
+        url.append(params[i]["test"]["request"].get("url"))
+        data.append(params[i]["test"]["request"].get("data"))
+        headers.append(params[i]["test"]["request"].get("headers"))
+
+class ConvertMoney:
+    '''
+    积分转换金额参数
+    '''
+    params = _getParameter('convert_money')
     url = []
     data = []
     headers = []
