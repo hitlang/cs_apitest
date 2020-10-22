@@ -17,6 +17,8 @@ class TestConvertMoney(unittest.TestCase):
     def test_integral_convert_money(self):
         # given
         params = ConvertMoney()
+
+        MyLog.get_log().debug("积分转换金额请求" + str(params.names[0]))
         confighttp = ConfigHttp(method="post", url=params.url[0], data=params.data[0], headers=params.headers[0])
 
         # when
