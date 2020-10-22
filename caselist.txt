@@ -1,4 +1,9 @@
 #支付流程
+#test_login
+#test_payment
+#test_logout
+#积分转换金额
 test_login
-test_payment
+test_convert_money
 test_logout
+
