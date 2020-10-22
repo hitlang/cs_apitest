@@ -22,10 +22,13 @@ class Payment:
     url = []
     data = []
     headers = []
+    names= []
     for i in range(0, len(params)):
         url.append(params[i]["test"]["request"].get("url"))
         data.append(params[i]["test"]["request"].get("data"))
         headers.append(params[i]["test"]["request"].get("headers"))
+        names.append(params[i]["test"].get("name"))
+
 
 class ConvertMoney:
     '''
@@ -35,8 +38,10 @@ class ConvertMoney:
     url = []
     data = []
     headers = []
+    names=[]
     for i in range(0, len(params)):
         url.append(params[i]["test"]["request"].get("url"))
         data.append(params[i]["test"]["request"].get("data"))
         headers.append(params[i]["test"]["request"].get("headers"))
+        names.append(params[i]["test"].get("name"))
 
