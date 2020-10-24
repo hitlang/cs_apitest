@@ -14,7 +14,7 @@ from apitest.common.log import MyLog
 from apitest.params.params import ConvertMoney
 from config import global_config
 
-test_data_file =  os.path.abspath( os.path.join(os.path.dirname(__file__) , os.pardir , "data", "test_convert_money2.json"))
+test_data_file =  os.path.abspath( os.path.join(os.path.dirname(__file__) , os.pardir , "data", "test_convert_money.json"))
 
 
 
