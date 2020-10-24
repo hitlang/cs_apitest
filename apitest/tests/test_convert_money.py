@@ -21,8 +21,6 @@ test_data_file =  os.path.abspath( os.path.join(os.path.dirname(__file__) , os.p
 @ddt
 class TestConvertMoney(unittest.TestCase):
 
-
-
     def setUp(self) -> None:
         self.log = MyLog.get_log()
 
@@ -30,33 +28,21 @@ class TestConvertMoney(unittest.TestCase):
     def test_integral_convert_money(self, integral_num,cart_integral_num,expected):
         self.log.debug("{},{},{}".format(integral_num,cart_integral_num,expected))
         user_token = global_config.getToken()
-        #
         self.log.debug(user_token)
         # # given
         params = ConvertMoney()
-        #
-        #
         payload = params.data[0]
         payload.update({
             "integral_num":integral_num,
             "cart_integral_num":cart_integral_num
         })
         payload.update({"user_token" : user_token})
-
         self.log.debug("payload {}".format(payload))
-
-        #
-        # # when
-        #
+        #  when
         confighttp = ConfigHttp(method="post", url=params.url[0], data=payload, headers=params.headers[0])
-        #
-        #
+        # then
         res = confighttp.request().json()
-        #
-        # MyLog.get_log().debug("积分转换金额响应结果" + str(res))
-        #
-        # # then
         self.assertEqual(res["result"]["money"], expected, "积分转换金额失败")
-        # # out
+        # out
 
         pass
