@@ -5,18 +5,14 @@
 积分转换金额
 
 '''
-import unittest
-
-from ddt import ddt, file_data, unpack
 import os
+import unittest
+from ddt import ddt, file_data
 from apitest.common.configHttp import ConfigHttp
 from apitest.common.log import MyLog
 from apitest.params.params import ConvertMoney
 from config import global_config
-
 test_data_file =  os.path.abspath( os.path.join(os.path.dirname(__file__) , os.pardir , "data", "test_convert_money.json"))
-
-
 
 @ddt
 class TestConvertMoney(unittest.TestCase):
@@ -28,7 +24,6 @@ class TestConvertMoney(unittest.TestCase):
     def test_integral_convert_money(self, integral_num,cart_integral_num,expected):
         self.log.debug("{},{},{}".format(integral_num,cart_integral_num,expected))
         user_token = global_config.getToken()
-        self.log.debug(user_token)
         # # given
         params = ConvertMoney()
         payload = params.data[0]
