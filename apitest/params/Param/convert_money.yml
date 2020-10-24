@@ -8,7 +8,5 @@ convert_money:
                     User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
                         (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36
                 method: POST
-                data:
-                  integral_num: 10000
-                  cart_integral_num: 1000000
+                data: {}
                 url: /integralConvertMoney

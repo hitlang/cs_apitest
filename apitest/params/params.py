@@ -13,7 +13,7 @@ path_dir = str(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir
 
 def _getParameter(name):
     data = tools.GetPages().get_page_list()
-    pprint(data)
+    # pprint(data)
     param = data[name]
     return param
 
@@ -29,6 +29,29 @@ class Payment:
         headers.append(params[i]["test"]["request"].get("headers"))
         names.append(params[i]["test"].get("name"))
 
+class PcLoginLink:
+    params = _getParameter('pc_login_link')
+    url = []
+    data = []
+    headers = []
+    names= []
+    for i in range(0, len(params)):
+        url.append(params[i]["test"]["request"].get("url"))
+        data.append(params[i]["test"]["request"].get("data"))
+        headers.append(params[i]["test"]["request"].get("headers"))
+        names.append(params[i]["test"].get("name"))
+
+class PcLoginPost:
+    params = _getParameter('pc_login_post')
+    url = []
+    data = []
+    headers = []
+    names= []
+    for i in range(0, len(params)):
+        url.append(params[i]["test"]["request"].get("url"))
+        data.append(params[i]["test"]["request"].get("data"))
+        headers.append(params[i]["test"]["request"].get("headers"))
+        names.append(params[i]["test"].get("name"))
 
 class ConvertMoney:
     '''

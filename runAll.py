@@ -35,7 +35,7 @@ class AllTest:
         if len(suite_module) > 0:
             for suite in suite_module:
                 for test_name in suite:
-                    print("test_name" , test_name)
+                    # print("test_name" , test_name)
                     test_suite.addTest(test_name)
         else:
             return None

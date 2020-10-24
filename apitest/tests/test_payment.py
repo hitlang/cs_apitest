@@ -11,7 +11,7 @@ from apitest.common.configHttp import ConfigHttp
 from apitest.params.params import Payment
 from config import global_config
 
-
+@unittest.skip("")
 class TestPayment(unittest.TestCase):
 
     def test_add_product_cart(self):
