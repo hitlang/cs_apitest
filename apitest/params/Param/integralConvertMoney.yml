@@ -9,5 +9,4 @@ integralConvertMoney:
                       cart_integral_num: 2000
                   headers: {}
                   method: POST
-                  expected: 10
                   url: /integralConvertMoney
