@@ -26,6 +26,10 @@ class Config:
         value = self.cf.get("MYSQL", key)
         return value
 
+    def getDataDir(self):
+        value = self.cf.get("DATA_PATH", "data_dir_path")
+        return value
+
     def getToken(self):
         return self.cf.get("TOKEN", "user_token")
 
