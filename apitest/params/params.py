@@ -53,18 +53,35 @@ class PcLoginPost:
         headers.append(params[i]["test"]["request"].get("headers"))
         names.append(params[i]["test"].get("name"))
 
-class ConvertMoney:
+
+class IntegralConvertMoney:
     '''
-    积分转换金额参数
+    积分转换金额测试数据类
     '''
-    params = _getParameter('convert_money')
-    url = []
-    data = []
+    params = _getParameter('integralConvertMoney')
+    urls = []
+    datas = []
     headers = []
-    names=[]
+    names= []
+    methods= []
+    expecteds = []
     for i in range(0, len(params)):
-        url.append(params[i]["test"]["request"].get("url"))
-        data.append(params[i]["test"]["request"].get("data"))
+        urls.append(params[i]["test"]["request"].get("url"))
+        datas.append(params[i]["test"]["request"].get("data"))
         headers.append(params[i]["test"]["request"].get("headers"))
+        methods.append(params[i]["test"]["request"].get("method"))
+        expecteds.append(params[i]["test"]["request"].get("expected"))
         names.append(params[i]["test"].get("name"))
 
+
+
+
+if __name__ == '__main__':
+    icm = IntegralConvertMoney()
+    print(icm.data[0])
+    print(icm.url[0])
+    print(icm.methods[0])
+    print(icm.names[0])
+
+
+    pass

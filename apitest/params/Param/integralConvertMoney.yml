@@ -1,0 +1,13 @@
+integralConvertMoney:
+  desc: 积分转换金额测试
+  parameters:
+      -   test:
+              name: 测试用例1
+              request:
+                  data:
+                      integral_num: 1000
+                      cart_integral_num: 2000
+                  headers: {}
+                  method: POST
+                  expected: 10
+                  url: /integralConvertMoney
