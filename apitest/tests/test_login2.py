@@ -58,7 +58,7 @@ class TestLogin2(unittest.TestCase):
         # then
 
 
-        self.log.debug(res.text)
+        # self.log.debug(res.text)
 
         # self.assertIn("退出",res.text, '登录失败')
 

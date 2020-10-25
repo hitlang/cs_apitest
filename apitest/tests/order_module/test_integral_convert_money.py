@@ -11,11 +11,8 @@ from apitest.common.log import MyLog
 from apitest.params.params import IntegralConvertMoney
 from config import global_config
 
-test_json_data =  os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir , "data" , "test_convert_money.json"))
-
-print(test_json_data)
-
-
+test_json_data = os.path.abspath(os.path.join(global_config.getDataDir(),"test_convert_money.json"))
+MyLog.get_log().debug("test_json_data  {}".format(test_json_data))
 
 @ddt
 class TestIntegralConvertMoney(unittest.TestCase):
