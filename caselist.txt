@@ -6,6 +6,9 @@
 test_login
 test_integral_convert_money
 test_logout
+#pc登录
+test_login2
+
 
 
 
