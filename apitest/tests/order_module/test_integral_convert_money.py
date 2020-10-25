@@ -3,13 +3,21 @@
 # @Author:liulang
 
 import unittest
+import os
+from ddt import ddt, file_data
 
 from apitest.common.configHttp import ConfigHttp
 from apitest.common.log import MyLog
 from apitest.params.params import IntegralConvertMoney
 from config import global_config
 
+test_json_data =  os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir , "data" , "test_convert_money.json"))
 
+print(test_json_data)
+
+
+
+@ddt
 class TestIntegralConvertMoney(unittest.TestCase):
 
 
@@ -20,8 +28,8 @@ class TestIntegralConvertMoney(unittest.TestCase):
         self.config = global_config
 
 
-
-    def test_convert_success(self):
+    @file_data(test_json_data)
+    def test_convert_success(self,integral_num,cart_integral_num,expected):
 
 
         '''
@@ -34,12 +42,16 @@ class TestIntegralConvertMoney(unittest.TestCase):
         self.log.debug("user_token ==  {}".format(user_token))
         icm = IntegralConvertMoney()
 
-        method = icm.methods[0]
-        url = icm.urls[0]
-        data = icm.datas[0]
+
+        method, url ,data  = icm.methods[0], icm.urls[0], icm.datas[0]
         self.log.debug("data ==  {}".format(data))
 
         data.update({"user_token" : user_token})
+        data.update({
+            "integral_num" :integral_num,
+            "cart_integral_num":cart_integral_num
+
+        })
 
 
         #when
@@ -48,7 +60,8 @@ class TestIntegralConvertMoney(unittest.TestCase):
 
         #then
 
-        expected = icm.expecteds[0]
+        # expected = icm.expecteds[0]
+
         actual = res["result"]["money"]
 
         self.assertEqual(expected, actual, "积分转换金额失败")
