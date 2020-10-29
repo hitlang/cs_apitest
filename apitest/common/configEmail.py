@@ -57,9 +57,11 @@ class Email:
             zippath = os.path.abspath(os.path.join(report_dir, "report.zip"))
             # zip file
             files = glob.glob(reportpath + '\*')
+            print("files ===============" , files)
             f = zipfile.ZipFile(zippath, 'w', zipfile.ZIP_DEFLATED)
             for file in files:
-                f.write(file, '/report/' + os.path.basename(file))
+                if file.endswith("html"):
+                    f.write(file)
 
             f.close()
             reportfile = open(zippath, 'rb').read()
