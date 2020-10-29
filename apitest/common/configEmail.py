@@ -64,7 +64,7 @@ class Email:
             f.close()
             reportfile = open(zippath, 'rb').read()
             filehtml = MIMEApplication(reportfile)
-            filehtml.add_header('Content-Disposition', 'attachment', filename="Interface test report.zip")
+            filehtml.add_header('Content-Disposition', 'attachment', filename="report.zip")
             self.msg.attach(filehtml)
 
     def check_file(self):
