@@ -10,13 +10,14 @@ from datetime import datetime
 from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+import os
 
-
-
+report_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir, "report"))
+report_file = os.path.join(report_dir, "report.html")
 
 class Email:
     def __init__(self):
-        global host, user, password, port, sender, title,receiver
+        global host, user, password, port, sender, title, receiver
         host = "smtp.163.com"
         user = "easyme2046@163.com"
         password = "RLZZBCQDMHHVXBTT"
@@ -40,8 +41,8 @@ class Email:
         self.msg['to'] = ";".join(self.receiver)
 
     def config_content(self):
-        #define email template
-        f = open(r"E:\cs_apitest\cs_apitest\report\report.html", encoding="utf-8")
+        # define email template
+        f = open(report_file, encoding="utf-8")
         content = f.read()
         f.close()
         content_plain = MIMEText(content, 'html', 'utf-8')
@@ -49,21 +50,21 @@ class Email:
 
     def config_file(self):
         if self.check_file():
-            reportpath =r"E:\cs_apitest\cs_apitest\report"
-            zippath = os.path.join(r"E:\cs_apitest\cs_apitest\report", "Interface test report.zip")
+            reportpath = report_dir
+            zippath = os.path.join(report_dir, "Interface test report.zip")
             # zip file
             files = glob.glob(reportpath + '\*')
             f = zipfile.ZipFile(zippath, 'w', zipfile.ZIP_DEFLATED)
             for file in files:
-                f.write(file, '/report/'+os.path.basename(file))
+                f.write(file, '/report/' + os.path.basename(file))
             f.close()
             reportfile = open(zippath, 'rb').read()
             filehtml = MIMEApplication(reportfile)
-            filehtml.add_header('Content-Disposition','attachment',filename="Interface test report.zip")
+            filehtml.add_header('Content-Disposition', 'attachment', filename="Interface test report.zip")
             self.msg.attach(filehtml)
 
     def check_file(self):
-        reportpath = r"E:\cs_apitest\cs_apitest\report\report.html"
+        reportpath = report_file
         if os.path.isfile(reportpath) and not os.stat(reportpath) == 0:
             return True
         else:
