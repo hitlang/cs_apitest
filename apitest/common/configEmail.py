@@ -15,6 +15,9 @@ import os
 report_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir, "report"))
 report_file = os.path.abspath(os.path.join(report_dir, "report.html"))
 
+print(report_dir)
+print(report_file)
+
 class Email:
     def __init__(self):
         global host, user, password, port, sender, title, receiver
@@ -51,12 +54,13 @@ class Email:
     def config_file(self):
         if self.check_file():
             reportpath = report_dir
-            zippath = os.path.join(report_dir, "Interface test report.zip")
+            zippath = os.path.abspath(os.path.join(report_dir, "Interface test report.zip"))
             # zip file
             files = glob.glob(reportpath + '\*')
             f = zipfile.ZipFile(zippath, 'w', zipfile.ZIP_DEFLATED)
             for file in files:
                 f.write(file, '/report/' + os.path.basename(file))
+
             f.close()
             reportfile = open(zippath, 'rb').read()
             filehtml = MIMEApplication(reportfile)
