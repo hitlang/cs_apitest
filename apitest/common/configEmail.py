@@ -13,7 +13,7 @@ from email.mime.text import MIMEText
 import os
 
 report_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir, "report"))
-report_file = os.path.join(report_dir, "report.html")
+report_file = os.path.abspath(os.path.join(report_dir, "report.html"))
 
 class Email:
     def __init__(self):
