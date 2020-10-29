@@ -5,13 +5,15 @@ import jpype
 
 jpype.startJVM("-Djava.class.path=test.jar")
 
-javaclass = jpype.JClass('com.cs.Hello')
+date_class = jpype.JClass('java.util.Date')
 
 # 实例化java对象
-# javaInstance = javaclass()
+date_instance = date_class()
 
 #静态方法不实例化
-javaclass.getMsg()
+timestamp = date_instance.getTime()
+
+print(timestamp)
 
 #关闭虚拟机
 jpype.shutdownJVM()

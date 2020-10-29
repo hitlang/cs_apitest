@@ -4,6 +4,7 @@
 import os
 import unittest
 from apitest.common import HTMLTestRunner
+from apitest.common.configEmail import MyEmail
 from apitest.common.log import MyLog
 from apitest.ut.core import _TestCase
 
@@ -12,6 +13,7 @@ class AllTest:
     def __init__(self):
         self.caseDir = os.path.abspath(os.path.join(os.path.dirname(__file__), "apitest", "tests"))
         self.caseList = []
+        self.email = MyEmail.get_email()
         pass
 
     def set_case_list(self):
@@ -59,6 +61,11 @@ class AllTest:
             MyLog.get_log().error(str(ex))
         finally:
             MyLog.get_log().info("-------------------------测试结束-----------------------")
+
+            #发送邮件
+            self.email.send_email()
+
+
 
 
 if __name__ == '__main__':
