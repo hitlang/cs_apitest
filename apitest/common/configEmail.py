@@ -1,13 +1,10 @@
 # -*-coding:utf-8 -*-
 # !/usr/bin/python3
 # @Author:liulang
-import glob
-import os
+
 import smtplib
 import threading
-import zipfile
 from datetime import datetime
-from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import os
@@ -15,8 +12,6 @@ import os
 report_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir, "report"))
 report_file = os.path.abspath(os.path.join(report_dir, "report.html"))
 
-print(report_dir)
-print(report_file)
 
 class Email:
     def __init__(self):
@@ -51,35 +46,11 @@ class Email:
         content_plain = MIMEText(content, 'html', 'utf-8')
         self.msg.attach(content_plain)
 
-    def config_file(self):
-        if self.check_file():
-            reportpath = report_dir
-            zippath = os.path.abspath(os.path.join(report_dir, "report.zip"))
-            # zip file
-            files = glob.glob(reportpath + '\*')
-            print("files ===============" , files)
-            f = zipfile.ZipFile(zippath, 'w', zipfile.ZIP_DEFLATED)
-            for file in files:
-                if file.endswith("html"):
-                    f.write(file)
 
-            f.close()
-            reportfile = open(zippath, 'rb').read()
-            filehtml = MIMEApplication(reportfile)
-            filehtml.add_header('Content-Disposition', 'attachment', filename="report.zip")
-            self.msg.attach(filehtml)
-
-    def check_file(self):
-        reportpath = report_file
-        if os.path.isfile(reportpath) and not os.stat(reportpath) == 0:
-            return True
-        else:
-            return False
 
     def send_email(self):
         self.config_header()
         self.config_content()
-        self.config_file()
         try:
             smtp = smtplib.SMTP()
             smtp.connect(host)
