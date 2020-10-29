@@ -54,7 +54,7 @@ class Email:
     def config_file(self):
         if self.check_file():
             reportpath = report_dir
-            zippath = os.path.abspath(os.path.join(report_dir, "Interface test report.zip"))
+            zippath = os.path.abspath(os.path.join(report_dir, "report.zip"))
             # zip file
             files = glob.glob(reportpath + '\*')
             f = zipfile.ZipFile(zippath, 'w', zipfile.ZIP_DEFLATED)
