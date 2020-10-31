@@ -5,6 +5,9 @@ import unittest
 import requests
 import re
 from apitest.common.log import MyLog
+from apitest.params.params import PcLogin
+from config import global_config
+
 
 class TestLogin2(unittest.TestCase):
 
@@ -12,11 +15,16 @@ class TestLogin2(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.s = requests.Session()
         cls.log = MyLog.get_log()
+        cls.PcLogin = PcLogin()
+        cls.base_url = global_config.getHttpConf("scheme") + "://" + global_config.getHttpConf("baseurl")
+
+        cls.log.debug("base_url == {}".format(cls.base_url))
+
 
     def test_click_login_link(self):
-        url = 'http://localhost/dbshop/user/login'
-
-        res = self.s.get(url=url)
+        headers = self.PcLogin.headers[0]
+        url = self.base_url + self.PcLogin.urls[0]
+        res = self.s.get(url=url, headers=headers)
         reg = re.compile(r"<input type=\"hidden\" name=\"login_security\" value=\"(.+-.+)\" />")
         match = reg.search(res.text)
         # out
@@ -24,18 +32,16 @@ class TestLogin2(unittest.TestCase):
         self.log.debug("code  ======= {}".format(self.security_code))
         pass
 
+    # @unittest.skip("")
     def test_login_success(self):
         # given
-        url = r"http://localhost/dbshop/user/login"
-        payload = {
-            "user_name": "test1",
-            "user_password": "123456",
-            "login_security": TestLogin2.security_code,
-            "http_referer": "http://localhost/dbshop/"
-        }
-
+        url =self.base_url + self.PcLogin.urls[1]
+        data =  self.PcLogin.datas[1]
+        data.update({"login_security": TestLogin2.security_code})
+        self.log.debug("payload ========={}".format(data))
         # when
-        res = self.s.post(url=url, data=payload)
+
+        res = self.s.post(url=url, data=data)
         reg = re.compile("退出")
         match = reg.search(res.text)
         self.assertIsNotNone(match)
