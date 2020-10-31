@@ -63,7 +63,7 @@ class AllTest:
             MyLog.get_log().info("-------------------------测试结束-----------------------")
 
             #发送邮件
-            self.email.send_email()
+            # self.email.send_email()
 
 
 
