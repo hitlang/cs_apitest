@@ -17,7 +17,6 @@ class TestLogin2(unittest.TestCase):
         cls.log = MyLog.get_log()
         cls.PcLogin = PcLogin()
         cls.base_url = global_config.getHttpConf("scheme") + "://" + global_config.getHttpConf("baseurl")
-
         cls.log.debug("base_url == {}".format(cls.base_url))
 
 
@@ -40,7 +39,6 @@ class TestLogin2(unittest.TestCase):
         data.update({"login_security": TestLogin2.security_code})
         self.log.debug("payload ========={}".format(data))
         # when
-
         res = self.s.post(url=url, data=data)
         reg = re.compile("退出")
         match = reg.search(res.text)
