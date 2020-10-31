@@ -1,6 +1,6 @@
-# __author__ = 'Daolin.Yang'
-# coding=utf-8
-# !/usr/bin/python
+# -*-coding:utf-8 -*-
+# !/usr/bin/python3
+# @Author:liulang
 import os
 import unittest
 from apitest.common import HTMLTestRunner
