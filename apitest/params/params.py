@@ -54,7 +54,7 @@ class PcLogin:
     '''
 
     '''
-    params = _getParameter('pc_login_loginout')
+    params = _getParameter('pc_login')
     urls = []
     datas = []
     headers = []
@@ -72,10 +72,10 @@ class PcLogin:
 
 if __name__ == '__main__':
     icm = PcLogin()
-    print(icm.datas[0])
-    print(icm.urls[0])
-    print(icm.methods[0])
-    print(icm.names[0])
+    print(icm.datas[1])
+    print(icm.urls[1])
+    print(icm.methods[1])
+    print(icm.names[1])
 
 
     pass
