@@ -11,6 +11,7 @@ class TestLogin2(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.s = requests.Session()
+        cls.log = MyLog.get_log()
 
     def test_click_login_link(self):
         url = 'http://localhost/dbshop/user/login'
@@ -19,8 +20,7 @@ class TestLogin2(unittest.TestCase):
         reg = re.compile(r"<input type=\"hidden\" name=\"login_security\" value=\"(.+-.+)\" />")
         match = reg.search(res.text)
         # out
-        self.security_code = match.group(1)
-        self.log = MyLog.get_log()
+        TestLogin2.security_code = match.group(1)
         self.log.debug("code  ======= {}".format(self.security_code))
         pass
 
@@ -30,7 +30,7 @@ class TestLogin2(unittest.TestCase):
         payload = {
             "user_name": "test1",
             "user_password": "123456",
-            "login_security": self.security_code,
+            "login_security": TestLogin2.security_code,
             "http_referer": "http://localhost/dbshop/"
         }
 
@@ -39,7 +39,7 @@ class TestLogin2(unittest.TestCase):
         reg = re.compile("退出")
         match = reg.search(res.text)
         self.assertIsNotNone(match)
-        self.log.debug(match.group())
+        TestLogin2.log.debug(match.group())
 
         # out
         pass
