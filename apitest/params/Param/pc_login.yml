@@ -11,8 +11,7 @@ pc_login:
                       Sec-Fetch-User: ?1
                       User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
                           (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36
-                  method: GET
-                  url: http://localhost/dbshop/user/login
+                  url: /user/login
 
       -   test:
               name: 提交登录表单
@@ -29,6 +28,5 @@ pc_login:
                       Sec-Fetch-User: ?1
                       User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
                           (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36
-                  method: POST
-                  url: http://localhost/dbshop/user/login
+                  url: /user/login
 
