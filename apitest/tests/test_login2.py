@@ -19,7 +19,6 @@ class TestLogin2(unittest.TestCase):
         cls.base_url = global_config.getHttpConf("scheme") + "://" + global_config.getHttpConf("baseurl")
         cls.log.debug("base_url == {}".format(cls.base_url))
 
-
     def test_click_login_link(self):
         headers = self.PcLogin.headers[0]
         url = self.base_url + self.PcLogin.urls[0]
@@ -34,8 +33,8 @@ class TestLogin2(unittest.TestCase):
     # @unittest.skip("")
     def test_login_success(self):
         # given
-        url =self.base_url + self.PcLogin.urls[1]
-        data =  self.PcLogin.datas[1]
+        url = self.base_url + self.PcLogin.urls[1]
+        data = self.PcLogin.datas[1]
         data.update({"login_security": TestLogin2.security_code})
         self.log.debug("payload ========={}".format(data))
         # when
@@ -44,10 +43,17 @@ class TestLogin2(unittest.TestCase):
         match = reg.search(res.text)
         self.assertIsNotNone(match)
         TestLogin2.log.debug(match.group())
-
         # out
+        cookie = res.request.headers
+
+        self.log.debug("cookie == {}".format(cookie))
+
+
+        global_config.setCookie(cookie["Cookie"])
         pass
 
     @classmethod
     def tearDownClass(cls) -> None:
-        cls.s.close()
+        # cls.s.close()
+        #
+        pass

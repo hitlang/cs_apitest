@@ -36,8 +36,21 @@ class Config:
     def setToken(self, value):
         self.cf.set("TOKEN", "user_token", value)
         with open(config_file,"w") as fp:
-
             self.cf.write(fp)
+
+    def setCookie(self, value):
+        '''
+
+        :param value:  cookie，格式key=value
+        :return:
+        '''
+        self.cf.set("COOKIE", "cookie", value)
+        with open(config_file,"w") as fp:
+            self.cf.write(fp)
+
+    def getCookie(self):
+        return self.cf.get("COOKIE", "cookie")
+
 
 
 # 配置对象
@@ -45,6 +58,14 @@ global_config = Config()
 # test
 if __name__ == '__main__':
     cf = Config()
-    port = cf.getMysqlConf("port")
-    print(port)
+    # port = cf.getMysqlConf("port")
+    # print(port)
+    cf.setCookie("sessionid=abc")
+
+    value = cf.getCookie()
+
+    print(value)
+
+
+
     pass

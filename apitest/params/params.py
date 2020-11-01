@@ -69,13 +69,32 @@ class PcLogin:
         expecteds.append(params[i]["test"]["request"].get("expected"))
         names.append(params[i]["test"].get("name"))
 
+class UploadImg:
+    '''
+
+    '''
+    params = _getParameter('upload_img')
+    urls = []
+    datas = []
+    headers = []
+    names= []
+    methods= []
+    expecteds = []
+    for i in range(0, len(params)):
+        urls.append(params[i]["test"]["request"].get("url"))
+        datas.append(params[i]["test"]["request"].get("data"))
+        headers.append(params[i]["test"]["request"].get("headers"))
+        methods.append(params[i]["test"]["request"].get("method"))
+        expecteds.append(params[i]["test"]["request"].get("expected"))
+        names.append(params[i]["test"].get("name"))
+
 
 if __name__ == '__main__':
-    icm = PcLogin()
-    print(icm.datas[1])
-    print(icm.urls[1])
-    print(icm.methods[1])
-    print(icm.names[1])
+    icm = UploadImg()
+    print(icm.datas[0])
+    print(icm.urls[0])
+    print(icm.methods[0])
+    print(icm.names[0])
 
 
     pass

@@ -1,0 +1,19 @@
+upload_img:
+  desc: 个人头像上传
+  parameters:
+      -   test:
+              name: 个人头像上传测试用例1
+              request:
+                  data:
+                    user_name: test1
+                    user_email: test11@dt.com
+                    user_sex: 1
+                    user_phone:
+                    user_birthday:
+                  headers:
+                      Content-Type: multipart/form-data
+                      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
+                          (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36
+                  method: POST
+                  url: /home/useredit
+

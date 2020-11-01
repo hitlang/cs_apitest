@@ -1,6 +1,1 @@
-2020-11-01 09:35:14,397  - INFO - -------------------------测试开始-----------------------
-2020-11-01 09:35:14,398  - DEBUG - base_url == http://116.85.42.10
-2020-11-01 09:35:14,588  - DEBUG - code  ======= 702497dfee649aa9ec1575a0d766073c-23b5fe06f62da7cae0411b0db6ea0941
-2020-11-01 09:35:14,588  - DEBUG - payload ========={'user_name': 'test1', 'user_password': '123456', 'login_security': '702497dfee649aa9ec1575a0d766073c-23b5fe06f62da7cae0411b0db6ea0941'}
-2020-11-01 09:35:15,007  - DEBUG - 退出
-2020-11-01 09:35:15,008  - INFO - -------------------------测试结束-----------------------
+2020-11-01 10:32:58,294  - DEBUG - date  == {'user_name': 'test1', 'user_email': 'test11@dt.com', 'user_sex': 1, 'user_phone': None, 'user_birthday': None, 'PHPSESSID': 'd9643h35fcjugc536rsekha8p0'}

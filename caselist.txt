@@ -8,6 +8,8 @@
 # test_logout
 #pc登录
 test_login2
+TestUploadImg
+
 
 
 
