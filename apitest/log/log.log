@@ -1,6 +1,6 @@
-2020-10-31 17:14:32,831  - INFO - -------------------------测试开始-----------------------
-2020-10-31 17:14:32,832  - DEBUG - base_url == http://localhost/dbshop
-2020-10-31 17:14:33,096  - DEBUG - code  ======= 2bbf4430ad11994da75bd8ba525f5f7b-df43b5b480349e12d3c16f0df26df9d3
-2020-10-31 17:14:33,096  - DEBUG - payload ========={'http_referer': 'http%3A%2F%2Flocalhost%2Fdbshop%2F', 'user_name': 'test1', 'user_password': '123456', 'login_security': '2bbf4430ad11994da75bd8ba525f5f7b-df43b5b480349e12d3c16f0df26df9d3'}
-2020-10-31 17:14:34,100  - DEBUG - 退出
-2020-10-31 17:14:34,101  - INFO - -------------------------测试结束-----------------------
+2020-11-01 09:28:17,331  - INFO - -------------------------测试开始-----------------------
+2020-11-01 09:28:17,332  - DEBUG - base_url == http://localhost/dbshop
+2020-11-01 09:28:17,687  - DEBUG - code  ======= 9923f72c5d28c3da47e8c1676ed99890-5aac1ae9363910d2fd8bfd9e4ce5d92d
+2020-11-01 09:28:17,687  - DEBUG - payload ========={'http_referer': 'http%3A%2F%2Flocalhost%2Fdbshop%2F', 'user_name': 'test1', 'user_password': '123456', 'login_security': '9923f72c5d28c3da47e8c1676ed99890-5aac1ae9363910d2fd8bfd9e4ce5d92d'}
+2020-11-01 09:28:18,254  - DEBUG - 退出
+2020-11-01 09:28:18,255  - INFO - -------------------------测试结束-----------------------
