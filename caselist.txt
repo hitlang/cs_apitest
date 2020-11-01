@@ -11,6 +11,7 @@
 # test_upload_img
 #appx
 test_appx_login
+test_classification_add
 test_appx_logout
 
 

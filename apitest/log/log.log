@@ -1,6 +1,7 @@
-2020-11-01 17:09:03,156  - INFO - -------------------------测试开始-----------------------
-2020-11-01 17:09:03,301  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
-2020-11-01 17:09:03,301  - DEBUG - token == 65567752659847edbd2b5e14b92abe38
-2020-11-01 17:09:03,433  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': 'fde721778a3849e4bf51ec9abbe64c3e'}}
-2020-11-01 17:09:03,548  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
-2020-11-01 17:09:03,549  - INFO - -------------------------测试结束-----------------------
+2020-11-01 18:11:49,654  - INFO - -------------------------测试开始-----------------------
+2020-11-01 18:11:49,784  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
+2020-11-01 18:11:49,784  - DEBUG - token == f1a32731903c4952bbac81d25374be4d
+2020-11-01 18:11:49,905  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': '927f74fc8768471298a53f509652c5c8'}}
+2020-11-01 18:11:50,018  - DEBUG - class add res ==={'code': '114041', 'checkPoint': 'gc.classification.classificationName:测试分类9999', 'comment': '数据已存在', 'data': None}
+2020-11-01 18:11:50,123  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
+2020-11-01 18:11:50,124  - INFO - -------------------------测试结束-----------------------
