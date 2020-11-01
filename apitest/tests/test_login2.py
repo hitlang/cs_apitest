@@ -54,6 +54,6 @@ class TestLogin2(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls) -> None:
-        # cls.s.close()
+        cls.s.close()
         #
         pass
