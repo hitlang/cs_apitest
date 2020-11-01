@@ -17,7 +17,6 @@ pc_login:
               name: 提交登录表单
               request:
                   data:
-                      http_referer: http%3A%2F%2Flocalhost%2Fdbshop%2F
                       user_name: test1
                       user_password: '123456'
                   headers:
