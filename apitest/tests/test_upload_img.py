@@ -2,7 +2,6 @@
 # !/usr/bin/python3
 # @Author:liulang
 import unittest
-
 from apitest.common.configHttp import ConfigHttp
 from apitest.common.log import MyLog
 from apitest.params.params import UploadImg
@@ -19,7 +18,7 @@ class TestUploadImg(unittest.TestCase):
         self.data = self.upload.datas[0]
         self.headers = self.upload.headers[0]
         self.log = MyLog.get_log()
-        self.file = open(r'E:\cs_apitest\cs_apitest\apitest\tests\timg.jpg', 'rb')
+        self.file = open(r'E:\cs_apitest\cs_apitest\apitest\tests\test_03.jpg', 'rb')
         files = {'user_avatar': self.file}
         cookie = self.config.getCookie().strip()  # 字符串
         value = cookie.split("=")

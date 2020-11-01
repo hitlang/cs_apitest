@@ -7,8 +7,10 @@
 # test_integral_convert_money
 # test_logout
 #pc登录
-test_login2
-test_upload_img
+# test_login2
+# test_upload_img
+#appx
+test_appx_login
 
 
 
