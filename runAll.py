@@ -12,7 +12,7 @@ from apitest.ut.core import _TestCase
 class AllTest:
     def __init__(self):
         self.caseDir = os.path.abspath(os.path.join(os.path.dirname(__file__), "apitest", "tests"))
-        self.caseList = []
+        self.caseList = [] # 文件中从上至下，指定的测试用例文件名。模块名
         self.email = MyEmail.get_email()
         pass
 
@@ -27,10 +27,12 @@ class AllTest:
     def set_case_suite(self):
         self.set_case_list()
         test_suite = unittest.TestSuite()
-        suite_module = []
+
+        suite_module = [] #  有序的
 
         for case in self.caseList:
             case_name = case.split("/")[-1]
+
             discover = unittest.defaultTestLoader.discover(self.caseDir, pattern=case_name + '.py', top_level_dir=None)
             suite_module.append(discover)
 

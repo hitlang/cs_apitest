@@ -15,7 +15,7 @@ def _getParameter(name):
     data = tools.GetPages().get_page_list()
     # pprint(data)
     param = data[name]
-    return param
+    return param #是测试用例的列表
 
 class Payment:
     params = _getParameter('payment')
@@ -136,15 +136,44 @@ class AppxClassAdd:
         expecteds.append(params[i]["test"]["request"].get("expected"))
         names.append(params[i]["test"].get("name"))
 
+class SaveAddress:
+    params = _getParameter('save_address')
+    urls = []
+    datas = []
+    headers = []
+    names = []
+    methods = []
+    expecteds = []
+    for i in range(0, len(params)):
+        urls.append(params[i]["test"]["request"].get("url"))
+        datas.append(params[i]["test"]["request"].get("data"))
+        headers.append(params[i]["test"]["request"].get("headers"))
+        methods.append(params[i]["test"]["request"].get("method"))
+        expecteds.append(params[i]["test"]["request"].get("expected"))
+        names.append(params[i]["test"].get("name"))
 
-
+class DeleteAddress:
+    params = _getParameter('delete_address')
+    urls = []
+    datas = []
+    headers = []
+    names = []
+    methods = []
+    expecteds = []
+    for i in range(0, len(params)):
+        urls.append(params[i]["test"]["request"].get("url"))
+        datas.append(params[i]["test"]["request"].get("data"))
+        headers.append(params[i]["test"]["request"].get("headers"))
+        methods.append(params[i]["test"]["request"].get("method"))
+        expecteds.append(params[i]["test"]["request"].get("expected"))
+        names.append(params[i]["test"].get("name"))
 if __name__ == '__main__':
-    icm = AppxClassAdd()
-    print(icm.datas[0])
-    print(icm.urls[0])
-    print(icm.methods[0])
-    print(icm.names[0])
-    print(icm.headers[0])
+    icm = DeleteAddress()
+    print(icm.datas[1])
+    print(icm.urls[1])
+    print(icm.methods[1])
+    print(icm.names[1])
+    print(icm.headers[1])
 
 
 

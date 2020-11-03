@@ -6,13 +6,17 @@ import configparser
 import os
 
 config_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "config.ini"))
+# import logging
 
+# logging.basicConfig(level=logging.DEBUG, format='%(asctime)s  - %(levelname)s - %(message)s')
 
 class Config:
 
     def __init__(self) -> None:
+        # logging.debug("---------------init开始------------------")
         self.cf = configparser.ConfigParser()  # 第一步
         self.cf.read(config_file)
+        # logging.debug("---------------init结束------------------")
 
     def getHttpConf(self, key):
         value = self.cf.get("HTTP", key)
@@ -53,18 +57,21 @@ class Config:
 
 
 
+
 # 配置对象
 global_config = Config()
 # test
 if __name__ == '__main__':
-    cf = Config()
-    # port = cf.getMysqlConf("port")
-    # print(port)
-    cf.setCookie("sessionid=abc")
+    # cf = Config()
+    # # port = cf.getMysqlConf("port")
+    # # print(port)
+    # cf.setCookie("sessionid=abc")
+    #
+    # value = cf.getCookie()
+    #
+    # print(value)
 
-    value = cf.getCookie()
 
-    print(value)
 
 
 

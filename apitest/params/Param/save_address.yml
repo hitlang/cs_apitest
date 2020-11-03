@@ -1,0 +1,16 @@
+save_address:
+  desc: 增加配送地址
+  parameters:
+      -   test:
+              name: 增加配送地址-测试用例1
+              request:
+                  data:
+                    address_id:
+                    true_name: 徐浩
+                    region_id: 1678
+                    region_value: 武汉市
+                    address: 武汉市洪山区
+                    zip_code: 10001
+                  method: post
+                  url: /saveAddress
+

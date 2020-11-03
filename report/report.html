@@ -200,9 +200,9 @@
         
     <div class='page-header'>
         <h1>Interface Test Report</h1>
-    <p class='attribute'><strong>开始时间:</strong> 2020-11-01 18:11:49</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:00.470027</p>
-<p class='attribute'><strong>状态:</strong> 通过 3 失败 1</p>
+    <p class='attribute'><strong>开始时间:</strong> 2020-11-03 21:03:54</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:00.860049</p>
+<p class='attribute'><strong>状态:</strong> 通过 4</p>
 
     </div>
     <div style="float: left;width:50%;"><p class='description'>jjj</p></div>
@@ -234,75 +234,57 @@
         </tr>
         
     <tr class='passClass'>
-        <td>appx.test_appx_login.TestAppxLogin</td>
-        <td>2</td>
-        <td>2</td>
+        <td>dbshop.test_shop_api_login.TestLogin</td>
+        <td>1</td>
+        <td>1</td>
         <td>0</td>
         <td>0</td>
-        <td><a href="javascript:showClassDetail('c1',2)">详情</a></td>
+        <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
     </tr>
 
 <tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_0001_user_login_token</div></td>
+    <td class='none'><div class='testcase'>test_0001_login_success</div></td>
     <td colspan='5' align='center'>通过</td>
 </tr>
 
-<tr id='pt1.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_0002_user_login</div></td>
-    <td colspan='5' align='center'>通过</td>
-</tr>
-
-    <tr class='failClass'>
-        <td>appx.test_classification_add.TestClassificationAdd</td>
+    <tr class='passClass'>
+        <td>dbshop.test_save_address.TestSaveAddress</td>
+        <td>1</td>
         <td>1</td>
         <td>0</td>
-        <td>1</td>
         <td>0</td>
         <td><a href="javascript:showClassDetail('c2',1)">详情</a></td>
     </tr>
 
-<tr id='ft2.1' class='none'>
-    <td class='failCase'><div class='testcase'>test_0001_class_add_smoke</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
-        失败</a>
-
-    <div id='div_ft2.1' class="popup_window">
-        <pre>ft2.1: Traceback (most recent call last):
-  File "E:\cs_apitest\cs_apitest\apitest\tests\appx\test_classification_add.py", line 36, in test_class_add_smoke
-    self.assertEqual(res["code"] , "000000")
-AssertionError: '114041' != '000000'
-- 114041
-+ 000000
-
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_0001_add_address</div></td>
+    <td colspan='5' align='center'>通过</td>
 </tr>
 
     <tr class='passClass'>
-        <td>appx.test_appx_logout.TestAppxLogout</td>
-        <td>1</td>
-        <td>1</td>
+        <td>dbshop.test_delete_address.TestDeleteAddress</td>
+        <td>2</td>
+        <td>2</td>
         <td>0</td>
         <td>0</td>
-        <td><a href="javascript:showClassDetail('c3',1)">详情</a></td>
+        <td><a href="javascript:showClassDetail('c3',2)">详情</a></td>
     </tr>
 
 <tr id='pt3.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_0001_appx_logout</div></td>
+    <td class='none'><div class='testcase'>test_0001_get_address_id</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_0002_delete_address</div></td>
     <td colspan='5' align='center'>通过</td>
 </tr>
 
         <tr id='total_row'>
             <td>总计</td>
             <td>4</td>
-            <td>3</td>
-            <td>1</td>
+            <td>4</td>
+            <td>0</td>
             <td>0</td>
             <td>&nbsp;</td>
         </tr>
@@ -337,8 +319,8 @@ AssertionError: '114041' != '000000'
                     radius : '60%',
                     center: ['50%', '60%'],
                     data:[
-                        {value:3, name:'通过'},
-                        {value:1, name:'失败'},
+                        {value:4, name:'通过'},
+                        {value:0, name:'失败'},
                         {value:0, name:'错误'}
                     ],
                     itemStyle: {

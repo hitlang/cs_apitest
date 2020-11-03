@@ -23,10 +23,11 @@ class Log:
         log_file = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, "log", "log.log"))
 
         # create console handler and set level to debug
-        # ch = self.loggerlogging.StreamHandler()
+        # ch1 = logging.StreamHandler()
         ch = logging.FileHandler(filename=log_file, encoding="utf-8", mode="wt")
 
         ch.setLevel(logging.DEBUG)
+        # ch1.setLevel(logging.DEBUG)
 
         # create formatter
         formatter = logging.Formatter('%(asctime)s  - %(levelname)s - %(message)s')
@@ -34,11 +35,13 @@ class Log:
         # add formatter to ch
         ch.setFormatter(formatter)
 
+        # ch1.setFormatter(formatter)
+
         # add ch to logger
         self.logger.addHandler(ch)
+        # self.logger.addHandler(ch1)
 
     def getLogger(self):
-
         return self.logger
 
 
@@ -54,3 +57,8 @@ class MyLog:
         return MyLog.log
 
 
+if __name__ == '__main__':
+    log = Log()
+
+    log.getLogger().debug("ddddddddddddddd")
+    pass

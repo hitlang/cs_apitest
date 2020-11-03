@@ -1,0 +1,14 @@
+delete_address:
+  desc: 删除配送地址
+  parameters:
+    - test:
+        name: 获取配送地址
+        request:
+          method: post
+          url: /addressList
+    - test:
+        name: 删除配送地址
+        request:
+          method: post
+          url: /delAddress
+
