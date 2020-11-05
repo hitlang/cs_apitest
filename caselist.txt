@@ -1,23 +1,4 @@
-#支付流程
-#test_login
-#test_payment
-#test_logout
-#积分转换金额
-# test_login
-# test_integral_convert_money
-# test_logout
-#pc登录
-# test_login2
-# test_upload_img
-#appx
-# test_appx_login
-# test_classification_add
-# test_appx_logout
-#积分转换金额
-test_shop_api_login
-test_save_address
-test_delete_address
-
-
-
-
+#appx-添加商品流程
+test_appx_login
+test_appx_goods_add
+test_appx_logout

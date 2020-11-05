@@ -1,0 +1,31 @@
+appx_goods_add:
+  desc: 商品添加接口测试
+  parameters:
+    - test:
+        name: 添加商品测试用例1
+        request:
+          headers:
+            Content-Type: application/json;charset=UTF-8
+            User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
+              (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36
+            appid: 1514e1d61686438f95fa46f19070c126
+          data:
+            allowRefund: true
+            categoryId: bedbdf24503b11e8a3bc7cd30abc
+            classificationIds:
+              - de2b060ce9fe410ab4ba4ee7f690ebbc
+            mainFigure: /resource/RETAIL/20201105/e9d5ad7c56304886b35f3859f0aea364.jpg
+            name: 测试商品游戏机2
+            recommend: false
+            skus:
+              - originalPrice: '200'
+                price: '100'
+                salesVolume: 1
+                stock: '1000'
+            source: RETAIL
+            status: APPLIED
+            stockType: RESTRICTED
+            storeId: 1514e1d61686438f95fa46f19070c126
+          method: POSTWITHJSON
+          url: /gc/goods/add
+
