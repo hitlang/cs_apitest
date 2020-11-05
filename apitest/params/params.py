@@ -187,11 +187,12 @@ class AppxGoodsAdd:
         expecteds.append(params[i]["test"]["request"].get("expected"))
         names.append(params[i]["test"].get("name"))
 
+
 if __name__ == '__main__':
-    icm = AppxGoodsAdd()
-    print(icm.datas[0])
-    print(icm.urls[0])
-    print(icm.methods[0])
-    print(icm.names[0])
-    print(icm.headers[0])
+    icm = AppxClassAdd()
+    print(icm.datas[1])
+    print(icm.urls[1])
+    print(icm.methods[1])
+    print(icm.names[1])
+    print(icm.headers[1])
 0

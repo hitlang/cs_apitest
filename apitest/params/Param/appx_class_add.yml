@@ -1,18 +1,30 @@
 appx_class_add:
   desc: 分类添加
   parameters:
-      -   test:
-              name: 分类添加
-              request:
-                  headers:
-                      appid: 1514e1d61686438f95fa46f19070c126
-                  data:
-                      name: 测试分类1103
-                      parentId: '0'
-                      recommend: false
-                      source: RETAIL
-                      status: DEFAULT
-                      storeId: 1514e1d61686438f95fa46f19070c126
-                  method: POSTWITHJSON
-                  url: /gc/classification/add
+    - test:
+        name: 上传图片
+        request:
+          headers:
+            User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
+              (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36
+          data:
+            type: IMAGE
+            appname: retail
+          method: POSTWITHFILE
+          url: /ic/uploadImage
+
+    - test:
+        name: 分类添加
+        request:
+          headers:
+            appid: 1514e1d61686438f95fa46f19070c126
+          data:
+            name: 测试分类1200
+            parentId: '0'
+            recommend: false
+            source: RETAIL
+            status: DEFAULT
+            storeId: 1514e1d61686438f95fa46f19070c126
+          method: POSTWITHJSON
+          url: /gc/classification/add
 

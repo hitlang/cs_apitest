@@ -1,7 +1,8 @@
-2020-11-05 17:30:36,005  - INFO - -------------------------测试开始-----------------------
-2020-11-05 17:30:36,158  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
-2020-11-05 17:30:36,158  - DEBUG - token == 61519fcb035f4523b2f3636c40c2ce07
-2020-11-05 17:30:36,348  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': '6f61e5197479421c8a6f36494c3e88ae'}}
-2020-11-05 17:30:36,550  - DEBUG - add good json res  ==={'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': '0db585cc3af144b695142e7398a9beaa'}
-2020-11-05 17:30:36,695  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
-2020-11-05 17:30:36,697  - INFO - -------------------------测试结束-----------------------
+2020-11-05 22:17:22,162  - INFO - -------------------------测试开始-----------------------
+2020-11-05 22:17:22,299  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
+2020-11-05 22:17:22,299  - DEBUG - token == beaf0c7b348040c18b58e3d6740b573e
+2020-11-05 22:17:22,457  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': '55e799b1709c4f4d8a1af0173109bc4e'}}
+2020-11-05 22:17:22,664  - DEBUG - upload_file  res ==={'code': '000000', 'checkPoint': 'ic.null', 'comment': 'Completed successfully', 'data': ['/resource/retail/20201105/1b086c10cdfc4229bdcb2c5be87d3f0c.jpg']}
+2020-11-05 22:17:22,945  - DEBUG - class add res ==={'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': '05150c938c084d51bff3f0a208172ab9'}
+2020-11-05 22:17:23,118  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
+2020-11-05 22:17:23,119  - INFO - -------------------------测试结束-----------------------

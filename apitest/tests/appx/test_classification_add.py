@@ -13,22 +13,62 @@ class TestClassificationAdd(unittest.TestCase):
 
 
     def setUp(self) -> None:
-        aca = AppxClassAdd()
-        self.url = aca.urls[0]
-        self.data = aca.datas[0]
-        self.headers = aca.headers[0]
-        self.method = aca.methods[0]
+        self.aca = AppxClassAdd()
         self.log = MyLog.get_log()
         self.config = global_config
         pass
 
+    def test_class_upload_file(self):
+        '''
+        上传分组图片
+        :return:
+        '''
+        image = open(r"E:\cs_apitest\cs_apitest\apitest\data\test_03.jpg", "rb")
+        url , data , headers , method  = self.aca.urls[0],self.aca.datas[0],self.aca.headers[0],self.aca.methods[0]
+
+        headers.update({
+            "Authorization": self.config.getToken()
+
+        })
+        files = {"file":image}
+        #when
+        res = ConfigHttp(method=method, url=url,  data=data, headers=headers, files=files).request().json()
+
+        self.log.debug("upload_file  res ==={}".format(res))
+
+        #then
+
+        self.assertEqual(res["code"] , "000000")
+        self.assertEqual(res["comment"] , "Completed successfully")
+        #out
+
+        image.close()
+
+        global  img_url
+
+        img_url = res["data"][0]
+
     def test_class_add_smoke(self):
-        self.headers.update({
+        global  img_url
+        '''
+         增加分组
+        :return: 
+        '''
+
+
+        url, data, headers, method = self.aca.urls[1], self.aca.datas[1], self.aca.headers[1], self.aca.methods[1]
+
+        headers.update({
             "Authorization": self.config.getToken()
 
         })
 
-        res = ConfigHttp(method=self.method, url=self.url,  data=self.data, headers=self.headers).request().json()
+        data.update({
+
+            "logo": img_url
+        })
+
+        res = ConfigHttp(method=method, url=url,  data=data, headers=headers).request().json()
 
         self.log.debug("class add res ==={}".format(res))
 
@@ -37,3 +77,6 @@ class TestClassificationAdd(unittest.TestCase):
         self.assertEqual(res["code"] , "000000")
         self.assertEqual(res["comment"] , "Completed successfully")
         pass
+
+
+

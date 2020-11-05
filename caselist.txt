@@ -1,4 +1,8 @@
 #appx-添加商品流程
+# test_appx_login
+# test_appx_goods_add
+# test_appx_logout
+#appx-增加分组
 test_appx_login
-test_appx_goods_add
+test_classification_add
 test_appx_logout
