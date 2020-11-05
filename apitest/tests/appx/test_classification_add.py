@@ -2,7 +2,7 @@
 #!/usr/bin/python3
 # @Author:liulang
 import unittest
-
+import  time
 from apitest.common.configHttp import ConfigHttp
 from apitest.common.log import MyLog
 from apitest.params.params import AppxClassAdd
@@ -64,7 +64,7 @@ class TestClassificationAdd(unittest.TestCase):
         })
 
         data.update({
-
+            "name": "测试分类名" + str(round(time.time())),
             "logo": img_url
         })
 

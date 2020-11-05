@@ -1,8 +1,8 @@
-2020-11-05 22:17:22,162  - INFO - -------------------------测试开始-----------------------
-2020-11-05 22:17:22,299  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
-2020-11-05 22:17:22,299  - DEBUG - token == beaf0c7b348040c18b58e3d6740b573e
-2020-11-05 22:17:22,457  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': '55e799b1709c4f4d8a1af0173109bc4e'}}
-2020-11-05 22:17:22,664  - DEBUG - upload_file  res ==={'code': '000000', 'checkPoint': 'ic.null', 'comment': 'Completed successfully', 'data': ['/resource/retail/20201105/1b086c10cdfc4229bdcb2c5be87d3f0c.jpg']}
-2020-11-05 22:17:22,945  - DEBUG - class add res ==={'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': '05150c938c084d51bff3f0a208172ab9'}
-2020-11-05 22:17:23,118  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
-2020-11-05 22:17:23,119  - INFO - -------------------------测试结束-----------------------
+2020-11-05 22:23:40,691  - INFO - -------------------------测试开始-----------------------
+2020-11-05 22:23:40,832  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
+2020-11-05 22:23:40,832  - DEBUG - token == 45d8791f581240bea06c93c95b6c5d7e
+2020-11-05 22:23:41,009  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': '19f1f579cda140168e9790934c248006'}}
+2020-11-05 22:23:41,255  - DEBUG - upload_file  res ==={'code': '000000', 'checkPoint': 'ic.null', 'comment': 'Completed successfully', 'data': ['/resource/retail/20201105/ba564a73f5b346a097b240f8cee81bc9.jpg']}
+2020-11-05 22:23:41,546  - DEBUG - class add res ==={'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': '505b2da5194a4d38994e4e7bdb7070f5'}
+2020-11-05 22:23:41,696  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
+2020-11-05 22:23:41,698  - INFO - -------------------------测试结束-----------------------
