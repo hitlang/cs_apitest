@@ -6,6 +6,7 @@ import unittest
 from apitest.common import HTMLTestRunner
 from apitest.common.configEmail import MyEmail
 from apitest.common.log import MyLog
+from apitest.dbfixture.test_data import init_data
 from apitest.ut.core import _TestCase
 
 
@@ -71,6 +72,9 @@ class AllTest:
 
 
 if __name__ == '__main__':
+
+    # init_data()
+
     unittest.TestCase = _TestCase # monkey patch
     at = AllTest()
     at.run()

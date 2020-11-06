@@ -188,11 +188,50 @@ class AppxGoodsAdd:
         names.append(params[i]["test"].get("name"))
 
 
+class DbshopApiLogin:
+    '''
+    封装appx-添加商品接口测试数据
+    '''
+    params = _getParameter('dbshop_api_login')
+    urls = []
+    datas = []
+    headers = []
+    names = []
+    methods = []
+    expecteds = []
+    for i in range(0, len(params)):
+        urls.append(params[i]["test"]["request"].get("url"))
+        datas.append(params[i]["test"]["request"].get("data"))
+        headers.append(params[i]["test"]["request"].get("headers"))
+        methods.append(params[i]["test"]["request"].get("method"))
+        expecteds.append(params[i]["test"]["request"].get("expected"))
+        names.append(params[i]["test"].get("name"))
+
+
+class DbshopApiLogout:
+    '''
+    封装appx-添加商品接口测试数据
+    '''
+    params = _getParameter('dbshop_api_logout')
+    urls = []
+    datas = []
+    headers = []
+    names = []
+    methods = []
+    expecteds = []
+    for i in range(0, len(params)):
+        urls.append(params[i]["test"]["request"].get("url"))
+        datas.append(params[i]["test"]["request"].get("data"))
+        headers.append(params[i]["test"]["request"].get("headers"))
+        methods.append(params[i]["test"]["request"].get("method"))
+        expecteds.append(params[i]["test"]["request"].get("expected"))
+        names.append(params[i]["test"].get("name"))
+
 if __name__ == '__main__':
-    icm = AppxClassAdd()
-    print(icm.datas[1])
-    print(icm.urls[1])
-    print(icm.methods[1])
-    print(icm.names[1])
-    print(icm.headers[1])
-0
+    icm = DbshopApiLogout()
+    print(icm.datas[0])
+    print(icm.urls[0])
+    print(icm.methods[0])
+    print(icm.names[0])
+    print(icm.headers[0])
+    print(icm.expecteds[0])

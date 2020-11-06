@@ -1,0 +1,13 @@
+dbshop_api_login:
+  desc: dbshop_api_登录
+  parameters:
+    - test:
+        name: test_login_success
+        request:
+          data:
+            user_unionid: 1
+          url: /login
+          method: post
+          expected: success
+
+

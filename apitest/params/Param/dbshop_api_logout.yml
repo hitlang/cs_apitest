@@ -1,0 +1,11 @@
+dbshop_api_logout:
+  desc: dbshop_api_退出登录
+  parameters:
+    - test:
+        name: 退出登录
+        request:
+          url: /loginOut
+          method: post
+          expected: success
+
+

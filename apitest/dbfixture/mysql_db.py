@@ -31,13 +31,26 @@ class DB:
         except pymysql.err.OperationalError as e:
             print("Mysql Error %d: %s" % (e.args[0], e.args[1]))
 
-    # clear table data
-    def clear(self, table_name):
-        # real_sql = "truncate table " + table_name + ";"
-        real_sql = "delete from " + table_name + ";"
+    def delete(self,sql, values):
         with self.connection.cursor() as cursor:
-            cursor.execute("SET FOREIGN_KEY_CHECKS=0;")
-            cursor.execute(real_sql)
+            r = cursor.execute(sql, values)
+        self.connection.commit()
+        return r
+
+
+    # clear table data
+    def clear(self, table_name , user_name ):
+        '''
+
+        :param table_name:
+        :param values:  ("user_name" : "test111")
+        :return:
+        '''
+        real_sql = "delete from " + table_name + " where " + "user_name = %s;"
+
+        with self.connection.cursor() as cursor:
+            r =  cursor.execute(real_sql, (user_name,))
+            print("delete ", r)
         self.connection.commit()
 
     # insert sql statement
@@ -50,8 +63,7 @@ class DB:
         # print(real_sql)
 
         with self.connection.cursor() as cursor:
-            cursor.execute(real_sql)
-
+            r = cursor.execute(real_sql)
         self.connection.commit()
 
     # close database
@@ -68,24 +80,15 @@ class DB:
 
 
 if __name__ == '__main__':
+
+    sql = "delete from dbshop_user where user_name = %s "
+
+    values = ("xionglin",)
     db = DB()
-    now = round(time())
-    table_name = "dbshop_user"
 
-    test_data = {
-        "group_id": 1,
-        "user_name": "test7",
-        "user_password": "4f8b6e3cc0dbe66cb0ba5c9d41c0a80d",
-        "user_email": "test7@dt.com",
-        "user_sex": 3,
-        "user_time": now,
-        "user_state": 1,
-        "user_integral_num": 0,
-        "integral_type_2_num": 0,
-        "user_money": 0.00
-    }
+    r = db.delete(sql, values)
 
-    db.insert(table_name, test_data)
-    db.close()
+    print(r)
+
 
     pass

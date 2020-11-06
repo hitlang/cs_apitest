@@ -10,9 +10,6 @@ past_time = time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time()-100000)
 
 # 定义将来时间
 future_time = time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time()+10000))
-
-
-
 # create data
 datas = {
     'sign_event':[
