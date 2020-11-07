@@ -2,11 +2,11 @@ appx_goods_apply:
   desc: 下架商品
   parameters:
     - test:
-        name: 下架商品用例1
+        name: 下架商品用例
         request:
           headers:
             User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36
               (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36
             appid: 1514e1d61686438f95fa46f19070c126
-          method: POST
+          method: POSTWITHJSON
           url: /gc/goods/apply

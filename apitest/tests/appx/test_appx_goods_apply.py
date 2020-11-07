@@ -19,7 +19,7 @@ class TestAppxGoodsApply(unittest.TestCase):
         self.config = global_config
         method, url, data, headers = AppxGoodsAdd.methods[0], \
                                      AppxGoodsAdd.urls[0], \
-                                     AppxGoodsAdd.datas[0], AppxGoodsAdd.datas[0]
+                                     AppxGoodsAdd.datas[0], AppxGoodsAdd.headers[0]
         # 增加商品
         headers.update({
             "Authorization": self.config.getToken()
@@ -29,17 +29,36 @@ class TestAppxGoodsApply(unittest.TestCase):
         # out
         self.goods_id = res['data']  # 商品id
 
+        self.log.debug("商品id : {}".format(self.goods_id))
+
+
+
     def test_apply_goods(self):
         '''
         下架商品
         :return:
         '''
-        # aga = AppxGoodsApply()
-        #
-        # data ={
-        #     "ids": [self.goods_id]
-        # }
 
+
+        url , method , headers = AppxGoodsApply.urls[0], \
+                                 AppxGoodsApply.methods[0],\
+                                 AppxGoodsApply.headers[0]
+
+        headers.update({
+            "Authorization": self.config.getToken()
+        })
+        #
+        data ={
+            "ids": [self.goods_id]
+        }
+
+        res = ConfigHttp(method=method, url=url, data=data, headers=headers).request().json()
+
+        self.log.debug("下架商品 响应数据 : {}".format(res) )
+
+        # then
+        self.assertEqual(res["code"], "000000")
+        self.assertEqual(res["comment"], "Completed successfully")
 
         pass
 

@@ -66,16 +66,13 @@ class AllTest:
             MyLog.get_log().info("-------------------------测试结束-----------------------")
 
             #发送邮件
-            self.email.send_email()
+            # self.email.send_email()
 
 
 
 
 if __name__ == '__main__':
-
-    # init_data()
-
     unittest.TestCase = _TestCase # monkey patch
-    at = AllTest()
-    at.run()
-    pass
+    AllTest().run()
+
+

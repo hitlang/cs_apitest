@@ -1,7 +1,13 @@
-2020-11-06 19:58:22,180  - INFO - -------------------------测试开始-----------------------
-2020-11-06 19:58:22,336  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
-2020-11-06 19:58:22,336  - DEBUG - token == 9e55d0ece1b04cd9b4b37ccc6f0108f0
-2020-11-06 19:58:22,506  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': 'f4b80b8917ad4f82ae8035c0f9b06b4c'}}
-2020-11-06 19:58:22,733  - DEBUG - add good json res  ==={'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': '4f0d4bf4083e431dba371f6c1e3ef471'}
-2020-11-06 19:58:22,886  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
-2020-11-06 19:58:22,887  - INFO - -------------------------测试结束-----------------------
+2020-11-07 16:25:03,558  - INFO - -------------------------测试开始-----------------------
+2020-11-07 16:25:03,698  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
+2020-11-07 16:25:03,698  - DEBUG - token == e78be1f4437b4997903e941f5baaf2b9
+2020-11-07 16:25:03,979  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': '703ad6cb5eb04e8b96056d8eb223b692'}}
+2020-11-07 16:25:04,182  - DEBUG - add good json res  ==={'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': 'abb0fdad5a1249b3af512d646c66f2ef'}
+2020-11-07 16:25:04,322  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
+2020-11-07 16:25:04,463  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
+2020-11-07 16:25:04,463  - DEBUG - token == a588f3f29ea940b594010d1db72084aa
+2020-11-07 16:25:04,619  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': 'ef50bd6915894c8fb567e341c9ee3c58'}}
+2020-11-07 16:25:04,806  - DEBUG - 商品id : 5b3e159267fe45579759525e14cfb8b8
+2020-11-07 16:25:04,978  - DEBUG - 下架商品 响应数据 : {'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': None}
+2020-11-07 16:25:05,118  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
+2020-11-07 16:25:05,118  - INFO - -------------------------测试结束-----------------------
