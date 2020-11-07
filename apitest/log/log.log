@@ -1,6 +1,7 @@
-2020-11-06 17:44:41,878  - INFO - -------------------------测试开始-----------------------
-2020-11-06 17:44:42,540  - DEBUG - test_login_success 响应结果=={'status': 'success', 'msg': '信息调用成功！', 'result': {'user_name': 'test1', 'nick_name': 'test1', 'user_avatar': 'http://localhost/dbshop/public/upload/user/avatar/2_1604193783.jpg', 'user_token': 'f74a406d1bb51c87df8ebceeb929185a', 'user_unionid': '5a105e8b9d40e1329780d62ea2265d8a'}}
-2020-11-06 17:44:43,202  - DEBUG - test_login_success 响应结果=={'status': 'success', 'msg': '信息调用成功！', 'result': {'user_name': 'test3', 'nick_name': 'test3', 'user_avatar': 'http://localhost/dbshop/public/upload/common/default_avatar.png', 'user_token': 'e20cdb8f5c99ba312d7067b286cbb60c', 'user_unionid': '8ad8757baa8564dc136c1e07507f4a98'}}
-2020-11-06 17:44:43,825  - DEBUG - test_login_success 响应结果=={'status': 'success', 'msg': '信息调用成功！', 'result': {'user_name': 'test11', 'nick_name': 'test11', 'user_avatar': 'http://localhost/dbshop/public/upload/common/default_avatar.png', 'user_token': '05bf9c4bb8dc3a4fbaece2aed4cdff9f', 'user_unionid': 'f696282aa4cd4f614aa995190cf442fe'}}
-2020-11-06 17:44:44,482  - DEBUG - test_login_success 响应结果=={'status': 'success', 'msg': '信息调用成功！', 'result': {'user_name': 'test9', 'nick_name': 'test9', 'user_avatar': 'http://localhost/dbshop/public/upload/common/default_avatar.png', 'user_token': 'e97eca86a042e2b61aa62c00e2b1cba3', 'user_unionid': '739969b53246b2c727850dbb3490ede6'}}
-2020-11-06 17:44:44,752  - INFO - -------------------------测试结束-----------------------
+2020-11-06 19:58:22,180  - INFO - -------------------------测试开始-----------------------
+2020-11-06 19:58:22,336  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
+2020-11-06 19:58:22,336  - DEBUG - token == 9e55d0ece1b04cd9b4b37ccc6f0108f0
+2020-11-06 19:58:22,506  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': 'f4b80b8917ad4f82ae8035c0f9b06b4c'}}
+2020-11-06 19:58:22,733  - DEBUG - add good json res  ==={'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': '4f0d4bf4083e431dba371f6c1e3ef471'}
+2020-11-06 19:58:22,886  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
+2020-11-06 19:58:22,887  - INFO - -------------------------测试结束-----------------------

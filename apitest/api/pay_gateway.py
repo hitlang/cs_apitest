@@ -10,3 +10,9 @@ def  get_orderPayFinish(configHttp):
     '''
     res = configHttp.request().json()
     return res
+
+
+def appx_goods_add():
+    
+
+    pass

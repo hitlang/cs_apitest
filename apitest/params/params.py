@@ -209,9 +209,6 @@ class DbshopApiLogin:
 
 
 class DbshopApiLogout:
-    '''
-    封装appx-添加商品接口测试数据
-    '''
     params = _getParameter('dbshop_api_logout')
     urls = []
     datas = []
@@ -227,8 +224,28 @@ class DbshopApiLogout:
         expecteds.append(params[i]["test"]["request"].get("expected"))
         names.append(params[i]["test"].get("name"))
 
+
+class AppxGoodsApply:
+    '''
+    下架商品
+    '''
+    params = _getParameter('appx_goods_apply')
+    urls = []
+    datas = []
+    headers = []
+    names = []
+    methods = []
+    expecteds = []
+    for i in range(0, len(params)):
+        urls.append(params[i]["test"]["request"].get("url"))
+        datas.append(params[i]["test"]["request"].get("data"))
+        headers.append(params[i]["test"]["request"].get("headers"))
+        methods.append(params[i]["test"]["request"].get("method"))
+        expecteds.append(params[i]["test"]["request"].get("expected"))
+        names.append(params[i]["test"].get("name"))
+
 if __name__ == '__main__':
-    icm = DbshopApiLogout()
+    icm = AppxGoodsApply()
     print(icm.datas[0])
     print(icm.urls[0])
     print(icm.methods[0])
