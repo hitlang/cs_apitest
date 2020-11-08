@@ -2,14 +2,17 @@
 test_appx_login
 test_appx_goods_add
 test_appx_logout
-#appx-增加分组
+# #appx-增加分组
 # test_appx_login
 # test_classification_add
 # test_appx_logout
-#dbshop api登录接口
-# test_api_login
-#appx下架商品
+# #appx下架商品
+# test_appx_login
+# test_appx_goods_apply
+# test_appx_logout
+
+#appx推荐商品
 test_appx_login
-test_appx_goods_apply
+test_appx_update_recomm
 test_appx_logout
 

@@ -244,8 +244,27 @@ class AppxGoodsApply:
         expecteds.append(params[i]["test"]["request"].get("expected"))
         names.append(params[i]["test"].get("name"))
 
+class AppxGoodsRecommend:
+    '''
+    更新商品推荐状态接
+    '''
+    params = _getParameter('appx_goods_recommend')
+    urls = []
+    datas = []
+    headers = []
+    names = []
+    methods = []
+    expecteds = []
+    for i in range(0, len(params)):
+        urls.append(params[i]["test"]["request"].get("url"))
+        datas.append(params[i]["test"]["request"].get("data"))
+        headers.append(params[i]["test"]["request"].get("headers"))
+        methods.append(params[i]["test"]["request"].get("method"))
+        expecteds.append(params[i]["test"]["request"].get("expected"))
+        names.append(params[i]["test"].get("name"))
+
 if __name__ == '__main__':
-    icm = AppxGoodsApply()
+    icm = AppxGoodsRecommend()
     print(icm.datas[0])
     print(icm.urls[0])
     print(icm.methods[0])
