@@ -3,13 +3,13 @@ test_appx_login
 test_appx_goods_add
 test_appx_logout
 # #appx-增加分组
-# test_appx_login
-# test_classification_add
-# test_appx_logout
+test_appx_login
+test_classification_add
+test_appx_logout
 # #appx下架商品
-# test_appx_login
-# test_appx_goods_apply
-# test_appx_logout
+test_appx_login
+test_appx_goods_apply
+test_appx_logout
 
 #appx推荐商品
 test_appx_login
