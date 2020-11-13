@@ -4,7 +4,7 @@
 import os
 import unittest
 from apitest.common import HTMLTestRunner
-from apitest.common.configEmail import MyEmail
+from apitest.common.configEmail import Email
 from apitest.common.log import MyLog
 from apitest.dbfixture.test_data import init_data
 from apitest.ut.core import _TestCase
@@ -14,7 +14,7 @@ class AllTest:
     def __init__(self):
         self.caseDir = os.path.abspath(os.path.join(os.path.dirname(__file__), "apitest", "tests"))
         self.caseList = [] # 文件中从上至下，指定的测试用例文件名。模块名
-        self.email = MyEmail.get_email()
+        self.email = Email()
         pass
 
     def set_case_list(self):

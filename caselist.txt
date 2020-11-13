@@ -17,5 +17,7 @@
 # test_appx_logout
 
 #appx登录数据驱动套件
-test_appx_login_suite
+# test_appx_login_suite
+test_api_text_ad
+
 

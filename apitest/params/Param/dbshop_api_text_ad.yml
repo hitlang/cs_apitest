@@ -1,0 +1,13 @@
+dbshop_api_text_ad:
+  desc: 文字广告测试用例
+  parameters:
+    - test:
+        name: 测试用例1
+        request:
+          data:
+            ad_code: example1
+          url: /specialAd
+          method: get
+
+
+

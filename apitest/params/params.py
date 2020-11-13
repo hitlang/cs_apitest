@@ -263,11 +263,22 @@ class AppxGoodsRecommend:
         expecteds.append(params[i]["test"]["request"].get("expected"))
         names.append(params[i]["test"].get("name"))
 
+class DbshopApiTextAd:
+    params = _getParameter('dbshop_api_text_ad')
+    urls = []
+    datas = []
+    methods = []
+    for i in range(0, len(params)):
+        urls.append(params[i]["test"]["request"].get("url"))
+        datas.append(params[i]["test"]["request"].get("data"))
+        methods.append(params[i]["test"]["request"].get("method"))
+
+
 if __name__ == '__main__':
-    icm = AppxGoodsRecommend()
+    icm = DbshopApiTextAd()
     print(icm.datas[0])
     print(icm.urls[0])
     print(icm.methods[0])
-    print(icm.names[0])
-    print(icm.headers[0])
-    print(icm.expecteds[0])
+    # print(icm.names[0])
+    # print(icm.headers[0])
+    # print(icm.expecteds[0])

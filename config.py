@@ -42,6 +42,11 @@ class Config:
         with open(config_file,"w") as fp:
             self.cf.write(fp)
 
+    #获取email
+    def get_email_receivers(self):
+        return self.cf.get("EMAIL", "receiver")
+
+
     def setCookie(self, value):
         '''
 
