@@ -35,13 +35,10 @@ class TestAppxGoodsAdd(unittest.TestCase):
         })
         #when
         res = ConfigHttp(method=self.method, url=self.url, data=self.data, headers=self.headers).request().json()
-
         self.log.debug("add good json res  ==={}".format(res))
         #then
         self.assertEqual(res["code"], "000000")
-        self.assertEqual(res["comment"], "Completed successfully")
         #out
-
         pass
 
     def tearDown(self) -> None:

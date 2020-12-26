@@ -2,15 +2,12 @@
 #!/usr/bin/python3
 # @Author:liulang
 import unittest
-
 from apitest.common.configHttp import ConfigHttp
 from apitest.common.log import MyLog
 from apitest.params.params import AppxLogout
 from config import global_config
 
-
 class TestAppxLogout(unittest.TestCase):
-
 
     def setUp(self) -> None:
         al = AppxLogout()

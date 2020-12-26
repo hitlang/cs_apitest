@@ -60,12 +60,9 @@ class TestAppxLogin(unittest.TestCase):
 
         # when
         res = ConfigHttp(method=method, params=params, url=url, headers=headers).request().json()
-
         self.log.debug("res === {}".format(res))
-
         #then
         self.assertEqual(res["code"],"000000", "重新获取token失败")
-
         #out
         self.config.setToken(res["data"]["token"])
 

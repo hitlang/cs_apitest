@@ -1,25 +1,7 @@
-2020-12-26 17:32:48,176  - INFO - -------------------------测试开始-----------------------
-2020-12-26 17:32:48,398  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
-2020-12-26 17:32:48,398  - DEBUG - token == 0bfc5f52aab1496193a8a17005c2fe38
-2020-12-26 17:32:48,559  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': 'd066a780c99046d5b5d842416ee51d44'}}
-2020-12-26 17:32:48,864  - DEBUG - add good json res  ==={'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': '98ed364f8b5d410bb3f3ec5d9f65b283'}
-2020-12-26 17:32:49,010  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
-2020-12-26 17:32:49,187  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
-2020-12-26 17:32:49,187  - DEBUG - token == 92d7b105f14d4cae9a3e8e8f6c4b5bd3
-2020-12-26 17:32:49,357  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': '2b92bf8896b64ae5b0ae1711a7946872'}}
-2020-12-26 17:32:49,681  - DEBUG - upload_file  res ==={'code': '000000', 'checkPoint': 'ic.null', 'comment': 'Completed successfully', 'data': ['/resource/retail/20201226/5a522431698a4fa7bc01d328e59a3f47.jpg']}
-2020-12-26 17:32:50,465  - DEBUG - class add res ==={'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': '742a0e4fe4f1428fab3e03323da74c8f'}
-2020-12-26 17:32:50,609  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
-2020-12-26 17:32:50,782  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
-2020-12-26 17:32:50,782  - DEBUG - token == a001b6c3d89147408eb73210a62ac523
-2020-12-26 17:32:50,971  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': 'b94e128e212c4b0a933b65416a6becef'}}
-2020-12-26 17:32:51,282  - DEBUG - 商品id : 4d514c56630a40258ccca21c71c47fce
-2020-12-26 17:32:51,466  - DEBUG - 下架商品 响应数据 : {'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': None}
-2020-12-26 17:32:51,617  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
-2020-12-26 17:32:51,809  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
-2020-12-26 17:32:51,809  - DEBUG - token == 928c8fb2138648eb9a59f940865aad28
-2020-12-26 17:32:51,973  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': 'ad421a30bca44a85ba8708a6ef950b2e'}}
-2020-12-26 17:32:55,208  - DEBUG - =======ids =====['b0f8b12f41244468bfef8a957b710bfc', 'bbbcc89b24844d2aa004e21a37d2ed31', 'c60dbb0c04ca42919018f83e9bedfd3c', '6ad38c5d286b4d48b6a0cb421e7cb5c8', '1400b0804b104f199bc9f25cc7a703ff', '6dde5d63530541349d8b95295280e9fa', '6b520be8a1db43619af0c74db154b623', 'fd2ff3ce25e442e985af0d49039eeb28', 'b597a8f5c1224d62b5a195f46889b5d6', '5d14fc69a8014ba2ab70951da6de6c22', '58ab9e3c8d054225a2f22ba41975a4e4']
-2020-12-26 17:32:55,393  - DEBUG - 更新商品推荐状态 响应数据 : {'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': None}
-2020-12-26 17:32:55,587  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
-2020-12-26 17:32:55,590  - INFO - -------------------------测试结束-----------------------
+2020-12-26 17:39:36,173  - INFO - -------------------------测试开始-----------------------
+2020-12-26 17:39:36,396  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
+2020-12-26 17:39:36,396  - DEBUG - token == c6c413e16ec7480b9a1036124753e2e3
+2020-12-26 17:39:36,570  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': '70f1b18848f7482189c40bda3f04d73d'}}
+2020-12-26 17:39:36,865  - DEBUG - add good json res  ==={'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': 'cdcca4dbfe9440a19df5e5ddf229fe78'}
+2020-12-26 17:39:37,022  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
+2020-12-26 17:39:37,024  - INFO - -------------------------测试结束-----------------------
