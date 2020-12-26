@@ -200,9 +200,9 @@
         
     <div class='page-header'>
         <h1>Interface Test Report</h1>
-    <p class='attribute'><strong>开始时间:</strong> 2020-12-02 18:49:07</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:00.176010</p>
-<p class='attribute'><strong>状态:</strong> 通过 1</p>
+    <p class='attribute'><strong>开始时间:</strong> 2020-12-26 17:24:57</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:00</p>
+<p class='attribute'><strong>状态:</strong> 错误 1</p>
 
     </div>
     <div style="float: left;width:50%;"><p class='description'>jjj</p></div>
@@ -233,26 +233,47 @@
             <td>查看</td>
         </tr>
         
-    <tr class='passClass'>
-        <td>appx.test_appx_login1.TestAppxLogin1</td>
-        <td>1</td>
+    <tr class='errorClass'>
+        <td>unittest.loader._FailedTest</td>
         <td>1</td>
         <td>0</td>
         <td>0</td>
+        <td>1</td>
         <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
     </tr>
 
-<tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_0001_user_login1</div></td>
-    <td colspan='5' align='center'>通过</td>
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_appx_login1</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        错误</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <pre>ft1.1: ImportError: Failed to import test module: appx.test_appx_login1
+Traceback (most recent call last):
+  File "c:\python37\lib\unittest\loader.py", line 434, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "c:\python37\lib\unittest\loader.py", line 375, in _get_module_from_name
+    __import__(name)
+  File "E:\cs_apitest\cs_apitest\apitest\tests\appx\test_appx_login1.py", line 7, in &lt;module&gt;
+    from apitest.params.params import AppxLogin, AppxLogin1
+ImportError: cannot import name 'AppxLogin1' from 'apitest.params.params' (E:\cs_apitest\cs_apitest\apitest\params\params.py)
+
+</pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
         <tr id='total_row'>
             <td>总计</td>
             <td>1</td>
+            <td>0</td>
+            <td>0</td>
             <td>1</td>
-            <td>0</td>
-            <td>0</td>
             <td>&nbsp;</td>
         </tr>
     </table>
@@ -286,9 +307,9 @@
                     radius : '60%',
                     center: ['50%', '60%'],
                     data:[
-                        {value:1, name:'通过'},
+                        {value:0, name:'通过'},
                         {value:0, name:'失败'},
-                        {value:0, name:'错误'}
+                        {value:1, name:'错误'}
                     ],
                     itemStyle: {
                         emphasis: {
