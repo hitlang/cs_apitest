@@ -1,33 +1,25 @@
-2020-12-26 17:29:27,508  - INFO - -------------------------测试开始-----------------------
-2020-12-26 17:29:27,759  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
-2020-12-26 17:29:27,759  - DEBUG - token == 4b0e39be27b84e32b3677a585fcfae3d
-2020-12-26 17:29:27,944  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': '7878dd3e4cd6436790b6ed23f19f23c3'}}
-2020-12-26 17:29:28,246  - DEBUG - add good json res  ==={'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': 'e4c006f86a4f490a89c604636c58afca'}
-2020-12-26 17:29:28,422  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
-2020-12-26 17:29:28,596  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
-2020-12-26 17:29:28,597  - DEBUG - token == a2665376fb114d4ab9d9817e3bcfd812
-2020-12-26 17:29:28,782  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': 'c741776f452d4142aa71132bf7819aab'}}
-2020-12-26 17:29:29,143  - DEBUG - upload_file  res ==={'code': '000000', 'checkPoint': 'ic.null', 'comment': 'Completed successfully', 'data': ['/resource/retail/20201226/311ab5e70fe1463fb877645816cf8676.jpg']}
-2020-12-26 17:29:29,881  - DEBUG - class add res ==={'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': '07382386d585493c82439f8abf783d69'}
-2020-12-26 17:29:30,059  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
-2020-12-26 17:29:30,227  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
-2020-12-26 17:29:30,228  - DEBUG - token == 90a3450a5278411296c2d055e288d8f3
-2020-12-26 17:29:30,425  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': '6b5443ae853d41d5beac6a6d2c015c4d'}}
-2020-12-26 17:29:30,696  - DEBUG - 商品id : 803acbff229b4da78eaf60aa812bcdba
-2020-12-26 17:29:30,861  - DEBUG - 下架商品 响应数据 : {'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': None}
-2020-12-26 17:29:31,027  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
-2020-12-26 17:29:31,202  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
-2020-12-26 17:29:31,203  - DEBUG - token == f26fe3bd355345c8891caf59d671aadb
-2020-12-26 17:29:31,391  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': 'e02453f2db2d4cbeae56527e001884b9'}}
-2020-12-26 17:29:34,690  - DEBUG - =======ids =====['d04e17c2ce71429db18bbb47ac7039f5', 'fdb459e7f4f64792a57638894fb7b610', '988c622a027042149d6be03d5297586b', 'a431faeb3afa4b05982c3804214fa8a2', '08daf7d0256b46339ad2d8cdf2ed8937', '9baa13a95c4c4aebbfd2ad05faa1d8dd', '66929c67546a4b81a5e4aaa7fc8a843e', '95c8a7e53ab14159afaa8ea86d10ec32', '833f4eb3e805433c96f5cfb39525b3df', '331124fd1b464d2eb0c453937fc5c821', '44631ca7ad254ce0a3b492616ee85e0a']
-2020-12-26 17:29:34,878  - DEBUG - 更新商品推荐状态 响应数据 : {'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': None}
-2020-12-26 17:29:35,016  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
-2020-12-26 17:29:35,506  - DEBUG - 退出 响应 ====
-2020-12-26 17:29:36,014  - DEBUG - 退出 响应 ====
-2020-12-26 17:29:36,533  - DEBUG - 退出 响应 ====
-2020-12-26 17:29:37,045  - DEBUG - 退出 响应 ====
-2020-12-26 17:29:37,207  - DEBUG - test_api_text_ad 响应结果=={'timestamp': 1608974833186, 'status': 404, 'error': 'Not Found', 'message': 'No message available', 'path': '/specialAd'}
-2020-12-26 17:29:37,667  - DEBUG - test_api_text_ad 响应结果=={'timestamp': 1608974833648, 'status': 404, 'error': 'Not Found', 'message': 'No message available', 'path': '/specialAd'}
-2020-12-26 17:29:37,821  - DEBUG - test_api_text_ad 响应结果=={'timestamp': 1608974833800, 'status': 404, 'error': 'Not Found', 'message': 'No message available', 'path': '/specialAd'}
-2020-12-26 17:29:37,984  - DEBUG - test_api_text_ad 响应结果=={'timestamp': 1608974833965, 'status': 404, 'error': 'Not Found', 'message': 'No message available', 'path': '/specialAd'}
-2020-12-26 17:29:37,988  - INFO - -------------------------测试结束-----------------------
+2020-12-26 17:32:48,176  - INFO - -------------------------测试开始-----------------------
+2020-12-26 17:32:48,398  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
+2020-12-26 17:32:48,398  - DEBUG - token == 0bfc5f52aab1496193a8a17005c2fe38
+2020-12-26 17:32:48,559  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': 'd066a780c99046d5b5d842416ee51d44'}}
+2020-12-26 17:32:48,864  - DEBUG - add good json res  ==={'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': '98ed364f8b5d410bb3f3ec5d9f65b283'}
+2020-12-26 17:32:49,010  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
+2020-12-26 17:32:49,187  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
+2020-12-26 17:32:49,187  - DEBUG - token == 92d7b105f14d4cae9a3e8e8f6c4b5bd3
+2020-12-26 17:32:49,357  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': '2b92bf8896b64ae5b0ae1711a7946872'}}
+2020-12-26 17:32:49,681  - DEBUG - upload_file  res ==={'code': '000000', 'checkPoint': 'ic.null', 'comment': 'Completed successfully', 'data': ['/resource/retail/20201226/5a522431698a4fa7bc01d328e59a3f47.jpg']}
+2020-12-26 17:32:50,465  - DEBUG - class add res ==={'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': '742a0e4fe4f1428fab3e03323da74c8f'}
+2020-12-26 17:32:50,609  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
+2020-12-26 17:32:50,782  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
+2020-12-26 17:32:50,782  - DEBUG - token == a001b6c3d89147408eb73210a62ac523
+2020-12-26 17:32:50,971  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': 'b94e128e212c4b0a933b65416a6becef'}}
+2020-12-26 17:32:51,282  - DEBUG - 商品id : 4d514c56630a40258ccca21c71c47fce
+2020-12-26 17:32:51,466  - DEBUG - 下架商品 响应数据 : {'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': None}
+2020-12-26 17:32:51,617  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
+2020-12-26 17:32:51,809  - DEBUG - appid == 1514e1d61686438f95fa46f19070c126
+2020-12-26 17:32:51,809  - DEBUG - token == 928c8fb2138648eb9a59f940865aad28
+2020-12-26 17:32:51,973  - DEBUG - res === {'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': {'token': 'ad421a30bca44a85ba8708a6ef950b2e'}}
+2020-12-26 17:32:55,208  - DEBUG - =======ids =====['b0f8b12f41244468bfef8a957b710bfc', 'bbbcc89b24844d2aa004e21a37d2ed31', 'c60dbb0c04ca42919018f83e9bedfd3c', '6ad38c5d286b4d48b6a0cb421e7cb5c8', '1400b0804b104f199bc9f25cc7a703ff', '6dde5d63530541349d8b95295280e9fa', '6b520be8a1db43619af0c74db154b623', 'fd2ff3ce25e442e985af0d49039eeb28', 'b597a8f5c1224d62b5a195f46889b5d6', '5d14fc69a8014ba2ab70951da6de6c22', '58ab9e3c8d054225a2f22ba41975a4e4']
+2020-12-26 17:32:55,393  - DEBUG - 更新商品推荐状态 响应数据 : {'code': '000000', 'checkPoint': 'gc.null', 'comment': 'Completed successfully', 'data': None}
+2020-12-26 17:32:55,587  - DEBUG - logout res ===={'code': '000000', 'checkPoint': 'bsmc.null', 'comment': 'Completed successfully', 'data': None}
+2020-12-26 17:32:55,590  - INFO - -------------------------测试结束-----------------------
