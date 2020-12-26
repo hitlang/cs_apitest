@@ -8,7 +8,7 @@
 import os
 from pprint import pprint
 from apitest.params import tools
-
+import pprint
 path_dir = str(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)))
 
 def _getParameter(name):
@@ -273,12 +273,3 @@ class DbshopApiTextAd:
         datas.append(params[i]["test"]["request"].get("data"))
         methods.append(params[i]["test"]["request"].get("method"))
 
-
-if __name__ == '__main__':
-    icm = DbshopApiTextAd()
-    print(icm.datas[0])
-    print(icm.urls[0])
-    print(icm.methods[0])
-    # print(icm.names[0])
-    # print(icm.headers[0])
-    # print(icm.expecteds[0])
