@@ -2,13 +2,11 @@
 # !/usr/bin/python3
 # @Author:liulang
 import unittest
-from ddt import ddt, file_data
 from apitest.common.configHttp import ConfigHttp
 from apitest.common.log import MyLog
 from apitest.params.params import DbshopApiLogin, DbshopApiLogout
 
 
-@ddt
 class TestApiLogin(unittest.TestCase):
 
     def setUp(self) -> None:
@@ -16,9 +14,8 @@ class TestApiLogin(unittest.TestCase):
         self.logout = DbshopApiLogout()
         self.log = MyLog.get_log()
 
-    # 第一个用例
-    @file_data(r"E:\cs_apitest\cs_apitest\apitest\data\dbshop_test_users.json")
-    def test_login_success(self, user_name, user_password):
+
+    def test_login_success(self):
         '''
         正向用例
         :return:
@@ -27,11 +24,7 @@ class TestApiLogin(unittest.TestCase):
 
         url, method, data ,expected = self.dal.urls[0], self.dal.methods[0], self.dal.datas[0],self.dal.expecteds[0]
 
-        data.update({
-            "user_name": user_name,
-            "user_password": user_password,
 
-        })
 
         # when
 

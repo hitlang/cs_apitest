@@ -6,6 +6,8 @@ dbshop_api_login:
         request:
           data:
             user_unionid: 1
+            user_name: test1
+            user_password: 123456
           url: /login
           method: post
           expected: success
