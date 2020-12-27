@@ -51,7 +51,7 @@ class TestApiLogin(unittest.TestCase):
         #
 
 
-        self.assertEqual("success" , res['status'] , "退出系统失败")
+        self.assertEqual("xxxxx" , res['status'] , "退出系统失败")
 
 
         pass
